@@ -1,0 +1,574 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: iNove 1.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-08-07 13:47+0900\n"
+"PO-Revision-Date: \n"
+"Last-Translator: mg12 <wuzhao.mail@gmail.com>\n"
+"Language-Team: wokamoto <http://dogmap.jp/>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:8
+#: header.php:27
+msgid "RSS 2.0 - all posts"
+msgstr "RSS 2.0 - all posts"
+
+#: 404.php:9
+#: header.php:28
+msgid "RSS 2.0 - all comments"
+msgstr "RSS 2.0 - all comments"
+
+#: 404.php:22
+msgid "Talker"
+msgstr "Talker"
+
+#: 404.php:25
+msgid "Welcome to 404 error page!"
+msgstr "404 エラーページへようこそ！"
+
+#: 404.php:26
+msgid "Welcome to this customized error page. You've reached this page because you've clicked on a link that does not exist. This is probably our fault... but instead of showing you the basic '404 Error' page that is confusing and doesn't really explain anything, we've created this page to explain what went wrong."
+msgstr "カスタマイズされたエラーページへようこそ。<br />あなたは存在しないリンクをクリックしたため、このページが表示されています。原因は、たぶん私にありますが...<br />せめてものお詫びに基本的な &quot;404エラーページ&quot; をあなたに見せる代わりに、何が支障をきたしたかを説明するこのページを作成しました。"
+
+#: 404.php:27
+msgid "You can either (a) click on the 'back' button in your browser and try to navigate through our site in a different direction, or (b) click on the following link to go to homepage."
+msgstr "(a) ブラウザの&quot;戻る&quot;ボタンをクリックして、以前に表示していたページに戻るか<br />(b) ホームページに戻るために以下のリンクをクリックしてください。"
+
+#: 404.php:29
+msgid "Back to homepage &raquo;"
+msgstr "ホームページへ戻る &raquo;"
+
+#: archive.php:10
+msgid "Search Results"
+msgstr "検索結果"
+
+#: archive.php:11
+#, php-format
+msgid "Keyword: &#8216;%1$s&#8217;"
+msgstr "キーワード: &#8216;%1$s&#8217;"
+
+#: archive.php:14
+msgid "Archive"
+msgstr "アーカイブ"
+
+#: archive.php:19
+#, php-format
+msgid "Archive for the &#8216;%1$s&#8217; Category"
+msgstr "&#8216;%1$s&#8217; カテゴリーのアーカイブ"
+
+#: archive.php:22
+#, php-format
+msgid "Posts Tagged &#8216;%1$s&#8217;"
+msgstr "&#8216;%1$s&#8217; タグのついている投稿"
+
+#: archive.php:25
+#: archive.php:28
+#: archive.php:31
+#, php-format
+msgid "Archive for %1$s"
+msgstr "%1$s のアーカイブ"
+
+#: archive.php:25
+#: archive.php:47
+#: archives.php:14
+#: comments.php:91
+#: functions.php:563
+#: index.php:22
+#: links.php:25
+#: page.php:8
+#: single.php:15
+#: twitter.php:15
+msgid "F jS, Y"
+msgstr "Y 年 n 月 j 日"
+
+#: archive.php:28
+msgid "F, Y"
+msgstr "Y 年 n 月"
+
+#: archive.php:31
+msgid "Y"
+msgstr "Y 年"
+
+#: archive.php:34
+msgid "Author Archive"
+msgstr "投稿者のアーカイブ"
+
+#: archive.php:37
+msgid "Blog Archives"
+msgstr "ブログアーカイブ"
+
+#: archive.php:49
+#: archives.php:15
+#: comments.php:95
+#: functions.php:571
+#: index.php:24
+#: links.php:26
+#: page.php:9
+#: single.php:17
+#: twitter.php:16
+msgid "Edit"
+msgstr "編集"
+
+#: archive.php:50
+#: index.php:25
+msgid "No comments"
+msgstr "コメントはありません"
+
+#: archive.php:50
+#: index.php:25
+msgid "1 comment"
+msgstr "コメント 1 件"
+
+#: archive.php:50
+#: index.php:25
+#, php-format
+msgid "% comments"
+msgstr "コメント % 件"
+
+#: archive.php:50
+#: index.php:25
+msgid "Comments off"
+msgstr ""
+
+#: archive.php:54
+#: index.php:29
+msgid "Read more..."
+msgstr "続きを読む..."
+
+#: archive.php:58
+#: index.php:33
+#: single.php:29
+msgid "Categories: "
+msgstr "カテゴリー: "
+
+#: archive.php:59
+#: index.php:34
+#: single.php:30
+msgid "Tags: "
+msgstr "タグ: "
+
+#: archive.php:64
+#: archives.php:39
+#: index.php:39
+#: links.php:59
+#: page.php:26
+#: single.php:68
+#: twitter.php:36
+msgid "Sorry, no posts matched your criteria."
+msgstr "該当する投稿は見つかりませんでした。"
+
+#: archive.php:72
+#: index.php:47
+msgid "Newer Entries"
+msgstr "新しい投稿"
+
+#: archive.php:73
+#: index.php:48
+msgid "Older Entries"
+msgstr "以前の投稿"
+
+#: archives.php:17
+#: comments.php:31
+#: links.php:28
+#: page.php:11
+#: single.php:19
+#: twitter.php:18
+msgid "Leave a comment"
+msgstr "コメントをどうぞ"
+
+#: archives.php:18
+#: links.php:29
+#: page.php:12
+#: single.php:20
+#: twitter.php:19
+msgid "Go to comments"
+msgstr "コメント"
+
+#: comments.php:5
+msgid "Enter your password to view comments."
+msgstr "この投稿はパスワードで保護されています。コメントを閲覧するにはパスワードを入力してください。"
+
+#: comments.php:25
+#: comments.php:28
+#: functions.php:367
+msgid "Comments"
+msgstr "コメント"
+
+#: comments.php:26
+msgid "Trackbacks"
+msgstr "トラックバック"
+
+#: comments.php:34
+msgid "Trackback"
+msgstr "トラックバックURL"
+
+#: comments.php:58
+msgid "No comments yet."
+msgstr "コメントはまだありません。"
+
+#: comments.php:72
+msgid "Comment pages"
+msgstr "コメントページ"
+
+#: comments.php:91
+#: functions.php:563
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s %2$s"
+
+#: comments.php:91
+#: functions.php:563
+msgid "H:i"
+msgstr "H:i"
+
+#: comments.php:108
+msgid "No trackbacks yet."
+msgstr "トラックバックはまだありません。"
+
+#: comments.php:123
+msgid "Comments are closed."
+msgstr "コメントは受け付けていません。"
+
+#: comments.php:134
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "コメントを投稿するには<a href=\"%s\">ログイン</a>してください。"
+
+#: comments.php:150
+msgid "Logged in as"
+msgstr "ログイン中"
+
+#: comments.php:151
+msgid "Log out of this account"
+msgstr "このアカウントからログアウト"
+
+#: comments.php:151
+msgid "Logout &raquo;"
+msgstr "ログアウト &raquo;"
+
+#: comments.php:157
+#, php-format
+msgid "Welcome back <strong>%s</strong>."
+msgstr "お帰りなさい <strong>%s</strong>."
+
+#: comments.php:158
+msgid "Change &raquo;"
+msgstr "変更する &raquo;"
+
+#: comments.php:159
+msgid "Close &raquo;"
+msgstr "閉じる &raquo;"
+
+#: comments.php:166
+msgid "Name"
+msgstr "お名前"
+
+#: comments.php:166
+#: comments.php:170
+msgid "(required)"
+msgstr "(必須)"
+
+#: comments.php:170
+msgid "E-Mail (will not be published)"
+msgstr "メール (公開されません)"
+
+#: comments.php:174
+msgid "Website"
+msgstr "ウェブサイト"
+
+#: comments.php:191
+msgid "Subscribe to comments feed"
+msgstr "コメントフィードをRSSリーダーで購読する"
+
+#: comments.php:193
+msgid "Submit Comment"
+msgstr "コメント送信"
+
+#: footer.php:17
+msgid "Top"
+msgstr "トップ"
+
+#: footer.php:27
+msgid "Copyright &copy; "
+msgstr "Copyright &copy; "
+
+#: footer.php:39
+#, php-format
+msgid "Theme by <a href=\"%1$s\">NeoEase</a>. Valid <a href=\"%2$s\">XHTML 1.1</a> and <a href=\"%3$s\">CSS 3</a>."
+msgstr ""
+
+#: functions.php:180
+#: functions.php:189
+msgid "Current Theme Options"
+msgstr "テーマの設定"
+
+#: functions.php:194
+msgid "Search"
+msgstr "検索"
+
+#: functions.php:198
+msgid "Using google custom search engine."
+msgstr "Google カスタムサーチエンジンを使用する。"
+
+#: functions.php:201
+msgid "CX:"
+msgstr "CX:"
+
+#: functions.php:204
+msgid "Find <code>name=\"cx\"</code> in the <strong>Search box code</strong> of <a href=\"%1$s\">Google Custom Search Engine</a>, and type the <code>value</code> here.<br/>For example: <code>014782006753236413342:1ltfrybsbz4</code>"
+msgstr "<a href=\"%1$s\">Google カスタムサーチエンジン</a>の <strong>サーチボックス</strong> から <code>name=\"cx\"</code> を探して、ここに入力してください。例：<code>014782006753236413342:1ltfrybsbz4</code>"
+
+#: functions.php:213
+msgid "Menubar"
+msgstr "メニューバー"
+
+#: functions.php:217
+msgid "Show pages as menu."
+msgstr "ページをメニューに表示する。"
+
+#: functions.php:221
+msgid "Show categories as menu."
+msgstr "カテゴリをメニューに表示する"
+
+#: functions.php:231
+msgid "Sidebar"
+msgstr "サイドバー"
+
+#: functions.php:235
+msgid "Hide sidebar from all pages."
+msgstr "サイドバーをページに表示されない。"
+
+#: functions.php:246
+msgid "Notice"
+msgstr "通知バー"
+
+#: functions.php:248
+#: functions.php:272
+#: functions.php:307
+#: functions.php:430
+msgid "HTML enabled"
+msgstr "HTML タグは有効です"
+
+#: functions.php:254
+msgid "This notice bar will display at the top of posts on homepage."
+msgstr "この通知バーは投稿の先頭に表示されます。"
+
+#: functions.php:270
+msgid "Banner"
+msgstr "バナー"
+
+#: functions.php:276
+msgid "This banner will display at the right of header. (height: 60 pixels)"
+msgstr "ヘッダ右側に表示されるバナー ( 高さ: 60px )"
+
+#: functions.php:278
+#: functions.php:313
+msgid "Who can see?"
+msgstr "だれが見ることができますか?"
+
+#: functions.php:281
+#: functions.php:316
+msgid "Registered Users"
+msgstr "登録されているユーザ"
+
+#: functions.php:285
+#: functions.php:320
+msgid "Commentator"
+msgstr "コメントした人"
+
+#: functions.php:289
+#: functions.php:324
+msgid "Visitors"
+msgstr "すべての訪問者"
+
+#: functions.php:305
+#: sidebar.php:56
+msgid "Showcase"
+msgstr "ショーケース"
+
+#: functions.php:311
+msgid "This showcase will display at the top of sidebar."
+msgstr "このショーケースはサイドバーの先頭に表示されます。"
+
+#: functions.php:329
+msgid "Title:"
+msgstr "タイトル:"
+
+#: functions.php:345
+msgid "Posts"
+msgstr "投稿"
+
+#: functions.php:349
+msgid "Show author on posts."
+msgstr "投稿に投稿者を表示する。"
+
+#: functions.php:353
+msgid "Show categories on posts."
+msgstr "投稿にカテゴリを表示する。"
+
+#: functions.php:357
+msgid "Show tags on posts."
+msgstr "投稿にタグを表示する。"
+
+#: functions.php:371
+msgid "Submit comments with Ctrl+Enter."
+msgstr "Ctrl+Enter で、コメントを投稿する。"
+
+#: functions.php:381
+msgid "Feed"
+msgstr "フィード"
+
+#: functions.php:385
+msgid "Show the feed reader list when mouse over on feed button."
+msgstr "マウスカーソルがフィードボタン上に置かれた時、RSSリーダーのリストを表示する。"
+
+#: functions.php:390
+msgid "Custom feed."
+msgstr "カスタムフィード"
+
+#: functions.php:392
+#: functions.php:398
+msgid "URL:"
+msgstr "URL:"
+
+#: functions.php:396
+msgid "Email feed."
+msgstr "メールフィード"
+
+#: functions.php:407
+#: sidebar.php:42
+msgid "Twitter"
+msgstr ""
+
+#: functions.php:411
+msgid "Add Twitter button."
+msgstr "Twitterボタンと追加する。"
+
+#: functions.php:414
+msgid "Twitter username:"
+msgstr "Twitter 名前："
+
+#: functions.php:428
+msgid "Web Analytics"
+msgstr ""
+
+#: functions.php:435
+msgid "Add web analytics code to your site. (e.g. Google Analytics, Yahoo! Web Analytics, ...)"
+msgstr ""
+
+#: functions.php:446
+msgid "Save Changes"
+msgstr "変更を保存する"
+
+#: functions.php:567
+msgid "Reply"
+msgstr "返信"
+
+#: functions.php:568
+msgid "Quote"
+msgstr "引用"
+
+#: functions.php:573
+msgid "Advanced edit"
+msgstr "編集"
+
+#: functions.php:579
+msgid "Your comment is awaiting moderation."
+msgstr "あなたのコメントは管理者の承認待ちです。"
+
+#: links.php:18
+msgid "Add link"
+msgstr "リンクを追加"
+
+#: links.php:19
+msgid "Edit links"
+msgstr "リンクを編集"
+
+#: sidebar.php:25
+msgid "Subscribe to this blog..."
+msgstr "このブログのフィードを購読する..."
+
+#: sidebar.php:25
+msgid "<abbr title=\"Really Simple Syndication\">RSS</abbr>"
+msgstr ""
+
+#: sidebar.php:28
+#: sidebar.php:29
+#: sidebar.php:30
+#: sidebar.php:31
+#: sidebar.php:32
+#: sidebar.php:33
+#: sidebar.php:34
+#: sidebar.php:35
+msgid "Subscribe with "
+msgstr "Subscribe with "
+
+#: sidebar.php:28
+msgid "Google"
+msgstr "Google"
+
+#: sidebar.php:29
+msgid "Youdao"
+msgstr "Youdao"
+
+#: sidebar.php:30
+msgid "Xian Guo"
+msgstr "Xian Guo"
+
+#: sidebar.php:31
+msgid "Zhua Xia"
+msgstr "Zhua Xia"
+
+#: sidebar.php:32
+msgid "My Yahoo!"
+msgstr "My Yahoo!"
+
+#: sidebar.php:33
+msgid "newsgator"
+msgstr "newsgator"
+
+#: sidebar.php:34
+msgid "Bloglines"
+msgstr "Bloglines"
+
+#: sidebar.php:35
+msgid "iNezha"
+msgstr "iNezha"
+
+#: sidebar.php:40
+msgid "Subscribe to this blog via email..."
+msgstr "メールで、このブログを購読する..."
+
+#: sidebar.php:40
+msgid "Email feed"
+msgstr "メールフィード"
+
+#: sidebar.php:42
+msgid "Follow me!"
+msgstr ""
+
+#: single.php:7
+msgid "Go to homepage"
+msgstr "ホームページへ戻る"
+
+#: single.php:7
+msgid "Home"
+msgstr "ホーム"
+
+#: templates/header.php:66
+msgid "Type text to search here..."
+msgstr "検索..."
+
+#~ msgid "Blogroll"
+#~ msgstr "ブログロール"
+#~ msgid "Author: "
+#~ msgstr "作成者: "
+
