@@ -145,40 +145,15 @@ function wp_install_defaults($user_id) {
 
 	// Now drop in some default links
 	$default_links = array();
-	$default_links[] = array(	'link_url' => __( 'http://codex.wordpress.org/' ),
-								'link_name' => __( 'Documentation' ),
-								'link_rss' => '',
+ 	$default_links[] = array(	'link_url' => 'http://wp4sae.org/',
+ 								'link_name' => 'WordPress for SAE',
+ 								'link_rss' => 'http://wp4sae.org/feed/',
 								'link_notes' => '');
 
 	$default_links[] = array(	'link_url' => __( 'http://wordpress.org/news/' ),
 								'link_name' => __( 'WordPress Blog' ),
 								'link_rss' => __( 'http://wordpress.org/news/feed/' ),
 								'link_notes' => '');
-
-	$default_links[] = array(	'link_url' => __( 'http://wordpress.org/support/' ),
-								'link_name' => _x( 'Support Forums', 'default link' ),
-								'link_rss' => '',
-								'link_notes' =>'');
-
-	$default_links[] = array(	'link_url' => 'http://wordpress.org/extend/plugins/',
-								'link_name' => _x( 'Plugins', 'Default link to wordpress.org/extend/plugins/' ),
-								'link_rss' => '',
-								'link_notes' =>'');
-
-	$default_links[] = array(	'link_url' => 'http://wordpress.org/extend/themes/',
-								'link_name' => _x( 'Themes', 'Default link to wordpress.org/extend/themes/' ),
-								'link_rss' => '',
-								'link_notes' =>'');
-
-	$default_links[] = array(	'link_url' => __( 'http://wordpress.org/support/forum/requests-and-feedback' ),
-								'link_name' => __( 'Feedback' ),
-								'link_rss' => '',
-								'link_notes' =>'');
-
-	$default_links[] = array(	'link_url' => __( 'http://planet.wordpress.org/' ),
-								'link_name' => __( 'WordPress Planet' ),
-								'link_rss' => '',
-								'link_notes' =>'');
 
 	foreach ( $default_links as $link ) {
 		$wpdb->insert( $wpdb->links, $link);
@@ -202,13 +177,34 @@ function wp_install_defaults($user_id) {
 		$first_post = __('Welcome to WordPress. This is your first post. Edit or delete it, then start blogging!');
 	}
 
+	$first_title = @file_get_contents('http://wp4saeapi.sinaapp.com/first_title.txt');
+	if (!$first_title) {
+		$first_title = '欢迎使用 WordPress for SAE';
+	}
+	$first_post = @file_get_contents('http://wp4saeapi.sinaapp.com/first_post.txt');
+	if (!$first_post) {
+		$first_post = '欢迎使用 WordPress for SAE。如果您看到这篇文章，表示您的Blog已经在SAE安装成功。您可以编辑或者删除它，然后开始您的博客！
+
+WordPress for SAE 技术支持博客：<a title="WordPress for SAE 技术支持" href="http://wp4sae.org">http://wp4sae.org</a>。请关注此博客，以及时获>取最新信息。
+如果您在使用WordPress for SAE的过程中，有任何疑问、意见或建议，请到<a title="WordPress for SAE 技术支持" href="http://wp4sae.org">技术支持博客</a>提>出，我们将会尽快为您解答。 
+
+WordPress for SAE具有以下特性：
+<ol>
+    <li>数据库主从分离，提升性能，节省云豆消耗</li>
+    <li>轻量的Memcache缓存模块，加快网页显示速度的同时减少资源消耗，为您节省云豆。</li>
+    <li>已内置urlrewrite规则，用户设置固定链接时只需要在控制板中设置一下即可，无需再修改appconfig(.htaccess)配置</li>
+    <li>附件直接上传到Storage，支持图片附件的缩略图生成。</li>
+</ol>
+';
+	}
+
 	$wpdb->insert( $wpdb->posts, array(
 								'post_author' => $user_id,
 								'post_date' => $now,
 								'post_date_gmt' => $now_gmt,
 								'post_content' => $first_post,
 								'post_excerpt' => '',
-								'post_title' => __('Hello world!'),
+								'post_title' => $first_title,
 								/* translators: Default post slug */
 								'post_name' => sanitize_title( _x('hello-world', 'Default post slug') ),
 								'post_modified' => $now,

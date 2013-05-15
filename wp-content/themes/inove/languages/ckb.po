@@ -1,0 +1,573 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: iNove 1.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-08-07 14:01+0900\n"
+"PO-Revision-Date: \n"
+"Last-Translator: mg12 <wuzhao.mail@gmail.com>\n"
+"Language-Team: NeoEase <http://www.neoease.com/themes/>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: CHINA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:8
+#: header.php:27
+msgid "RSS 2.0 - all posts"
+msgstr ""
+
+#: 404.php:9
+#: header.php:28
+msgid "RSS 2.0 - all comments"
+msgstr ""
+
+#: 404.php:22
+msgid "Talker"
+msgstr ""
+
+#: 404.php:25
+msgid "Welcome to 404 error page!"
+msgstr "بەخێربێیت بۆ پەڕەی هەڵەی 404"
+
+#: 404.php:26
+msgid "Welcome to this customized error page. You've reached this page because you've clicked on a link that does not exist. This is probably our fault... but instead of showing you the basic '404 Error' page that is confusing and doesn't really explain anything, we've created this page to explain what went wrong."
+msgstr "ئەمە پەڕەی هەڵەیە، چونکە بەدوای بەستەری هەڵە کەوتویت یان پەڕەکە بوونی نییە"
+
+#: 404.php:27
+msgid "You can either (a) click on the 'back' button in your browser and try to navigate through our site in a different direction, or (b) click on the following link to go to homepage."
+msgstr "یان بگەڕێرەوە دواوە یان ئەوەتا گەڕانێکی وردتر بەکار ببە"
+
+#: 404.php:29
+msgid "Back to homepage &raquo;"
+msgstr "گەڕانەوە بۆ ماڵپەڕ &raquo;"
+
+#: archive.php:10
+msgid "Search Results"
+msgstr "ئەنجامی گەڕان"
+
+#: archive.php:11
+#, php-format
+msgid "Keyword: &#8216;%1$s&#8217;"
+msgstr "کلیلەوشەکان: &#8216;%1$s&#8217;"
+
+#: archive.php:14
+msgid "Archive"
+msgstr "ئەرشیف"
+
+#: archive.php:19
+#, php-format
+msgid "Archive for the &#8216;%1$s&#8217; Category"
+msgstr "ئەرشیف بۆ &#8216;%1$s&#8217; هاوپۆل"
+
+#: archive.php:22
+#, php-format
+msgid "Posts Tagged &#8216;%1$s&#8217;"
+msgstr "بابەت تاگی بۆکراوە &#8216;%1$s&#8217;"
+
+#: archive.php:25
+#: archive.php:28
+#: archive.php:31
+#, php-format
+msgid "Archive for %1$s"
+msgstr "ئەرشیف بۆ %1$s"
+
+#: archive.php:25
+#: archive.php:47
+#: archives.php:14
+#: comments.php:91
+#: functions.php:563
+#: index.php:22
+#: links.php:25
+#: page.php:8
+#: single.php:15
+#: twitter.php:15
+msgid "F jS, Y"
+msgstr ""
+
+#: archive.php:28
+msgid "F, Y"
+msgstr ""
+
+#: archive.php:31
+msgid "Y"
+msgstr ""
+
+#: archive.php:34
+msgid "Author Archive"
+msgstr "ئەرسیفی نوسەر"
+
+#: archive.php:37
+msgid "Blog Archives"
+msgstr "ئەرشیفی ماڵپەڕ یا بڵاگ"
+
+#: archive.php:49
+#: archives.php:15
+#: comments.php:95
+#: functions.php:571
+#: index.php:24
+#: links.php:26
+#: page.php:9
+#: single.php:17
+#: twitter.php:16
+msgid "Edit"
+msgstr "دەستکاری"
+
+#: archive.php:50
+#: index.php:25
+msgid "No comments"
+msgstr "هیج لێدوانێک نییە"
+
+#: archive.php:50
+#: index.php:25
+msgid "1 comment"
+msgstr "یەک لێدوان هەیە"
+
+#: archive.php:50
+#: index.php:25
+#, php-format
+msgid "% comments"
+msgstr "% لێدوان"
+
+#: archive.php:50
+#: index.php:25
+msgid "Comments off"
+msgstr "لێدوان داخراوە"
+
+#: archive.php:54
+#: index.php:29
+msgid "Read more..."
+msgstr "درێژەی بابەت ..."
+
+#: archive.php:58
+#: index.php:33
+#: single.php:29
+msgid "Categories: "
+msgstr "هاوپۆلەکان"
+
+#: archive.php:59
+#: index.php:34
+#: single.php:30
+msgid "Tags: "
+msgstr "تاگەکان"
+
+#: archive.php:64
+#: archives.php:39
+#: index.php:39
+#: links.php:59
+#: page.php:26
+#: single.php:68
+#: twitter.php:36
+msgid "Sorry, no posts matched your criteria."
+msgstr "ببورە هیچی نەدۆزیەوە"
+
+#: archive.php:72
+#: index.php:47
+msgid "Newer Entries"
+msgstr "نوێتر"
+
+#: archive.php:73
+#: index.php:48
+msgid "Older Entries"
+msgstr "کۆنتر"
+
+#: archives.php:17
+#: comments.php:31
+#: links.php:28
+#: page.php:11
+#: single.php:19
+#: twitter.php:18
+msgid "Leave a comment"
+msgstr "لێدوانێک بنوسە"
+
+#: archives.php:18
+#: links.php:29
+#: page.php:12
+#: single.php:20
+#: twitter.php:19
+msgid "Go to comments"
+msgstr "بڕۆ بۆ لێدوانەکان"
+
+#: comments.php:5
+msgid "Enter your password to view comments."
+msgstr "تێپەڕەوشە بنوسە بۆ بینینی لێدوانەکان"
+
+#: comments.php:25
+#: comments.php:28
+#: functions.php:367
+msgid "Comments"
+msgstr "لێدوانەکان"
+
+#: comments.php:26
+msgid "Trackbacks"
+msgstr "تراکباک"
+
+#: comments.php:34
+msgid "Trackback"
+msgstr "تراکباک"
+
+#: comments.php:58
+msgid "No comments yet."
+msgstr "هیج لێدوانیک نییە ئێستا"
+
+#: comments.php:72
+msgid "Comment pages"
+msgstr "پەڕەی لێدوانەکان"
+
+#: comments.php:91
+#: functions.php:563
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s لە %2$s"
+
+#: comments.php:91
+#: functions.php:563
+msgid "H:i"
+msgstr ""
+
+#: comments.php:108
+msgid "No trackbacks yet."
+msgstr ""
+
+#: comments.php:123
+msgid "Comments are closed."
+msgstr "لێدوانەکان داخراون"
+
+#: comments.php:134
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "تۆ دەبێت <a href=\"%s\">لەژوورەوە </a> بیت بۆ بۆچوون نوسین."
+
+#: comments.php:150
+msgid "Logged in as"
+msgstr "لەژوورەوەی وەک"
+
+#: comments.php:151
+msgid "Log out of this account"
+msgstr "دەرجوون"
+
+#: comments.php:151
+msgid "Logout &raquo;"
+msgstr "دەرجوون &raquo;"
+
+#: comments.php:157
+#, php-format
+msgid "Welcome back <strong>%s</strong>."
+msgstr "بەخێربێیتەوە <strong>%s</strong>"
+
+#: comments.php:158
+msgid "Change &raquo;"
+msgstr "گۆڕینی &raquo;"
+
+#: comments.php:159
+msgid "Close &raquo;"
+msgstr "گۆڕینی &raquo;"
+
+#: comments.php:166
+msgid "Name"
+msgstr "ناو"
+
+#: comments.php:166
+#: comments.php:170
+msgid "(required)"
+msgstr "(پێویستە)"
+
+#: comments.php:170
+msgid "E-Mail (will not be published)"
+msgstr "پۆستی ئەلیکترۆنی"
+
+#: comments.php:174
+msgid "Website"
+msgstr "وێبگە"
+
+#: comments.php:191
+msgid "Subscribe to comments feed"
+msgstr "بەشداری لەفێدی بۆچوونەکان"
+
+#: comments.php:193
+msgid "Submit Comment"
+msgstr "ناردنی پەیام"
+
+#: footer.php:17
+msgid "Top"
+msgstr "بۆ سەرەوە"
+
+#: footer.php:27
+msgid "Copyright &copy; "
+msgstr "مافی لەبەرگرتنەوە  &copy;"
+
+#: footer.php:39
+#, php-format
+msgid "Theme by <a href=\"%1$s\">NeoEase</a>. Valid <a href=\"%2$s\">XHTML 1.1</a> and <a href=\"%3$s\">CSS 3</a>."
+msgstr ""
+
+#: functions.php:180
+#: functions.php:189
+msgid "Current Theme Options"
+msgstr "دەستکاریەکانی ڕووکار"
+
+#: functions.php:194
+msgid "Search"
+msgstr "گەڕان"
+
+#: functions.php:198
+msgid "Using google custom search engine."
+msgstr "بەکارهێنانی گووگڵ و ئامێرەکەی"
+
+#: functions.php:201
+msgid "CX:"
+msgstr "CX:"
+
+#: functions.php:204
+#, php-format
+msgid "Find <code>name=\"cx\"</code> in the <strong>Search box code</strong> of <a href=\"%1$s\">Google Custom Search Engine</a>, and type the <code>value</code> here.<br/>For example: <code>014782006753236413342:1ltfrybsbz4</code>"
+msgstr ""
+
+#: functions.php:213
+msgid "Menubar"
+msgstr "پێرست"
+
+#: functions.php:217
+msgid "Show pages as menu."
+msgstr "نیشاندانی پەڕە وەکو پێرست"
+
+#: functions.php:221
+msgid "Show categories as menu."
+msgstr "نیشاندانی هاوپۆل وەکو پێرست"
+
+#: functions.php:231
+msgid "Sidebar"
+msgstr "لاتەنیشت"
+
+#: functions.php:235
+msgid "Hide sidebar from all pages."
+msgstr ""
+
+#: functions.php:246
+msgid "Notice"
+msgstr "تێبینی"
+
+#: functions.php:248
+#: functions.php:272
+#: functions.php:307
+#: functions.php:430
+msgid "HTML enabled"
+msgstr "هتمل چالاکە"
+
+#: functions.php:254
+msgid "This notice bar will display at the top of posts on homepage."
+msgstr "ئەم تێبینیە لەسەرەوە پەڕەکان دەردەکەوێت"
+
+#: functions.php:270
+msgid "Banner"
+msgstr "بەیداخ"
+
+#: functions.php:276
+msgid "This banner will display at the right of header. (height: 60 pixels)"
+msgstr "ئەم بەیداخە لەلای سەری ڕاستەوە دەردەکەوێت"
+
+#: functions.php:278
+#: functions.php:313
+msgid "Who can see?"
+msgstr "کوێ دەتوانم ببینم؟"
+
+#: functions.php:281
+#: functions.php:316
+msgid "Registered Users"
+msgstr "ئەندام خۆتۆمارکردوەکان"
+
+#: functions.php:285
+#: functions.php:320
+msgid "Commentator"
+msgstr "بۆچوونووس"
+
+#: functions.php:289
+#: functions.php:324
+msgid "Visitors"
+msgstr "میوانەکان"
+
+#: functions.php:305
+#: sidebar.php:56
+msgid "Showcase"
+msgstr "بەرهەم"
+
+#: functions.php:311
+msgid "This showcase will display at the top of sidebar."
+msgstr "ئەم بەرهەم یان دروستکراوانە لەسەری لای ڕاستەوە دەردەکەون"
+
+#: functions.php:329
+msgid "Title:"
+msgstr "سەردێڕ:"
+
+#: functions.php:345
+msgid "Posts"
+msgstr "بابەتەکان:"
+
+#: functions.php:349
+msgid "Show author on posts."
+msgstr "نیشاندانی نوسەر لەگەڵ بابەتدا"
+
+#: functions.php:353
+msgid "Show categories on posts."
+msgstr "نیشاندانی هاوپۆل لەگەڵ بابەتدا"
+
+#: functions.php:357
+msgid "Show tags on posts."
+msgstr "نیشاندانی تاگەکان لەگەڵ بابەتدا"
+
+#: functions.php:371
+msgid "Submit comments with Ctrl+Enter."
+msgstr "ناردنی لێدوان بەCtrl+Enter لەسەر تەختەکلیلەوە "
+
+#: functions.php:381
+msgid "Feed"
+msgstr "فێد"
+
+#: functions.php:385
+msgid "Show the feed reader list when mouse over on feed button."
+msgstr "نیشاندانی فێدەکان لەکاتی بردنی مشکەکە بەسەریاندا"
+
+#: functions.php:390
+msgid "Custom feed."
+msgstr "فێدی دروستکراو"
+
+#: functions.php:392
+#: functions.php:398
+msgid "URL:"
+msgstr "بەستەر:"
+
+#: functions.php:396
+msgid "Email feed."
+msgstr "فێدی پۆستی ئەلیکترۆنی:"
+
+#: functions.php:407
+#: sidebar.php:42
+msgid "Twitter"
+msgstr ""
+
+#: functions.php:411
+msgid "Add Twitter button."
+msgstr ""
+
+#: functions.php:414
+msgid "Twitter username:"
+msgstr ""
+
+#: functions.php:428
+msgid "Web Analytics"
+msgstr ""
+
+#: functions.php:435
+msgid "Add web analytics code to your site. (e.g. Google Analytics, Yahoo! Web Analytics, ...)"
+msgstr ""
+
+#: functions.php:446
+msgid "Save Changes"
+msgstr "جێگیرکردنی گۆڕانکاریەکان"
+
+#: functions.php:567
+msgid "Reply"
+msgstr "وەڵام"
+
+#: functions.php:568
+msgid "Quote"
+msgstr "ئاماژە"
+
+#: functions.php:573
+msgid "Advanced edit"
+msgstr "دەستکاری پێشکەوتوو"
+
+#: functions.php:579
+msgid "Your comment is awaiting moderation."
+msgstr "بۆچوونەکەت دوای چاولێکردنی بڵاو دەکرێتەوە"
+
+#: links.php:18
+msgid "Add link"
+msgstr "زۆرکردنی بەستەر"
+
+#: links.php:19
+msgid "Edit links"
+msgstr "دەستکاری بەستەرەکان"
+
+#: sidebar.php:25
+msgid "Subscribe to this blog..."
+msgstr "بەشداربە لەم بڵاگە"
+
+#: sidebar.php:25
+msgid "<abbr title=\"Really Simple Syndication\">RSS</abbr>"
+msgstr ""
+
+#: sidebar.php:28
+#: sidebar.php:29
+#: sidebar.php:30
+#: sidebar.php:31
+#: sidebar.php:32
+#: sidebar.php:33
+#: sidebar.php:34
+#: sidebar.php:35
+msgid "Subscribe with "
+msgstr "بەشداری لەگەڵ"
+
+#: sidebar.php:28
+msgid "Google"
+msgstr ""
+
+#: sidebar.php:29
+msgid "Youdao"
+msgstr ""
+
+#: sidebar.php:30
+msgid "Xian Guo"
+msgstr ""
+
+#: sidebar.php:31
+msgid "Zhua Xia"
+msgstr ""
+
+#: sidebar.php:32
+msgid "My Yahoo!"
+msgstr ""
+
+#: sidebar.php:33
+msgid "newsgator"
+msgstr ""
+
+#: sidebar.php:34
+msgid "Bloglines"
+msgstr ""
+
+#: sidebar.php:35
+msgid "iNezha"
+msgstr ""
+
+#: sidebar.php:40
+msgid "Subscribe to this blog via email..."
+msgstr "بەشداری لەم بڵاگە بەڕێگای ئیمەیڵەوە"
+
+#: sidebar.php:40
+msgid "Email feed"
+msgstr "فێدی ئیمەیڵ"
+
+#: sidebar.php:42
+msgid "Follow me!"
+msgstr ""
+
+#: single.php:7
+msgid "Go to homepage"
+msgstr "بڕۆ بۆ ماڵپەڕ"
+
+#: single.php:7
+msgid "Home"
+msgstr "ماڵەوە"
+
+#: templates/header.php:66
+msgid "Type text to search here..."
+msgstr "وشەیەک بنوسە بۆ گەڕان"
+
+#~ msgid "Blogroll"
+#~ msgstr "بڵۆگڕۆڵ"
+
