@@ -1,0 +1,19 @@
+<appwizard>
+	<introduction>
+		<name>WordPress 3.5/3.5.1 zh-CN for SAE</name>
+		<author>TAHO</author>
+		<homepage>http://www.tahoroom.com</homepage>
+		<description><![CDATA[ <p>WordPress 3.5/3.5.1 简体中文版本，修改自官方3.5.X 版本，多次测试，已完整适用于SAE。支持SVN安装主题、插件，在线编辑主题、插件功能等。</p> ]]></description>
+	</introduction>
+	<platform>
+		<services><!-- 初始化应用中启用的服务,根据需要启用 -->
+			<service name="wordpress" params="public">Storage</service>
+			<!-- 例：初始化一个域名为:wordpress的Storage，域属性为“public”，更多参数配置请参考Storage的API文档 -->
+			<service>Mysql</service><!-- 例：初始化Mysql -->
+		</services>
+	</platform>
+	<code>
+		<!-- 初始化页面地址：即应用安装成功后跳转的地址，可以将应用初始化脚本或数据库导入脚本写在该文件中 -->
+		<initScript>wp-admin/install.php</initScript>
+	</code>
+</appwizard>

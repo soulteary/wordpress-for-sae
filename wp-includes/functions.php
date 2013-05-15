@@ -1312,19 +1312,8 @@ function wp_get_original_referer() {
  * @return bool Whether the path was created. True if path already exists.
  */
 function wp_mkdir_p( $target ) {
-	$wrapper = null;
-
-	// strip the protocol
-	if( wp_is_stream( $target ) ) {
-		list( $wrapper, $target ) = explode( '://', $target, 2 );
-	}
-
-	// from php.net/mkdir user contributed notes
-	$target = str_replace( '//', '/', $target );
-
-	// put the wrapper back on the target
-	if( $wrapper !== null ) {
-		$target = $wrapper . '://' . $target;
+	if ( substr($target, 0, 10) == 'saestor://' ) {
+		return true;
 	}
 
 	// safe mode fails with a trailing slash under certain PHP versions.
@@ -1566,6 +1555,8 @@ function wp_upload_dir( $time = null ) {
 		}
 	}
 
+	$dir = SAE_DIR;
+	$url = SAE_URL;
 	$basedir = $dir;
 	$baseurl = $url;
 
@@ -1925,6 +1916,7 @@ function wp_get_mime_types() {
 	'tar' => 'application/x-tar',
 	'zip' => 'application/zip',
 	'gz|gzip' => 'application/x-gzip',
+	'bz2' => 'application/bzip2',
 	'rar' => 'application/rar',
 	'7z' => 'application/x-7z-compressed',
 	'exe' => 'application/x-msdownload',
@@ -3711,6 +3703,14 @@ function wp_find_hierarchy_loop_tortoise_hare( $callback, $start, $override = ar
 	}
 
 	return false;
+}
+
+
+if ( !function_exists('utf8_encode') ) {
+	function utf8_encode($str) {
+		$encoding_in = mb_detect_encoding($str);
+		return mb_convert_encoding($str, 'UTF-8', $encoding_in);
+	}
 }
 
 /**

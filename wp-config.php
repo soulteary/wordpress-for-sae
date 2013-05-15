@@ -58,6 +58,16 @@ $db_list = array(
 		);
 $global_db_list = $db_list['write'];
 
+/** 设置SAE应用里的Storage的Domain名（域名） */
+define('SAE_STORAGE', wordpress);
+
+/** 文件上传的路径 */ 
+define('SAE_DIR','saestor://'.SAE_STORAGE.'/uploads');
+
+/** 文件路径的URL */ 
+define('SAE_URL', 'http://' . $_SERVER['HTTP_APPNAME'] . '-'.SAE_STORAGE.'.stor.sinaapp.com/uploads');
+
+
 /**#@+
  * 身份认证密匙设定。
  *
