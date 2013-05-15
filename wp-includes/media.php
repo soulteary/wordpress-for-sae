@@ -2,7 +2,6 @@
 /**
  * WordPress API for media display.
  *
- * @modified Elmer Zhang <freeboy6716@gmail.com>
  * @package WordPress
  */
 
@@ -417,15 +416,11 @@ function image_resize_dimensions($orig_w, $orig_h, $dest_w, $dest_h, $crop = fal
  */
 function image_resize( $file, $max_w, $max_h, $crop = false, $suffix = null, $dest_path = null, $jpeg_quality = 90 ) {
 
-	if ( is_numeric( $file ) )
-		$file = get_attached_file( $file );
-	$imagecontent = file_get_contents($file);
-	if ( !$imagecontent )
-		return new WP_Error( 'error_loading_image', sprintf(__('File &#8220;%s&#8221; doesn&#8217;t exist?'), $file), $file );
+	$image = wp_load_image( $file );
+	if ( !is_resource( $image ) )
+		return new WP_Error( 'error_loading_image', $image, $file );
 
-	$localtmp = tempnam(SAE_TMP_PATH, 'WPIMG');
-	file_put_contents($localtmp, $imagecontent);
-	$size = @getimagesize( $localtmp );
+	$size = @getimagesize( $file );
 	if ( !$size )
 		return new WP_Error('invalid_image', __('Could not read image size'), $file);
 	list($orig_w, $orig_h, $orig_type) = $size;
@@ -435,9 +430,16 @@ function image_resize( $file, $max_w, $max_h, $crop = false, $suffix = null, $de
 		return new WP_Error( 'error_getting_dimensions', __('Could not calculate resized image dimensions') );
 	list($dst_x, $dst_y, $src_x, $src_y, $dst_w, $dst_h, $src_w, $src_h) = $dims;
 
-	$saeimage = new SaeImage();
-	$saeimage->setData( $imagecontent );
-	$saeimage->resize( $dst_w, $dst_h );
+	$newimage = wp_imagecreatetruecolor( $dst_w, $dst_h );
+
+	imagecopyresampled( $newimage, $image, $dst_x, $dst_y, $src_x, $src_y, $dst_w, $dst_h, $src_w, $src_h);
+
+	// convert from full colors to index colors, like original PNG.
+	if ( IMAGETYPE_PNG == $orig_type && function_exists('imageistruecolor') && !imageistruecolor( $image ) )
+		imagetruecolortopalette( $newimage, false, imagecolorstotal( $image ) );
+
+	// we don't need the original in memory anymore
+	imagedestroy( $image );
 
 	// $suffix will be appended to the destination filename, just before the extension
 	if ( !$suffix )
@@ -453,21 +455,25 @@ function image_resize( $file, $max_w, $max_h, $crop = false, $suffix = null, $de
 	$destfilename = "{$dir}/{$name}-{$suffix}.{$ext}";
 
 	if ( IMAGETYPE_GIF == $orig_type ) {
-		$retcontent = $saeimage->exec('gif');
-		if ( !$retcontent || !file_put_contents($destfilename, $retcontent) )
+		if ( !imagegif( $newimage, $destfilename ) )
 			return new WP_Error('resize_path_invalid', __( 'Resize path invalid' ));
 	} elseif ( IMAGETYPE_PNG == $orig_type ) {
-		$retcontent = $saeimage->exec('png');
-		if ( !$retcontent || !file_put_contents($destfilename, $retcontent) )
+		if ( !imagepng( $newimage, $destfilename ) )
 			return new WP_Error('resize_path_invalid', __( 'Resize path invalid' ));
 	} else {
 		// all other formats are converted to jpg
 		if ( 'jpg' != $ext && 'jpeg' != $ext )
 			$destfilename = "{$dir}/{$name}-{$suffix}.jpg";
-		$retcontent = $saeimage->exec('jpg');
-		if ( !$retcontent || !file_put_contents($destfilename, $retcontent) )
+		if ( !imagejpeg( $newimage, $destfilename, apply_filters( 'jpeg_quality', $jpeg_quality, 'image_resize' ) ) )
 			return new WP_Error('resize_path_invalid', __( 'Resize path invalid' ));
 	}
+
+	imagedestroy( $newimage );
+
+	// Set correct file permissions
+	$stat = stat( dirname( $destfilename ));
+	$perms = $stat['mode'] & 0000666; //same permissions as parent folder, strip off the executable bits
+	@ chmod( $destfilename, $perms );
 
 	return $destfilename;
 }
@@ -490,7 +496,6 @@ function image_resize( $file, $max_w, $max_h, $crop = false, $suffix = null, $de
 function image_make_intermediate_size($file, $width, $height, $crop=false) {
 	if ( $width || $height ) {
 		$resized_file = image_resize($file, $width, $height, $crop);
-		usleep(300000);
 		if ( !is_wp_error($resized_file) && $resized_file && $info = getimagesize($resized_file) ) {
 			$resized_file = apply_filters('image_make_intermediate_size', $resized_file);
 			return array(

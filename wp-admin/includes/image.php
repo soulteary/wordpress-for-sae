@@ -92,10 +92,9 @@ function wp_crop_image( $src, $src_x, $src_y, $src_w, $src_h, $dst_w, $dst_h, $s
 
 	$dst_file = dirname( $dst_file ) . '/' . wp_unique_filename( dirname( $dst_file ), basename( $dst_file ) );
 
-    $tmpfile = tempnam(SAE_TMP_PATH, 'WPIMG');
-	if ( 'image/png' == $image_type && imagepng( $dst, $tmpfile ) && copy($tmpfile, $dst_file) )
+	if ( 'image/png' == $image_type && imagepng( $dst, $dst_file ) )
 		return $dst_file;
-	elseif ( imagejpeg( $dst, $tmpfile, apply_filters( 'jpeg_quality', 90, 'wp_crop_image' ) ) && copy($tmpfile, $dst_file) )
+	elseif ( imagejpeg( $dst, $dst_file, apply_filters( 'jpeg_quality', 90, 'wp_crop_image' ) ) )
 		return $dst_file;
 	else
 		return false;

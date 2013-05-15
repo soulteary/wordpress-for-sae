@@ -29,6 +29,7 @@ class WP_Plugin_Install_List_Table extends WP_List_Table {
 		$tabs['dashboard'] = __( 'Search' );
 		if ( 'search' == $tab )
 			$tabs['search']	= __( 'Search Results' );
+		$tabs['upload'] = __( 'Upload' );
 		$tabs['featured'] = _x( 'Featured','Plugin Installer' );
 		$tabs['popular']  = _x( 'Popular','Plugin Installer' );
 		$tabs['new']      = _x( 'Newest','Plugin Installer' );

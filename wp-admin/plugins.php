@@ -2,7 +2,6 @@
 /**
  * Plugins administration panel.
  *
- * @modified Elmer Zhang <freeboy6716@gmail.com>
  * @package WordPress
  * @subpackage Administration
  */
@@ -43,7 +42,6 @@ if ( $action ) {
 			$result = activate_plugin($plugin, self_admin_url('plugins.php?error=true&plugin=' . $plugin), is_network_admin() );
 			if ( is_wp_error( $result ) ) {
 				if ( 'unexpected_output' == $result->get_error_code() ) {
-					WP_DEBUG && file_put_contents('saemc://plugin_error', $result->get_error_data()); //ezdebug
 					$redirect = self_admin_url('plugins.php?error=true&charsout=' . strlen($result->get_error_data()) . '&plugin=' . $plugin . "&plugin_status=$status&paged=$page&s=$s");
 					wp_redirect(add_query_arg('_error_nonce', wp_create_nonce('plugin-activation-error_' . $plugin), $redirect));
 					exit;
@@ -405,7 +403,7 @@ if ( !empty($invalid) )
 <div class="wrap">
 <?php screen_icon(); ?>
 <h2><?php echo esc_html( $title );
-if ( false && ( ! is_multisite() || is_network_admin() ) && current_user_can('install_plugins') ) { ?>
+if ( ( ! is_multisite() || is_network_admin() ) && current_user_can('install_plugins') ) { ?>
  <a href="<?php echo self_admin_url( 'plugin-install.php' ); ?>" class="add-new-h2"><?php echo esc_html_x('Add New', 'plugin'); ?></a>
 <?php }
 if ( $s )

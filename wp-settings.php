@@ -7,7 +7,6 @@
  *
  * @internal This file must be parsable by PHP4.
  *
- * @modified Elmer Zhang <freeboy6716@gmail.com>
  * @package WordPress
  */
 

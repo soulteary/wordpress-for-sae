@@ -221,7 +221,7 @@ else : ?>
 	if ( is_writeable( $file ) ) :
 		submit_button( __( 'Update File' ), 'primary', 'submit', true, array( 'tabindex' => '2' ) );
 	else : ?>
-<p><em><?php echo 'WordPress for SAE 禁止在线更改主题代码。您可以将代码下载到本地，修改后重新上传。' ?></em></p>
+<p><em><?php _e('You need to make this file writable before you can save your changes. See <a href="http://codex.wordpress.org/Changing_File_Permissions">the Codex</a> for more information.'); ?></em></p>
 <?php endif; ?>
 		</div>
 	</form>
