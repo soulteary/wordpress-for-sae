@@ -96,7 +96,7 @@ require_once('./admin-header.php');
 
 <div class="wrap"><?php
 screen_icon();
-if ( ! is_multisite() && current_user_can( 'install_themes' ) ) : ?>
+if ( false && ! is_multisite() && current_user_can( 'install_themes' ) ) : ?>
 <h2 class="nav-tab-wrapper">
 <a href="themes.php" class="nav-tab nav-tab-active"><?php echo esc_html( $title ); ?></a><a href="<?php echo admin_url( 'theme-install.php'); ?>" class="nav-tab"><?php echo esc_html_x('Install Themes', 'theme'); ?></a>
 <?php else : ?>

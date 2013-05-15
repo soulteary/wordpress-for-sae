@@ -120,6 +120,7 @@ function insert_with_markers( $filename, $marker, $insertion ) {
  * @since 1.5.0
  */
 function save_mod_rewrite_rules() {
+	return;
 	if ( is_multisite() )
 		return;
 
