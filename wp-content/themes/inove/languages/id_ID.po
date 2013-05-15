@@ -1,0 +1,572 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: iNove 1.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-08-07 13:46+0900\n"
+"PO-Revision-Date: \n"
+"Last-Translator: mg12 <wuzhao.mail@gmail.com>\n"
+"Language-Team: NeoEase <http://www.neoease.com/themes/>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: CHINA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:8
+#: header.php:27
+msgid "RSS 2.0 - all posts"
+msgstr "RSS 2.0 - semua artikel"
+
+#: 404.php:9
+#: header.php:28
+msgid "RSS 2.0 - all comments"
+msgstr "RSS 2.0 - semua komentar"
+
+#: 404.php:22
+msgid "Talker"
+msgstr "Pembicara"
+
+#: 404.php:25
+msgid "Welcome to 404 error page!"
+msgstr "Selamat datang di halama error 404!"
+
+#: 404.php:26
+msgid "Welcome to this customized error page. You've reached this page because you've clicked on a link that does not exist. This is probably our fault... but instead of showing you the basic '404 Error' page that is confusing and doesn't really explain anything, we've created this page to explain what went wrong."
+msgstr "Selamat datang di halaman error kostumisasi ini. Anda menemukan halaman ini karena telah meng-klik pranala yang tidak ada pada situs ini. Mungkin karena kesalahan kami... tapi tujuan kami memperlihatkan halaman 'error 404' sangat membingungkan dan sesungguhnya tidak menjelaskan apa-apa. Kami membuatnya untuk menjelaskan sedang terjadi kesalahan."
+
+#: 404.php:27
+msgid "You can either (a) click on the 'back' button in your browser and try to navigate through our site in a different direction, or (b) click on the following link to go to homepage."
+msgstr "Anda dapat melakukan pilihan (a) klik tombol 'kembali' pada browser dan coba untuk menuju ke situs ini pada direksi yang berbeda, atau (b) klik pranala berikut untuk menuju ke halaman utama."
+
+#: 404.php:29
+msgid "Back to homepage &raquo;"
+msgstr "Kembali ke halam utaman &raquo;"
+
+#: archive.php:10
+msgid "Search Results"
+msgstr "Hasil Pencarian"
+
+#: archive.php:11
+#, php-format
+msgid "Keyword: &#8216;%1$s&#8217;"
+msgstr "Kata kunci: &#8216;%1$s&#8217;"
+
+#: archive.php:14
+msgid "Archive"
+msgstr "Arsip"
+
+#: archive.php:19
+#, php-format
+msgid "Archive for the &#8216;%1$s&#8217; Category"
+msgstr "Arsip untuk kategori &#8216;%1$s&#8217;"
+
+#: archive.php:22
+#, php-format
+msgid "Posts Tagged &#8216;%1$s&#8217;"
+msgstr "Tag Artikel &#8216;%1$s&#8217;"
+
+#: archive.php:25
+#: archive.php:28
+#: archive.php:31
+#, php-format
+msgid "Archive for %1$s"
+msgstr "Arsip untuk %1$s"
+
+#: archive.php:25
+#: archive.php:47
+#: archives.php:14
+#: comments.php:91
+#: functions.php:563
+#: index.php:22
+#: links.php:25
+#: page.php:8
+#: single.php:15
+#: twitter.php:15
+msgid "F jS, Y"
+msgstr "d/m/Y"
+
+#: archive.php:28
+msgid "F, Y"
+msgstr "F, Y"
+
+#: archive.php:31
+msgid "Y"
+msgstr "Y"
+
+#: archive.php:34
+msgid "Author Archive"
+msgstr "Arsip penulis"
+
+#: archive.php:37
+msgid "Blog Archives"
+msgstr "Arsip Blog"
+
+#: archive.php:49
+#: archives.php:15
+#: comments.php:95
+#: functions.php:571
+#: index.php:24
+#: links.php:26
+#: page.php:9
+#: single.php:17
+#: twitter.php:16
+msgid "Edit"
+msgstr "Edit"
+
+#: archive.php:50
+#: index.php:25
+msgid "No comments"
+msgstr "Tidak ada komentar"
+
+#: archive.php:50
+#: index.php:25
+msgid "1 comment"
+msgstr "1 komentar"
+
+#: archive.php:50
+#: index.php:25
+#, php-format
+msgid "% comments"
+msgstr "% komentar"
+
+#: archive.php:50
+#: index.php:25
+msgid "Comments off"
+msgstr ""
+
+#: archive.php:54
+#: index.php:29
+msgid "Read more..."
+msgstr "Baca lanjutannya..."
+
+#: archive.php:58
+#: index.php:33
+#: single.php:29
+msgid "Categories: "
+msgstr "Kategori:"
+
+#: archive.php:59
+#: index.php:34
+#: single.php:30
+msgid "Tags: "
+msgstr "Tag"
+
+#: archive.php:64
+#: archives.php:39
+#: index.php:39
+#: links.php:59
+#: page.php:26
+#: single.php:68
+#: twitter.php:36
+msgid "Sorry, no posts matched your criteria."
+msgstr "Maaf, tidak ada artikel yang sesuai kriteria Anda"
+
+#: archive.php:72
+#: index.php:47
+msgid "Newer Entries"
+msgstr "Entri Lebih Baru"
+
+#: archive.php:73
+#: index.php:48
+msgid "Older Entries"
+msgstr "Entri Lebih Lama"
+
+#: archives.php:17
+#: comments.php:31
+#: links.php:28
+#: page.php:11
+#: single.php:19
+#: twitter.php:18
+msgid "Leave a comment"
+msgstr "Berikan komentar"
+
+#: archives.php:18
+#: links.php:29
+#: page.php:12
+#: single.php:20
+#: twitter.php:19
+msgid "Go to comments"
+msgstr ""
+
+#: comments.php:5
+msgid "Enter your password to view comments."
+msgstr "Masukkan password Anda untuk melihat komentar."
+
+#: comments.php:25
+#: comments.php:28
+#: functions.php:367
+msgid "Comments"
+msgstr "Daftar Komentar"
+
+#: comments.php:26
+msgid "Trackbacks"
+msgstr "Daftar Tautan Balik"
+
+#: comments.php:34
+msgid "Trackback"
+msgstr "Beri Tautan Balik"
+
+#: comments.php:58
+msgid "No comments yet."
+msgstr "Belum ada komentar."
+
+#: comments.php:72
+msgid "Comment pages"
+msgstr "Halaman komentar"
+
+#: comments.php:91
+#: functions.php:563
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s pada %2$s"
+
+#: comments.php:91
+#: functions.php:563
+msgid "H:i"
+msgstr "G:i"
+
+#: comments.php:108
+msgid "No trackbacks yet."
+msgstr "Belum ada tautan balik"
+
+#: comments.php:123
+msgid "Comments are closed."
+msgstr "Komentar ditutup"
+
+#: comments.php:134
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "Anda harus <a href=\"%s\">masuk log</a> untuk mengirim komentar."
+
+#: comments.php:150
+msgid "Logged in as"
+msgstr "Anda masuk sebagai"
+
+#: comments.php:151
+msgid "Log out of this account"
+msgstr "Keluar dari akun ini"
+
+#: comments.php:151
+msgid "Logout &raquo;"
+msgstr "Keluar log &raquo;"
+
+#: comments.php:157
+#, php-format
+msgid "Welcome back <strong>%s</strong>."
+msgstr "Selamat datang kembali <strong>%s</strong>"
+
+#: comments.php:158
+msgid "Change &raquo;"
+msgstr "Ganti &raquo;"
+
+#: comments.php:159
+msgid "Close &raquo;"
+msgstr "Tutup &raquo;"
+
+#: comments.php:166
+msgid "Name"
+msgstr "Nama"
+
+#: comments.php:166
+#: comments.php:170
+msgid "(required)"
+msgstr "(wajib diisi)"
+
+#: comments.php:170
+msgid "E-Mail (will not be published)"
+msgstr "E-Mail (tidak akan dipublikasikan)"
+
+#: comments.php:174
+msgid "Website"
+msgstr "Website"
+
+#: comments.php:191
+msgid "Subscribe to comments feed"
+msgstr "Berlangganan dengan feed komentar"
+
+#: comments.php:193
+msgid "Submit Comment"
+msgstr "Kirim Komentar"
+
+#: footer.php:17
+msgid "Top"
+msgstr "Ke atas"
+
+#: footer.php:27
+msgid "Copyright &copy; "
+msgstr "Hak cipta &copy;"
+
+#: footer.php:39
+#, php-format
+msgid "Theme by <a href=\"%1$s\">NeoEase</a>. Valid <a href=\"%2$s\">XHTML 1.1</a> and <a href=\"%3$s\">CSS 3</a>."
+msgstr "Tema oleh <a href=\"%1$s\">mg12</a>. Valid <a href=\"%2$s\">XHTML 1.1</a> dan <a href=\"%3$s\">CSS 3</a>."
+
+#: functions.php:180
+#: functions.php:189
+msgid "Current Theme Options"
+msgstr "Pengaturan Tema"
+
+#: functions.php:194
+msgid "Search"
+msgstr "Cari"
+
+#: functions.php:198
+msgid "Using google custom search engine."
+msgstr "Gunakan Pencarian Kostum Google"
+
+#: functions.php:201
+msgid "CX:"
+msgstr "CX:"
+
+#: functions.php:204
+msgid "Find <code>name=\"cx\"</code> in the <strong>Search box code</strong> of <a href=\"%1$s\">Google Custom Search Engine</a>, and type the <code>value</code> here.<br/>For example: <code>014782006753236413342:1ltfrybsbz4</code>"
+msgstr "Cari <code>name=\"cx\"</code> pada <strong>Kode kotak pencarian</strong> of <a href=\"%1$s\">Pencarian Kostum Google</a>, dan ketikkan <code>kodenya</code> di sini.<br/>Sebagai contoh: <code>014782006753236413342:1ltfrybsbz4</code>"
+
+#: functions.php:213
+msgid "Menubar"
+msgstr "Menu Navigasi"
+
+#: functions.php:217
+msgid "Show pages as menu."
+msgstr "Gunakan halaman sebagai menu"
+
+#: functions.php:221
+msgid "Show categories as menu."
+msgstr "Gunakan kategori sebagai menu"
+
+#: functions.php:231
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:235
+msgid "Hide sidebar from all pages."
+msgstr ""
+
+#: functions.php:246
+msgid "Notice"
+msgstr "Pemberitahuan"
+
+#: functions.php:248
+#: functions.php:272
+#: functions.php:307
+#: functions.php:430
+msgid "HTML enabled"
+msgstr "Boleh menggunakan HTML"
+
+#: functions.php:254
+msgid "This notice bar will display at the top of posts on homepage."
+msgstr "Pemberitahuan ini akan ditampilkan pada bagian atas di halaman utama."
+
+#: functions.php:270
+msgid "Banner"
+msgstr "Banner"
+
+#: functions.php:276
+msgid "This banner will display at the right of header. (height: 60 pixels)"
+msgstr "Banner ini akan ditampilkan di bagian kanan dari header. (tinggi: 60 piksel)"
+
+#: functions.php:278
+#: functions.php:313
+msgid "Who can see?"
+msgstr "Siapa yang dapat melihat?"
+
+#: functions.php:281
+#: functions.php:316
+msgid "Registered Users"
+msgstr "Pengguna yang terdaftar"
+
+#: functions.php:285
+#: functions.php:320
+msgid "Commentator"
+msgstr "Komentator"
+
+#: functions.php:289
+#: functions.php:324
+msgid "Visitors"
+msgstr "Pengunjung"
+
+#: functions.php:305
+#: sidebar.php:56
+msgid "Showcase"
+msgstr "Showcase"
+
+#: functions.php:311
+msgid "This showcase will display at the top of sidebar."
+msgstr "Showcase ini akan ditampilkan pada bagian atas dari sidebar"
+
+#: functions.php:329
+msgid "Title:"
+msgstr "Judul"
+
+#: functions.php:345
+msgid "Posts"
+msgstr "Artikel"
+
+#: functions.php:349
+msgid "Show author on posts."
+msgstr "Perlihatkan penulis artikel"
+
+#: functions.php:353
+msgid "Show categories on posts."
+msgstr "Perlihatkan kategori artikel"
+
+#: functions.php:357
+msgid "Show tags on posts."
+msgstr "Perlihatkan tag artikel"
+
+#: functions.php:371
+msgid "Submit comments with Ctrl+Enter."
+msgstr "Kirim komentar dengan menekan Ctrl+Enter"
+
+#: functions.php:381
+msgid "Feed"
+msgstr "Feed"
+
+#: functions.php:385
+msgid "Show the feed reader list when mouse over on feed button."
+msgstr "Perlihatkan daftar pembaca feed ketika mouse over pada tombol feed."
+
+#: functions.php:390
+msgid "Custom feed."
+msgstr "Feed Kostum"
+
+#: functions.php:392
+#: functions.php:398
+msgid "URL:"
+msgstr "URL:"
+
+#: functions.php:396
+msgid "Email feed."
+msgstr "Feed email."
+
+#: functions.php:407
+#: sidebar.php:42
+msgid "Twitter"
+msgstr ""
+
+#: functions.php:411
+msgid "Add Twitter button."
+msgstr ""
+
+#: functions.php:414
+msgid "Twitter username:"
+msgstr ""
+
+#: functions.php:428
+msgid "Web Analytics"
+msgstr ""
+
+#: functions.php:435
+msgid "Add web analytics code to your site. (e.g. Google Analytics, Yahoo! Web Analytics, ...)"
+msgstr ""
+
+#: functions.php:446
+msgid "Save Changes"
+msgstr "Simpan Perubahan"
+
+#: functions.php:567
+msgid "Reply"
+msgstr "Balas"
+
+#: functions.php:568
+msgid "Quote"
+msgstr "Kutip"
+
+#: functions.php:573
+msgid "Advanced edit"
+msgstr "Edit komentar"
+
+#: functions.php:579
+msgid "Your comment is awaiting moderation."
+msgstr "Komentar Anda sedang menunggu moderasi"
+
+#: links.php:18
+msgid "Add link"
+msgstr ""
+
+#: links.php:19
+msgid "Edit links"
+msgstr "Edit pranala"
+
+#: sidebar.php:25
+msgid "Subscribe to this blog..."
+msgstr "Berlangganan dengan blog ini..."
+
+#: sidebar.php:25
+msgid "<abbr title=\"Really Simple Syndication\">RSS</abbr>"
+msgstr ""
+
+#: sidebar.php:28
+#: sidebar.php:29
+#: sidebar.php:30
+#: sidebar.php:31
+#: sidebar.php:32
+#: sidebar.php:33
+#: sidebar.php:34
+#: sidebar.php:35
+msgid "Subscribe with "
+msgstr "Berlangganan via"
+
+#: sidebar.php:28
+msgid "Google"
+msgstr ""
+
+#: sidebar.php:29
+msgid "Youdao"
+msgstr ""
+
+#: sidebar.php:30
+msgid "Xian Guo"
+msgstr ""
+
+#: sidebar.php:31
+msgid "Zhua Xia"
+msgstr ""
+
+#: sidebar.php:32
+msgid "My Yahoo!"
+msgstr ""
+
+#: sidebar.php:33
+msgid "newsgator"
+msgstr ""
+
+#: sidebar.php:34
+msgid "Bloglines"
+msgstr ""
+
+#: sidebar.php:35
+msgid "iNezha"
+msgstr ""
+
+#: sidebar.php:40
+msgid "Subscribe to this blog via email..."
+msgstr "Beralangganan dengan blog ini via email..."
+
+#: sidebar.php:40
+msgid "Email feed"
+msgstr "Feed email"
+
+#: sidebar.php:42
+msgid "Follow me!"
+msgstr ""
+
+#: single.php:7
+msgid "Go to homepage"
+msgstr ""
+
+#: single.php:7
+msgid "Home"
+msgstr "Beranda"
+
+#: templates/header.php:66
+msgid "Type text to search here..."
+msgstr ""
+
+#~ msgid "Author: "
+#~ msgstr "Penulis:"
+

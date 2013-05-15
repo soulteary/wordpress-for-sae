@@ -2,6 +2,7 @@
 /**
  * Main WordPress API
  *
+ * @modified Elmer Zhang <freeboy6716@gmail.com>
  * @package WordPress
  */
 
@@ -1292,6 +1293,9 @@ function wp_get_original_referer() {
  */
 function wp_mkdir_p( $target ) {
 	// from php.net/mkdir user contributed notes
+	if ( substr($target, 0, 10) == 'saestor://' ) {
+		return true;
+	}
 	$target = str_replace( '//', '/', $target );
 
 	// safe mode fails with a trailing slash under certain PHP versions.
@@ -1465,6 +1469,10 @@ function wp_upload_dir( $time = null ) {
 			$dir = untrailingslashit(BLOGUPLOADDIR);
 		$url = str_replace( UPLOADS, 'files', $url );
 	}
+
+	// for SAE
+	$dir = 'saestor://wordpress/uploads';
+	$url = 'http://' . $_SERVER['HTTP_APPNAME'] . '-wordpress.stor.sinaapp.com/uploads';
 
 	$bdir = $dir;
 	$burl = $url;
@@ -1813,6 +1821,7 @@ function get_allowed_mime_types() {
 		'tar' => 'application/x-tar',
 		'zip' => 'application/zip',
 		'gz|gzip' => 'application/x-gzip',
+		'bz2' => 'application/bzip2',
 		'rar' => 'application/rar',
 		'7z' => 'application/x-7z-compressed',
 		'exe' => 'application/x-msdownload',
@@ -3499,6 +3508,14 @@ function wp_find_hierarchy_loop_tortoise_hare( $callback, $start, $override = ar
 	}
 
 	return false;
+}
+
+// for SAE
+if ( !function_exists('utf8_encode') ) {
+	function utf8_encode($str) {
+		$encoding_in = mb_detect_encoding($str);
+		return mb_convert_encoding($str, 'UTF-8', $encoding_in);
+	}
 }
 
 /**

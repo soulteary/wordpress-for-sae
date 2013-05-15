@@ -1,0 +1,155 @@
+    VERSION DATE       TYPE   CHANGES
+    1.4.6   2009/08/07 NEW    Added 'web analytics' options.
+                       NEW    Added 'twitter' options.
+                       NEW    Added Kurdish language support. (Thanks Sia)
+                       MODIFY Optimize SQL to select the copyright years.
+                       MODIFY Show tag cloud on all the pages.
+                       MODIFY Changed the mode of WP-EasyArchives to 'none' in sidebar.
+                       MODIFY Changed font-family of text boxes.
+                       MODIFY Set the delay time for the menus on mouse out action.
+                       MODIFY Split links by category in links page (links.php).
+                       MODIFY Updated style for Thread Twitter.
+                       MODIFY Updated Polish translation.
+                       MODIFY Updated Dutch translation.
+                       MODIFY Updated Janpanese translation.
+                       MODIFY Update Simplified Chinese translation.
+                       MODIFY Update German translation.
+                       FIX    Fixed the comments, they are XHTML valid!.
+    1.4.5   2009/06/09 MODIFY Changed text 'Remove sidebar from all pages.' to 'Hide sidebar from all pages.'
+                       FIX    Fixed 'Google adsenses to cover the menus'. (Thanks bolo)
+    1.4.4   2009/06/09 MODIFY Show the AJAX loader icon when change page in WP-RecentComments.
+                       FIX    Fixed 'comments doesn't show in the pages'. (I am so sorry for my stupid mistake.)
+    1.4.3   2009/06/07 NEW    Change the style of multi-level menus.
+    1.4.2   2009/06/06 NEW    Change the style of sidebar separating.
+                       FIX    Fixed a plugin conflict (wp_head was not found in header.php/wp_footer was not found in footer.php).
+    1.4.1   2009/06/06 NEW    Multi level menu is now supported.
+                       NEW    Added Indonesian language support. (Thanks 4MB)
+                       MODIFY Move the '404 talker' image from Flickr to localhost.
+                       MODIFY Updated Italian translation.
+                       MODIFY Updated Finnish translation.
+                       MODIFY Updated Lithuanian translation. (Thanks Mantas Malcius)
+                       MODIFY Updated Israeli Hebrew translation. (Thanks Yonatan Levy)
+                       MODIFY Update Traditional Chinese translation.
+                       MODIFY Updated Bulgarian translation.
+                       FIX    Fixed the style of right-to-left layout.
+    1.4     2009/05/11 NEW    Added 'nosidebar' option that allow you to remove sidebar from all pages.
+                       NEW    Added 'Add link' button in link template.
+                       NEW    'Mail To Commenter' plugin is now supported. (via '@+user+blank')
+                       NEW    Added searchbox tip.
+                       NEW    Added Finnish language support. (Thanks Petteri Laine)
+                       NEW    Added Korean language support. (Thanks Hackie)
+                       MODIFY Changed header.
+                       MODIFY Changed the link of CSS validator.
+                       MODIFY Updated Italian translation.
+                       MODIFY Updated Janpanese translation.
+                       MODIFY Update Simplified Chinese translation.
+                       MODIFY Moved author link below post title.
+                       FIX    Fixed the error that broke admin comments interface.
+                       FIX    Fixed submenus with a large title.
+                       FIX    Fixed banner in right-to-left layout.
+                       FIX    Fixed display bug about icons.
+                       FIX    Fixed 'sidebar being pushed down in IE6'.
+    1.3     2009/04/19 NEW    Compatible with IE8.
+                       NEW    'AJAX Comment Pager' plugin is now supported. (Comment list ID: thecomments | Callback method name: custom_comments)
+                       NEW    'Thread Twitter' plugin is now supported. (twitter.php)
+                       NEW    Added 'Feed readers' option in 'Current Theme Options' page.
+                       NEW    'WP-Poll' plugin is now supported.
+                       NEW    Added style for calendar widget.
+                       NEW    Added banner options.
+                       NEW    Added 'Submit comments with Ctrl+Enter' option.
+                       NEW    Added Uyghur language support. (Thanks ahbar)
+                       NEW    Added Ukrainian language support. (Thanks Jurko Chervony)
+                       NEW    Added Icelandic language support. (Thanks Undandi)
+                       NEW    Added Swedish language support. (Thanks Robert Kajic)
+                       NEW    Added Vietnamese language support. (Thanks Thắng Mạo)
+                       NEW    Added Basque language support. (Thanks Ibon Igartua)
+                       NEW    Added Lithuanian language support. (Thanks Aivaras Kivillius)
+                       NEW    Added Thai language support. (Thanks Kazama)
+                       MODIFY Changed '<?' to '<?php'. (Thanks Florent DURGET)
+                       MODIFY Changed table style.
+                       MODIFY Improved style for image captions.
+                       MODIFY Changed searchbox.
+                       MODIFY Update Simplified Chinese translation.
+                       MODIFY Update Traditional Chinese translation.
+                       FIX    Fixed 'Change »' and 'Close »' output in comments.php.
+                       FIX    Multicol tags when there are many tags on the posts.
+                       FIX    Show default cursor when mouse move out of the menu.
+                       FIX    Fixed 'some unapproved spam comments were being taking into consideration'. (Thanks Marcelo Silveira)
+                       FIX    Someone got 'this.menu is undefined' error message and the feed combobox could not show up, the problem got fixed.
+                       REMOVE Removed description and keywords options, because there is conflict between this feature and some SEO plugins.
+                       REMOVE Removed JS and CSS about image switcher.
+    1.2.3   2009/01/19 NEW    'WP-EasyArchives' plugin is now supported.
+                       NEW    Added Romanian language support. (Thanks Paul Iercosan)
+                       NEW    Added Hungarian language support. (Thanks Furus Calix)
+                       NEW    Added Bulgarian language support. (Thanks Emil Minev)
+                       NEW    Added Hindi language support. (Thanks sanjay bengani)
+                       NEW    Added Persian language support. (Thanks Farzad Sagharchi)
+                       NEW    Added Portuguese language support. (Thanks Luís Mota)
+                       MODIFY Change letter-spacing to -0.05em on H tags.
+                       MODIFY Optimize SQL to select the copyright years. (Thanks kouz)
+                       MODIFY Change the width of submenus from 125px to 150px.
+                       MODIFY Update Italian translation.
+                       MODIFY Update Traditional Chinese translation. (Thanks Allen)
+                       MODIFY Update Simplified Chinese translation.
+                       FIX    Added link of the author to archive pages and search page.
+                       FIX    Added 'do_action('comment_form', $post->ID);' tag to comment from.
+                       FIX    Fixed style for right-to-left layout (rtl.css).
+                       FIX    Changed the images of link in 'Links' page.
+                       FIX    Fixed 'Edit link'.
+                       FIX    Removed redundant code about options.
+    1.2.2   2009/01/05 NEW    Added Croatian language support. (Thanks Fuzz Fais)
+    1.2.1   2009/01/04 NEW    Added Russian language support. (Thanks Yury Zemskov)
+                       NEW    Added Traditional Chinese language support. (Thanks nozumu)
+                       MODIFY Hide trackbacks tab when trackbacks and pingbacks not allow on this post
+                       FIX    Added 'rel="external nofollow"' tag to the comment links.
+    1.2     2009/01/02 NEW    Added right-to-left layout support.
+                       NEW    Added link of the author of the current post.
+                       NEW    Added a new template without sidebar.
+                       NEW    Added Czech language support. (Thanks Ladislav Prskavec)
+                       NEW    Added Turkish language support. (Thanks posta)
+                       NEW    Added Dutch language support. (Thanks Johan Scholten)
+                       NEW    Added Israeli Hebrew language support. (Thanks David Abutbul)
+                       MODIFY Combine 'search.php' with 'archive.php'.
+                       MODIFY Moved all the .mo files to 'languages' directory.
+                       MODIFY Rewrite code and create some templates.
+                       MODIFY Using conditional comments as CSS hack for IE6.
+                       MODIFY Update German translation.
+                       MODIFY Update Polish translation.
+                       MODIFY Update Italian translation.
+                       FIX    Fixed the comments template of page.
+                       FIX    Apply translations to 'Current Theme Options'.
+                       FIX    Submenu are disabled when remove feeds from sidebar, this bug now fixed.
+    1.1.4   2008/12/15 FIX    Fixed translation files.
+    1.1.3   2008/12/15 NEW    Added Polish language support. (Thanks Tomasz Wisniewski)
+                       REMOVE Removed supported for 'SRG Clean Archives' plugin.
+    1.1.2   2008/12/14 NEW    'Quick Comments' plugin is now supported.
+                       NEW    Added Japanese language support. (Thanks をかもと)
+                       NEW    Added Brazilian Portuguese language support. (Thanks Welington Rodrigues Braga)
+                       NEW    Added French language support. (Thanks Gasquez Florian)
+                       NEW    Added Italian language support. (Thanks Gianni Diurno)
+                       FIX    Fixed a weird problem when people updated to WordPress 2.7.
+                       FIX    Apply translations to 'Your comment is awaiting moderation.'.
+                       FIX    Fixed the width of title.
+                       FIX    Fixed REPLY and QUERY events in Opera Browsers.
+    1.1.1   2008/12/01 FIX    Fixed trackbacks in WordPress 2.7.
+    1.1     2008/10/29 NEW    Added Norwegian language support. (Thanks Rune Gulbrandsøy)
+                       NEW    Added Spanish language support. (Thanks Alberto Gonzalez)
+                       NEW    Added 2-level menu and feed readers.
+                       NEW    Added style for image captions.
+                       NEW    Added 'Show categories as menu' option.
+                       NEW    Comment pages ready.
+                       MODIFY light.png => light.gif.
+                       MODIFY Changed '<?=' to '<?php echo'.
+                       MODIFY Changed the style of 'Submit comment' button.
+                       FIX    Changed the icon of 'Edit links' button.
+                       FIX    Fixed login/logout links on comment page, again.
+                       FIX    Fixed the mothod to get copyright term.
+    1.0.5   2008/10/15 FIX    Fixed login/logout links on comment page.
+    1.0.4   2008/10/15 FIX    In the pass version, sidebar was misplaced when searchbox widget was activated.
+                       FIX    Fixed <pre> style for IE6.
+    1.0.3   2008/10/11 NEW    Created this CHANGLOG file.
+                       NEW    Added German language support. (Thanks Nicola Tiling)
+                       NEW    Added Danish language support. (Thanks Soeren Eskildsen)
+                       FIX    Fixed style for Firefox2.
+                       FIX    Fixed trackback style.
+                       FIX    Fixed 'Categories & Tags' options.

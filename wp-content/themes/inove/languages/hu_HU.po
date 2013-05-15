@@ -1,0 +1,569 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: iNove 1.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-08-07 13:46+0900\n"
+"PO-Revision-Date: 2009-08-07 14:02+0900\n"
+"Last-Translator: mg12 <wuzhao.mail@gmail.com>\n"
+"Language-Team: NeoEase <http://www.neoease.com/themes/>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-Country: CHINA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:8
+#: header.php:27
+msgid "RSS 2.0 - all posts"
+msgstr "RSS 2.0 - minden bejegyzés"
+
+#: 404.php:9
+#: header.php:28
+msgid "RSS 2.0 - all comments"
+msgstr "RSS 2.0 - minden hozzászólás"
+
+#: 404.php:22
+msgid "Talker"
+msgstr "Beszélő"
+
+#: 404.php:25
+msgid "Welcome to 404 error page!"
+msgstr "Üdv a 404-es hibalapon!"
+
+#: 404.php:26
+msgid "Welcome to this customized error page. You've reached this page because you've clicked on a link that does not exist. This is probably our fault... but instead of showing you the basic '404 Error' page that is confusing and doesn't really explain anything, we've created this page to explain what went wrong."
+msgstr "Üdv a hibalapon! Azért vagy most itt, mert egy olyan hivatkozásra kattintottál, ami sehová nem vezet... Sajna ez valószínűleg a mi hibánk :( De ahelyett, hogy az alap \"404-es hiba\" lapjára vezettünk volna, ami igazából megzavaró és semmit sem magyaráz meg, engedd meg, hogy ezen a lapon kérjünk bocsánatot Tőled. Ha jelzed a hibát, igyekszünk mihamarabb kijavítani."
+
+#: 404.php:27
+msgid "You can either (a) click on the 'back' button in your browser and try to navigate through our site in a different direction, or (b) click on the following link to go to homepage."
+msgstr "Kattints a böngésződ \"Vissza\" gombjára, és úgy navigálj tovább, vagy kattints az alábbi linkre, amely a Bejárathoz visz el Téged."
+
+#: 404.php:29
+msgid "Back to homepage &raquo;"
+msgstr "Vissza a Bejárathoz &raquo;"
+
+#: archive.php:10
+msgid "Search Results"
+msgstr "Keresési eredmények"
+
+#: archive.php:11
+#, php-format
+msgid "Keyword: &#8216;%1$s&#8217;"
+msgstr "Kulcsszó: &#8216;%1$s&#8217;"
+
+#: archive.php:14
+msgid "Archive"
+msgstr "Archívum"
+
+#: archive.php:19
+#, php-format
+msgid "Archive for the &#8216;%1$s&#8217; Category"
+msgstr "A(z) &#8216;%1$s&#8217; kategória archívuma"
+
+#: archive.php:22
+#, php-format
+msgid "Posts Tagged &#8216;%1$s&#8217;"
+msgstr "&#8216;%1$s&#8217; cimkével ellátott bejegyzés"
+
+#: archive.php:25
+#: archive.php:28
+#: archive.php:31
+#, php-format
+msgid "Archive for %1$s"
+msgstr "%1$s archívuma"
+
+#: archive.php:25
+#: archive.php:47
+#: archives.php:14
+#: comments.php:91
+#: functions.php:563
+#: index.php:22
+#: links.php:25
+#: page.php:8
+#: single.php:15
+#: twitter.php:15
+msgid "F jS, Y"
+msgstr ""
+
+#: archive.php:28
+msgid "F, Y"
+msgstr ""
+
+#: archive.php:31
+msgid "Y"
+msgstr ""
+
+#: archive.php:34
+msgid "Author Archive"
+msgstr "A Szerkesztő archívuma"
+
+#: archive.php:37
+msgid "Blog Archives"
+msgstr "Blog archívumok"
+
+#: archive.php:49
+#: archives.php:15
+#: comments.php:95
+#: functions.php:571
+#: index.php:24
+#: links.php:26
+#: page.php:9
+#: single.php:17
+#: twitter.php:16
+msgid "Edit"
+msgstr "Szerkesztés"
+
+#: archive.php:50
+#: index.php:25
+msgid "No comments"
+msgstr "Nincsenek hozzászólások"
+
+#: archive.php:50
+#: index.php:25
+msgid "1 comment"
+msgstr "1 hozzászólás"
+
+#: archive.php:50
+#: index.php:25
+#, php-format
+msgid "% comments"
+msgstr "% hozzászólás"
+
+#: archive.php:50
+#: index.php:25
+msgid "Comments off"
+msgstr ""
+
+#: archive.php:54
+#: index.php:29
+msgid "Read more..."
+msgstr "Olvass tovább..."
+
+#: archive.php:58
+#: index.php:33
+#: single.php:29
+msgid "Categories: "
+msgstr ""
+
+#: archive.php:59
+#: index.php:34
+#: single.php:30
+msgid "Tags: "
+msgstr ""
+
+#: archive.php:64
+#: archives.php:39
+#: index.php:39
+#: links.php:59
+#: page.php:26
+#: single.php:68
+#: twitter.php:36
+msgid "Sorry, no posts matched your criteria."
+msgstr "Sajnáljuk, nem találtunk a kritériumoknak megfelelő bejegyzést"
+
+#: archive.php:72
+#: index.php:47
+msgid "Newer Entries"
+msgstr "Újabb bejegyzések"
+
+#: archive.php:73
+#: index.php:48
+msgid "Older Entries"
+msgstr "Régebbi bejegyzések"
+
+#: archives.php:17
+#: comments.php:31
+#: links.php:28
+#: page.php:11
+#: single.php:19
+#: twitter.php:18
+msgid "Leave a comment"
+msgstr "Szólj hozzá!"
+
+#: archives.php:18
+#: links.php:29
+#: page.php:12
+#: single.php:20
+#: twitter.php:19
+msgid "Go to comments"
+msgstr "Tovább a hozzászólásokhoz"
+
+#: comments.php:5
+msgid "Enter your password to view comments."
+msgstr "Add meg a jelszavadat, hogy megtekinthesd a hozzászólásokat."
+
+#: comments.php:25
+#: comments.php:28
+#: functions.php:367
+msgid "Comments"
+msgstr "Hozzászólások"
+
+#: comments.php:26
+msgid "Trackbacks"
+msgstr "Visszakövetések"
+
+#: comments.php:34
+msgid "Trackback"
+msgstr "Visszakövetés"
+
+#: comments.php:58
+msgid "No comments yet."
+msgstr "Még nincs hozzászólás"
+
+#: comments.php:72
+msgid "Comment pages"
+msgstr "Hozzászólás oldalakhoz"
+
+#: comments.php:91
+#: functions.php:563
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s %2$s-nél"
+
+#: comments.php:91
+#: functions.php:563
+msgid "H:i"
+msgstr ""
+
+#: comments.php:108
+msgid "No trackbacks yet."
+msgstr "Még nincsenek visszakövetések"
+
+#: comments.php:123
+msgid "Comments are closed."
+msgstr "Hozzászólások lezárva"
+
+#: comments.php:134
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr " <a href=\"%s\">-ként kell bejelentkezned</a>, hogy hozzászólhass"
+
+#: comments.php:150
+msgid "Logged in as"
+msgstr "Bejelentkezve, mint"
+
+#: comments.php:151
+msgid "Log out of this account"
+msgstr "Kijelentkezés"
+
+#: comments.php:151
+msgid "Logout &raquo;"
+msgstr "Kijelentkezés &raquo;"
+
+#: comments.php:157
+#, php-format
+msgid "Welcome back <strong>%s</strong>."
+msgstr "Üdv ismét errefelé, <strong>%s</strong>!"
+
+#: comments.php:158
+msgid "Change &raquo;"
+msgstr "Válts &raquo;"
+
+#: comments.php:159
+msgid "Close &raquo;"
+msgstr "Bezár &raquo;"
+
+#: comments.php:166
+msgid "Name"
+msgstr "Név"
+
+#: comments.php:166
+#: comments.php:170
+msgid "(required)"
+msgstr "(kötelező)"
+
+#: comments.php:170
+msgid "E-Mail (will not be published)"
+msgstr "e-mail (nem lesz közzétéve)"
+
+#: comments.php:174
+msgid "Website"
+msgstr "Honlap"
+
+#: comments.php:191
+msgid "Subscribe to comments feed"
+msgstr "Feliratkozás hozzászólásokra"
+
+#: comments.php:193
+msgid "Submit Comment"
+msgstr "Hozzászólás elküldése"
+
+#: footer.php:17
+msgid "Top"
+msgstr "Az oldal tetejére"
+
+#: footer.php:27
+msgid "Copyright &copy; "
+msgstr ""
+
+#: footer.php:39
+#, php-format
+msgid "Theme by <a href=\"%1$s\">NeoEase</a>. Valid <a href=\"%2$s\">XHTML 1.1</a> and <a href=\"%3$s\">CSS 3</a>."
+msgstr ""
+
+#: functions.php:180
+#: functions.php:189
+msgid "Current Theme Options"
+msgstr "Jelen téma beállításai"
+
+#: functions.php:194
+msgid "Search"
+msgstr "Keress"
+
+#: functions.php:198
+msgid "Using google custom search engine."
+msgstr "A google custom search engine használata"
+
+#: functions.php:201
+msgid "CX:"
+msgstr "CX:"
+
+#: functions.php:204
+msgid "Find <code>name=\"cx\"</code> in the <strong>Search box code</strong> of <a href=\"%1$s\">Google Custom Search Engine</a>, and type the <code>value</code> here.<br/>For example: <code>014782006753236413342:1ltfrybsbz4</code>"
+msgstr "Keress <code>name=\"cx\"</code> a <strong>Keresőmező kód</strong> a <a href=\"%1$s\">Google Custom Search Engine segítségével</a>, és írd be a <code>értéket</code> ide.<br/>Pl: <code>014782006753236413342:1ltfrybsbz4</code>"
+
+#: functions.php:213
+msgid "Menubar"
+msgstr "Menü"
+
+#: functions.php:217
+msgid "Show pages as menu."
+msgstr "Mutasd az oldalakat menüelemekként"
+
+#: functions.php:221
+msgid "Show categories as menu."
+msgstr "Mutasd a kategóriákat menüelemekként"
+
+#: functions.php:231
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:235
+msgid "Hide sidebar from all pages."
+msgstr ""
+
+#: functions.php:246
+msgid "Notice"
+msgstr "Közlemény"
+
+#: functions.php:248
+#: functions.php:272
+#: functions.php:307
+#: functions.php:430
+msgid "HTML enabled"
+msgstr "HTML megengedett"
+
+#: functions.php:254
+msgid "This notice bar will display at the top of posts on homepage."
+msgstr "Ez a közlemény szerepelni fog minden bejegyzés tetején, amely a főoldalon van."
+
+#: functions.php:270
+msgid "Banner"
+msgstr ""
+
+#: functions.php:276
+msgid "This banner will display at the right of header. (height: 60 pixels)"
+msgstr ""
+
+#: functions.php:278
+#: functions.php:313
+msgid "Who can see?"
+msgstr "Ki láthatja?"
+
+#: functions.php:281
+#: functions.php:316
+msgid "Registered Users"
+msgstr "Regisztrált felhasználók"
+
+#: functions.php:285
+#: functions.php:320
+msgid "Commentator"
+msgstr "Hozzászóló"
+
+#: functions.php:289
+#: functions.php:324
+msgid "Visitors"
+msgstr "Látogatók"
+
+#: functions.php:305
+#: sidebar.php:56
+msgid "Showcase"
+msgstr "Bemutatóterem"
+
+#: functions.php:311
+msgid "This showcase will display at the top of sidebar."
+msgstr "Ez a bemutató megjelenik majd az oldalsáv tetején"
+
+#: functions.php:329
+msgid "Title:"
+msgstr "Cím:"
+
+#: functions.php:345
+msgid "Posts"
+msgstr "Bejegyzések"
+
+#: functions.php:349
+msgid "Show author on posts."
+msgstr "Szerző mutatása a bejegyzéseknél"
+
+#: functions.php:353
+msgid "Show categories on posts."
+msgstr "Kategóriák mutatása bejegyzéseknél"
+
+#: functions.php:357
+msgid "Show tags on posts."
+msgstr "Cimkék mutatása bejegyzéseknél"
+
+#: functions.php:371
+msgid "Submit comments with Ctrl+Enter."
+msgstr ""
+
+#: functions.php:381
+msgid "Feed"
+msgstr "Forrás"
+
+#: functions.php:385
+msgid "Show the feed reader list when mouse over on feed button."
+msgstr ""
+
+#: functions.php:390
+msgid "Custom feed."
+msgstr "Saját forrás"
+
+#: functions.php:392
+#: functions.php:398
+msgid "URL:"
+msgstr ""
+
+#: functions.php:396
+msgid "Email feed."
+msgstr "e-mail forrás"
+
+#: functions.php:407
+#: sidebar.php:42
+msgid "Twitter"
+msgstr ""
+
+#: functions.php:411
+msgid "Add Twitter button."
+msgstr ""
+
+#: functions.php:414
+msgid "Twitter username:"
+msgstr ""
+
+#: functions.php:428
+msgid "Web Analytics"
+msgstr ""
+
+#: functions.php:435
+msgid "Add web analytics code to your site. (e.g. Google Analytics, Yahoo! Web Analytics, ...)"
+msgstr ""
+
+#: functions.php:446
+msgid "Save Changes"
+msgstr "Változtatások elmentése"
+
+#: functions.php:567
+msgid "Reply"
+msgstr "Válasz"
+
+#: functions.php:568
+msgid "Quote"
+msgstr "Idézet"
+
+#: functions.php:573
+msgid "Advanced edit"
+msgstr "Haladó szerkesztés"
+
+#: functions.php:579
+msgid "Your comment is awaiting moderation."
+msgstr "A hozzászólásod moderálásra vár."
+
+#: links.php:18
+msgid "Add link"
+msgstr ""
+
+#: links.php:19
+msgid "Edit links"
+msgstr "Hivatkozások szerkesztése"
+
+#: sidebar.php:25
+msgid "Subscribe to this blog..."
+msgstr "Feliratkozás erre a blogra..."
+
+#: sidebar.php:25
+msgid "<abbr title=\"Really Simple Syndication\">RSS</abbr>"
+msgstr ""
+
+#: sidebar.php:28
+#: sidebar.php:29
+#: sidebar.php:30
+#: sidebar.php:31
+#: sidebar.php:32
+#: sidebar.php:33
+#: sidebar.php:34
+#: sidebar.php:35
+msgid "Subscribe with "
+msgstr "Feliratkozás:"
+
+#: sidebar.php:28
+msgid "Google"
+msgstr ""
+
+#: sidebar.php:29
+msgid "Youdao"
+msgstr ""
+
+#: sidebar.php:30
+msgid "Xian Guo"
+msgstr ""
+
+#: sidebar.php:31
+msgid "Zhua Xia"
+msgstr ""
+
+#: sidebar.php:32
+msgid "My Yahoo!"
+msgstr ""
+
+#: sidebar.php:33
+msgid "newsgator"
+msgstr ""
+
+#: sidebar.php:34
+msgid "Bloglines"
+msgstr ""
+
+#: sidebar.php:35
+msgid "iNezha"
+msgstr ""
+
+#: sidebar.php:40
+msgid "Subscribe to this blog via email..."
+msgstr "Feliratkozás erre a blogra e-mail segítségével"
+
+#: sidebar.php:40
+msgid "Email feed"
+msgstr "e-mail forrás"
+
+#: sidebar.php:42
+msgid "Follow me!"
+msgstr ""
+
+#: single.php:7
+msgid "Go to homepage"
+msgstr "A Bejárathoz"
+
+#: single.php:7
+msgid "Home"
+msgstr "Bejárat"
+
+#: templates/header.php:66
+msgid "Type text to search here..."
+msgstr ""
+

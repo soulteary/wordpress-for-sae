@@ -126,6 +126,7 @@ function export_date_options( $post_type = 'post' ) {
 <p><?php _e('When you click the button below WordPress will create an XML file for you to save to your computer.'); ?></p>
 <p><?php _e('This format, which we call WordPress eXtended RSS or WXR, will contain your posts, pages, comments, custom fields, categories, and tags.'); ?></p>
 <p><?php _e('Once you&#8217;ve saved the download file, you can use the Import function in another WordPress installation to import the content from this site.'); ?></p>
+<p style="color:red">由于SAE对脚本执行时间有限制，当数据量非常大时，导出可能会超时而导致失败。您可以使用SAE的Defferred Jobs服务将Mysql数据导出。</p>
 
 <h3><?php _e( 'Choose what to export' ); ?></h3>
 <form action="" method="get" id="export-filters">

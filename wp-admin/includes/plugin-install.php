@@ -302,11 +302,11 @@ function install_plugin_information() {
 		switch ( $status['status'] ) {
 			case 'install':
 				if ( $status['url'] )
-					echo '<a href="' . $status['url'] . '" target="_parent">' . __('Install Now') . '</a>';
+					echo '<a href="' . $api->download_link . '" target="_blank">' . '现在下载' . '</a>';
 				break;
 			case 'update_available':
 				if ( $status['url'] )
-					echo '<a href="' . $status['url'] . '" target="_parent">' . __('Install Update Now') .'</a>';
+					echo '<a href="' . $api->download_link . '" target="_blank">' . '现在下载更新' .'</a>';
 				break;
 			case 'newer_installed':
 				echo '<a>' . sprintf(__('Newer Version (%s) Installed'), $status['version']) . '</a>';
