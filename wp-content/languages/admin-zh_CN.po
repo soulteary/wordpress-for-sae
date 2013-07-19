@@ -2,20 +2,18 @@
 # This file is distributed under the same license as the WordPress package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WordPress 3.5\n"
+"Project-Id-Version: WordPress 3.5.2\n"
 "Report-Msgid-Bugs-To: http://wppolyglots.wordpress.com\n"
-"POT-Creation-Date: 2013-01-24 21:19:53+00:00\n"
-"PO-Revision-Date: 2013-01-24 17:39-0500\n"
-"Last-Translator: Jiehan Zheng <zheng@jiehan.org>\n"
-"Language-Team: WordPress China <wpchina@jiehan.org>\n"
+"POT-Creation-Date: 2013-06-21 18:14:21+00:00\n"
+"PO-Revision-Date: 2013-06-22 00:52-0000\n"
+"Last-Translator: Jimmy Xu <me@jimmyxu.org>\n"
+"Language-Team: WordPress China\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Poedit-Basepath: /home/jiehan/Documents/WordPress/core/trunk/\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.5.5\n"
 
 #: wp-admin/about.php:20 wp-admin/credits.php:53 wp-admin/freedoms.php:20
 msgid "Welcome to WordPress %s"
@@ -49,14 +47,14 @@ msgstr "鸣谢"
 msgid "Freedoms"
 msgstr "您的自由"
 
-#: wp-admin/about.php:37 wp-admin/about.php:150
+#: wp-admin/about.php:37 wp-admin/about.php:154
 msgid "Maintenance and Security Release"
 msgid_plural "Maintenance and Security Releases"
 msgstr[0] "维护和安全更新"
 
 #. translators: 1: WordPress version number, 2: plural number of bugs. More
 #. than one security issue.
-#: wp-admin/about.php:38 wp-admin/about.php:165
+#: wp-admin/about.php:38 wp-admin/about.php:42 wp-admin/about.php:169
 msgid ""
 "<strong>Version %1$s</strong> addressed some security issues and fixed %2$s "
 "bug."
@@ -65,49 +63,49 @@ msgid_plural ""
 "bugs."
 msgstr[0] "<strong>%1$s 版本</strong>修补了安全漏洞、修正了 %2$s 个问题。"
 
-#: wp-admin/about.php:40 wp-admin/about.php:168
+#: wp-admin/about.php:40 wp-admin/about.php:44 wp-admin/about.php:172
 msgid "For more information, see <a href=\"%s\">the release notes</a>."
 msgstr "欲了解更多，参见<a href=\"%s\">发行注记</a>。"
 
-#: wp-admin/about.php:45 wp-admin/includes/template.php:1830
+#: wp-admin/about.php:49 wp-admin/includes/template.php:1830
 msgid "New Media Manager"
 msgstr "全新的多媒体管理器"
 
-#: wp-admin/about.php:51
+#: wp-admin/about.php:55
 msgid "Beautiful Interface"
 msgstr "界面美观"
 
-#: wp-admin/about.php:52
+#: wp-admin/about.php:56
 msgid ""
 "Adding media has been streamlined with an all-new experience, making it a "
 "breeze to upload files and place them into your posts."
 msgstr "添加媒体文件如今更为简单：上传，插入一气呵成！"
 
-#: wp-admin/about.php:55
+#: wp-admin/about.php:59
 msgid "Picturesque Galleries"
 msgstr "别致的相册设计"
 
-#: wp-admin/about.php:56
+#: wp-admin/about.php:60
 msgid ""
 "Creating image galleries is faster with drag and drop reordering, inline "
 "caption editing, and simplified controls for layout."
 msgstr ""
 "有了拖拽排序、图片说明快速编辑、简化的控件设计，我们让整理相册变得更容易。"
 
-#: wp-admin/about.php:62
+#: wp-admin/about.php:66
 msgid "New Default Theme"
 msgstr "全新默认主题"
 
-#: wp-admin/about.php:66
+#: wp-admin/about.php:70
 msgid "Introducing Twenty Twelve"
 msgstr "Twenty Twelve 全新登场"
 
-#: wp-admin/about.php:67
+#: wp-admin/about.php:71
 msgid ""
 "The newest default theme for WordPress is simple, flexible, and elegant."
 msgstr "WordPress 的最新主题。简洁、灵活、优美。"
 
-#: wp-admin/about.php:68
+#: wp-admin/about.php:72
 msgid ""
 "What makes it really shine are the design details, like the gorgeous Open "
 "Sans typeface and a fully responsive design that looks great on any device."
@@ -115,7 +113,7 @@ msgstr ""
 "细节上的设计令它与众不同。比如我们选用了美观的 Open Sans 字体、引入了响应式网"
 "页设计，在任何设备上都有很好的效果。"
 
-#: wp-admin/about.php:69
+#: wp-admin/about.php:73
 msgid ""
 "Naturally, Twenty Twelve supports all the theme features you’ve come to know "
 "and love, but it is also designed to be as great for a website as it is for "
@@ -124,15 +122,15 @@ msgstr ""
 "显然，Twenty Twelve 支持我们所有的主题特性，同时它不仅适用于博客，还适用于网"
 "站。"
 
-#: wp-admin/about.php:74
+#: wp-admin/about.php:78
 msgid "Retina Ready"
 msgstr "支持 Retina 显示屏"
 
-#: wp-admin/about.php:78
+#: wp-admin/about.php:82
 msgid "So Sharp You Can&#8217;t See the Pixels"
 msgstr "清晰到看不见像素啦"
 
-#: wp-admin/about.php:79
+#: wp-admin/about.php:83
 msgid ""
 "The WordPress dashboard now looks beautiful on high-resolution screens like "
 "those found on the iPad, Kindle Fire HD, Nexus 10, and MacBook Pro with "
@@ -143,15 +141,15 @@ msgstr ""
 "HD、Nexus 10 和配备 Retina 显示屏的 MacBook Pro 等。图标等视觉元素显示清晰、"
 "详尽。"
 
-#: wp-admin/about.php:84
+#: wp-admin/about.php:88
 msgid "Smoother Experience"
 msgstr "更平滑的体验"
 
-#: wp-admin/about.php:88
+#: wp-admin/about.php:92
 msgid "Better Accessibility"
 msgstr "增强的可用性"
 
-#: wp-admin/about.php:89
+#: wp-admin/about.php:93
 msgid ""
 "WordPress supports more usage modes than ever before. Screenreaders, touch "
 "devices, and mouseless workflows all have improved ease of use and "
@@ -160,11 +158,11 @@ msgstr ""
 "WordPress 支持了更广泛的使用方式。读屏软件、触摸设备、纯键盘操作等工作流程都"
 "变得简洁明了。"
 
-#: wp-admin/about.php:91
+#: wp-admin/about.php:95
 msgid "More Polish"
 msgstr "精致设计"
 
-#: wp-admin/about.php:92
+#: wp-admin/about.php:96
 msgid ""
 "A number of screens and controls have been refined. For example, a new color "
 "picker makes it easier for you to choose that perfect shade of blue."
@@ -172,15 +170,15 @@ msgstr ""
 "本版本还包含了对一些页面的细节优化。比如，我们的新选色器让您轻松选到您要的那"
 "种蓝色。"
 
-#: wp-admin/about.php:97
+#: wp-admin/about.php:101
 msgid "Under the Hood"
 msgstr "面板之下"
 
-#: wp-admin/about.php:101
+#: wp-admin/about.php:105
 msgid "Meta Query Additions"
 msgstr "元查询特性的增强"
 
-#: wp-admin/about.php:102
+#: wp-admin/about.php:106
 msgid ""
 "The <code>WP_Comment_Query</code> and <code>WP_User_Query</code> classes now "
 "support meta queries just like <code>WP_Query.</code> Meta queries now "
@@ -190,11 +188,11 @@ msgstr ""
 "<code>WP_Query</code> 一样，支持了元查询。元查询功能添加了无需指定元 key 的对"
 "象查询方式。"
 
-#: wp-admin/about.php:105
+#: wp-admin/about.php:109
 msgid "Post Objects"
 msgstr "“Post”文章对象"
 
-#: wp-admin/about.php:106
+#: wp-admin/about.php:110
 msgid ""
 "Post objects are now instances of a <code>WP_Post</code> class, which "
 "improves performance by loading selected properties on demand."
@@ -202,11 +200,11 @@ msgstr ""
 "“Post”对象变成了 <code>WP_Post</code> 类的实例，通过按需加载的方法，带来了性"
 "能上的增强。"
 
-#: wp-admin/about.php:109
+#: wp-admin/about.php:113
 msgid "Image Editing API"
 msgstr "图像编辑 API"
 
-#: wp-admin/about.php:110
+#: wp-admin/about.php:114
 msgid ""
 "The <code>WP_Image_Editor</code> class abstracts image editing functionality "
 "such as cropping and scaling, and uses ImageMagick when available."
@@ -214,20 +212,20 @@ msgstr ""
 "<code>WP_Image_Editor</code> 类将图像编辑功能抽象化，并在 ImageMagick 可用时"
 "使用它。"
 
-#: wp-admin/about.php:116
+#: wp-admin/about.php:120
 msgid "Multisite Improvements"
 msgstr "多站点功能增强"
 
-#: wp-admin/about.php:117
+#: wp-admin/about.php:121
 msgid ""
 "<code>switch_to_blog()</code> is now significantly faster and more reliable."
 msgstr "<code>switch_to_blog()</code> 比以往更快、更可靠。"
 
-#: wp-admin/about.php:120
+#: wp-admin/about.php:124
 msgid "XML-RPC API"
 msgstr "XML-RPC API"
 
-#: wp-admin/about.php:121
+#: wp-admin/about.php:125
 msgid ""
 "The <a href=\"%s\">WordPress API</a> is now always enabled, and supports "
 "fetching users, editing profiles, managing post revisions, and searching "
@@ -236,15 +234,15 @@ msgstr ""
 "<a href=\"%s\">WordPress API</a> 永远启用，支持获取用户、编辑个人资料、管理文"
 "章历史版本和搜索文章。"
 
-#: wp-admin/about.php:121
+#: wp-admin/about.php:125
 msgid "http://codex.wordpress.org/XML-RPC_WordPress_API"
 msgstr "http://codex.wordpress.org/zh-cn:XML-RPC_WordPress_API"
 
-#: wp-admin/about.php:124 wp-admin/credits.php:160
+#: wp-admin/about.php:128 wp-admin/credits.php:160
 msgid "External Libraries"
 msgstr "外部库"
 
-#: wp-admin/about.php:125
+#: wp-admin/about.php:129
 msgid ""
 "WordPress now includes the <a href=\"%1$s\">Underscore</a> and <a href=\"%2$s"
 "\">Backbone</a> JavaScript libraries. TinyMCE, jQuery, jQuery UI, and "
@@ -254,47 +252,47 @@ msgstr ""
 "\">Backbone</a> JavaScript 库。TinyMCE、jQuery、jQuery UI 和 SimplePie 升级到"
 "了当前最新版本。"
 
-#: wp-admin/about.php:133
+#: wp-admin/about.php:137
 msgid "Return to Updates"
 msgstr "返回“更新”"
 
-#: wp-admin/about.php:133
+#: wp-admin/about.php:137
 msgid "Return to Dashboard &rarr; Updates"
 msgstr "返回“仪表盘” &rarr; “更新”"
 
-#: wp-admin/about.php:137
+#: wp-admin/about.php:141
 msgid "Go to Dashboard &rarr; Home"
 msgstr "前往“仪表盘” &rarr; “首页”"
 
-#: wp-admin/about.php:137
+#: wp-admin/about.php:141
 msgid "Go to Dashboard"
 msgstr "前往“仪表盘”"
 
-#: wp-admin/about.php:148
+#: wp-admin/about.php:152
 msgid "Maintenance Release"
 msgid_plural "Maintenance Releases"
 msgstr[0] "维护更新"
 
-#: wp-admin/about.php:149
+#: wp-admin/about.php:153
 msgid "Security Release"
 msgid_plural "Security Releases"
 msgstr[0] "安全更新"
 
 #. translators: 1: WordPress version number.
-#: wp-admin/about.php:153
+#: wp-admin/about.php:157
 msgid "<strong>Version %1$s</strong> addressed a security issue."
 msgid_plural "<strong>Version %1$s</strong> addressed some security issues."
 msgstr[0] "<strong>%1$s 版本</strong>修补了安全漏洞。"
 
 #. translators: 1: WordPress version number, 2: plural number of bugs.
-#: wp-admin/about.php:157
+#: wp-admin/about.php:161
 msgid "<strong>Version %1$s</strong> addressed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed %2$s bugs."
 msgstr[0] "<strong>%1$s 版本</strong>修复了 %2$s 个问题。"
 
 #. translators: 1: WordPress version number, 2: plural number of bugs. Singular
 #. security issue.
-#: wp-admin/about.php:161
+#: wp-admin/about.php:165
 msgid ""
 "<strong>Version %1$s</strong> addressed a security issue and fixed %2$s bug."
 msgid_plural ""
@@ -2547,14 +2545,14 @@ msgid ""
 msgstr "%s 正在编辑这篇文章。若您更新，其修改将被覆盖。"
 
 #: wp-admin/includes/ajax-actions.php:1071
-#: wp-admin/includes/ajax-actions.php:1314 wp-admin/includes/post.php:166
-#: wp-admin/includes/post.php:1284
+#: wp-admin/includes/ajax-actions.php:1314 wp-admin/includes/post.php:177
+#: wp-admin/includes/post.php:1295
 msgid "You are not allowed to edit this page."
 msgstr "您没有修改这个页面的权限。"
 
 #: wp-admin/includes/ajax-actions.php:1074
-#: wp-admin/includes/ajax-actions.php:1317 wp-admin/includes/post.php:168
-#: wp-admin/includes/post.php:1287 wp-admin/press-this.php:35
+#: wp-admin/includes/ajax-actions.php:1317 wp-admin/includes/post.php:179
+#: wp-admin/includes/post.php:1298 wp-admin/press-this.php:35
 #: wp-admin/upload.php:62
 msgid "You are not allowed to edit this post."
 msgstr "您没有修改这篇文章的权限。"
@@ -3223,7 +3221,7 @@ msgstr "启用"
 
 #: wp-admin/includes/class-wp-ms-themes-list-table.php:233
 #: wp-admin/includes/class-wp-ms-themes-list-table.php:276
-#: wp-admin/includes/class-wp-upgrader.php:1520
+#: wp-admin/includes/class-wp-upgrader.php:1526
 msgid "Network Enable"
 msgstr "开放给整个站点网络使用"
 
@@ -3444,7 +3442,7 @@ msgstr[0] "Drop-in 高级插件 <span class=\"count\">(%s)</span>"
 
 #: wp-admin/includes/class-wp-plugins-list-table.php:240
 #: wp-admin/includes/class-wp-plugins-list-table.php:345
-#: wp-admin/includes/class-wp-upgrader.php:1438
+#: wp-admin/includes/class-wp-upgrader.php:1444
 msgid "Network Activate"
 msgstr "在整个网络启用"
 
@@ -3483,7 +3481,7 @@ msgid "Deactivate this plugin"
 msgstr "停用该插件"
 
 #: wp-admin/includes/class-wp-plugins-list-table.php:345
-#: wp-admin/includes/class-wp-upgrader.php:1438
+#: wp-admin/includes/class-wp-upgrader.php:1444
 msgid "Activate this plugin for all sites in this network"
 msgstr "为本网络中的所有站点启用此插件"
 
@@ -3493,9 +3491,9 @@ msgid "Delete this plugin"
 msgstr "删除该插件"
 
 #: wp-admin/includes/class-wp-plugins-list-table.php:353
-#: wp-admin/includes/class-wp-upgrader.php:1195
-#: wp-admin/includes/class-wp-upgrader.php:1433
-#: wp-admin/includes/class-wp-upgrader.php:1435
+#: wp-admin/includes/class-wp-upgrader.php:1198
+#: wp-admin/includes/class-wp-upgrader.php:1439
+#: wp-admin/includes/class-wp-upgrader.php:1441
 msgid "Activate this plugin"
 msgstr "启用这个插件"
 
@@ -3554,10 +3552,10 @@ msgstr "永久删除此项目"
 #: wp-admin/includes/class-wp-posts-list-table.php:559
 #: wp-admin/includes/class-wp-theme-install-list-table.php:188
 #: wp-admin/includes/class-wp-themes-list-table.php:140
-#: wp-admin/includes/class-wp-upgrader.php:1515
-#: wp-admin/includes/class-wp-upgrader.php:1516
-#: wp-admin/includes/class-wp-upgrader.php:1582
-#: wp-admin/includes/class-wp-upgrader.php:1583
+#: wp-admin/includes/class-wp-upgrader.php:1521
+#: wp-admin/includes/class-wp-upgrader.php:1522
+#: wp-admin/includes/class-wp-upgrader.php:1588
+#: wp-admin/includes/class-wp-upgrader.php:1589
 msgid "Preview &#8220;%s&#8221;"
 msgstr "预览“%s”"
 
@@ -3737,14 +3735,14 @@ msgid ""
 msgstr "您目前只能使用这个主题。请联系 %s 的管理员，以了解如何使用更多主题。"
 
 #: wp-admin/includes/class-wp-themes-list-table.php:137
-#: wp-admin/includes/class-wp-upgrader.php:1517
-#: wp-admin/includes/class-wp-upgrader.php:1584
+#: wp-admin/includes/class-wp-upgrader.php:1523
+#: wp-admin/includes/class-wp-upgrader.php:1590
 msgid "Activate &#8220;%s&#8221;"
 msgstr "启用“%s”"
 
 #: wp-admin/includes/class-wp-themes-list-table.php:144
-#: wp-admin/includes/class-wp-upgrader.php:1516
-#: wp-admin/includes/class-wp-upgrader.php:1583
+#: wp-admin/includes/class-wp-upgrader.php:1522
+#: wp-admin/includes/class-wp-upgrader.php:1589
 msgid "Live Preview"
 msgstr "实时预览"
 
@@ -3774,7 +3772,7 @@ msgstr "http://codex.wordpress.org/zh-cn:%E5%AD%90%E4%B8%BB%E9%A2%98"
 msgid "Invalid Data provided."
 msgstr "提供的数据无效。"
 
-#: wp-admin/includes/class-wp-upgrader.php:42 wp-admin/includes/file.php:522
+#: wp-admin/includes/class-wp-upgrader.php:42 wp-admin/includes/file.php:532
 #: wp-admin/includes/plugin.php:710 wp-admin/includes/theme.php:53
 msgid "Could not access filesystem."
 msgstr "无法访问文件系统。"
@@ -3810,7 +3808,7 @@ msgid "Download failed."
 msgstr "下载失败。"
 
 #: wp-admin/includes/class-wp-upgrader.php:52
-#: wp-admin/includes/update-core.php:665
+#: wp-admin/includes/update-core.php:667
 msgid "Installing the latest version&#8230;"
 msgstr "正在安装最新版本&#8230;"
 
@@ -3818,9 +3816,9 @@ msgstr "正在安装最新版本&#8230;"
 msgid "Destination folder already exists."
 msgstr "目标目录已存在。"
 
-#: wp-admin/includes/class-wp-upgrader.php:54 wp-admin/includes/file.php:616
-#: wp-admin/includes/file.php:708 wp-admin/includes/file.php:767
-#: wp-admin/includes/update-core.php:828
+#: wp-admin/includes/class-wp-upgrader.php:54 wp-admin/includes/file.php:626
+#: wp-admin/includes/file.php:718 wp-admin/includes/file.php:777
+#: wp-admin/includes/update-core.php:830
 msgid "Could not create directory."
 msgstr "无法创建目录。"
 
@@ -3999,122 +3997,122 @@ msgstr "无法复制文件。"
 msgid "Could not copy files. You may have run out of disk space."
 msgstr "无法复制文件，您可能用完了磁盘空间。"
 
-#: wp-admin/includes/class-wp-upgrader.php:1177 wp-admin/update.php:54
+#: wp-admin/includes/class-wp-upgrader.php:1180 wp-admin/update.php:54
 msgid "Update Plugin"
 msgstr "升级插件"
 
-#: wp-admin/includes/class-wp-upgrader.php:1195
-#: wp-admin/includes/class-wp-upgrader.php:1435
+#: wp-admin/includes/class-wp-upgrader.php:1198
+#: wp-admin/includes/class-wp-upgrader.php:1441
 msgid "Activate Plugin"
 msgstr "启用插件"
 
-#: wp-admin/includes/class-wp-upgrader.php:1196
-#: wp-admin/includes/class-wp-upgrader.php:1349
+#: wp-admin/includes/class-wp-upgrader.php:1199
+#: wp-admin/includes/class-wp-upgrader.php:1355
 msgid "Go to plugins page"
 msgstr "前往插件页面"
 
-#: wp-admin/includes/class-wp-upgrader.php:1196
-#: wp-admin/includes/class-wp-upgrader.php:1349
-#: wp-admin/includes/class-wp-upgrader.php:1447
+#: wp-admin/includes/class-wp-upgrader.php:1199
+#: wp-admin/includes/class-wp-upgrader.php:1355
+#: wp-admin/includes/class-wp-upgrader.php:1453
 msgid "Return to Plugins page"
 msgstr "返回“插件”页面"
 
-#: wp-admin/includes/class-wp-upgrader.php:1233
+#: wp-admin/includes/class-wp-upgrader.php:1236
 msgid ""
 "The update process is starting. This process may take a while on some hosts, "
 "so please be patient."
 msgstr "正开始升级。这个过程在某些服务器上花的时间要长些，请耐心等待。"
 
-#: wp-admin/includes/class-wp-upgrader.php:1234
+#: wp-admin/includes/class-wp-upgrader.php:1237
 msgid "An error occurred while updating %1$s: <strong>%2$s</strong>."
 msgstr "在升级 %1$s 时出错：<strong>%2$s</strong>。"
 
-#: wp-admin/includes/class-wp-upgrader.php:1235
+#: wp-admin/includes/class-wp-upgrader.php:1238
 msgid "The update of %1$s failed."
 msgstr "%1$s 升级失败。"
 
-#: wp-admin/includes/class-wp-upgrader.php:1236
+#: wp-admin/includes/class-wp-upgrader.php:1239
 msgid "%1$s updated successfully."
 msgstr "%1$s 升级成功。"
 
-#: wp-admin/includes/class-wp-upgrader.php:1236
+#: wp-admin/includes/class-wp-upgrader.php:1239
 msgid "Show Details"
 msgstr "显示详情"
 
-#: wp-admin/includes/class-wp-upgrader.php:1236
+#: wp-admin/includes/class-wp-upgrader.php:1239
 msgid "Hide Details"
 msgstr "隐藏详情"
 
-#: wp-admin/includes/class-wp-upgrader.php:1237
+#: wp-admin/includes/class-wp-upgrader.php:1240
 msgid "All updates have been completed."
 msgstr "更新任务全部完成。"
 
-#: wp-admin/includes/class-wp-upgrader.php:1336
+#: wp-admin/includes/class-wp-upgrader.php:1342
 msgid "Updating Plugin %1$s (%2$d/%3$d)"
 msgstr "正在升级 %1$s 插件（%2$d/%3$d）"
 
-#: wp-admin/includes/class-wp-upgrader.php:1350
-#: wp-admin/includes/class-wp-upgrader.php:1385
+#: wp-admin/includes/class-wp-upgrader.php:1356
+#: wp-admin/includes/class-wp-upgrader.php:1391
 msgid "Go to WordPress Updates page"
 msgstr "访问“WordPress 升级”页面"
 
-#: wp-admin/includes/class-wp-upgrader.php:1350
-#: wp-admin/includes/class-wp-upgrader.php:1385
+#: wp-admin/includes/class-wp-upgrader.php:1356
+#: wp-admin/includes/class-wp-upgrader.php:1391
 msgid "Return to WordPress Updates"
 msgstr "返回“WordPress 更新”页面"
 
-#: wp-admin/includes/class-wp-upgrader.php:1370
+#: wp-admin/includes/class-wp-upgrader.php:1376
 msgid "Updating Theme %1$s (%2$d/%3$d)"
 msgstr "正在更新主题 %1$s（%2$d/%3$d）"
 
-#: wp-admin/includes/class-wp-upgrader.php:1384
+#: wp-admin/includes/class-wp-upgrader.php:1390
 msgid "Go to themes page"
 msgstr "前往主题页面"
 
-#: wp-admin/includes/class-wp-upgrader.php:1384
-#: wp-admin/includes/class-wp-upgrader.php:1525
-#: wp-admin/includes/class-wp-upgrader.php:1591
+#: wp-admin/includes/class-wp-upgrader.php:1390
+#: wp-admin/includes/class-wp-upgrader.php:1531
+#: wp-admin/includes/class-wp-upgrader.php:1597
 msgid "Return to Themes page"
 msgstr "返回“主题”页面"
 
-#: wp-admin/includes/class-wp-upgrader.php:1421
+#: wp-admin/includes/class-wp-upgrader.php:1427
 msgid "Successfully installed the plugin <strong>%s %s</strong>."
 msgstr "安装插件 <strong>%s %s</strong> 成功。"
 
-#: wp-admin/includes/class-wp-upgrader.php:1433
+#: wp-admin/includes/class-wp-upgrader.php:1439
 msgid "Activate Plugin &amp; Run Importer"
 msgstr "启用插件并运行导入工具"
 
-#: wp-admin/includes/class-wp-upgrader.php:1443
+#: wp-admin/includes/class-wp-upgrader.php:1449
 msgid "Return to Importers"
 msgstr "返回“导入工具”页面"
 
-#: wp-admin/includes/class-wp-upgrader.php:1445
+#: wp-admin/includes/class-wp-upgrader.php:1451
 msgid "Return to Plugin Installer"
 msgstr "返回“插件安装器”页面"
 
-#: wp-admin/includes/class-wp-upgrader.php:1520
+#: wp-admin/includes/class-wp-upgrader.php:1526
 msgid "Enable this theme for all sites in this network"
 msgstr "为站点网络中的所有站点启用这个主题"
 
-#: wp-admin/includes/class-wp-upgrader.php:1523
+#: wp-admin/includes/class-wp-upgrader.php:1529
 msgid "Return to Theme Installer"
 msgstr "返回“主题安装器”页面"
 
-#: wp-admin/includes/class-wp-upgrader.php:1525
+#: wp-admin/includes/class-wp-upgrader.php:1531
 msgid "Themes page"
 msgstr "“主题”页面"
 
-#: wp-admin/includes/class-wp-upgrader.php:1549 wp-admin/update.php:157
+#: wp-admin/includes/class-wp-upgrader.php:1555 wp-admin/update.php:157
 msgid "Update Theme"
 msgstr "升级主题"
 
-#: wp-admin/includes/class-wp-upgrader.php:1580 wp-admin/themes.php:124
+#: wp-admin/includes/class-wp-upgrader.php:1586 wp-admin/themes.php:124
 msgid "Customize &#8220;%s&#8221;"
 msgstr "自定义“%s”"
 
-#: wp-admin/includes/class-wp-upgrader.php:1616
-#: wp-admin/includes/class-wp-upgrader.php:1650
+#: wp-admin/includes/class-wp-upgrader.php:1622
+#: wp-admin/includes/class-wp-upgrader.php:1656
 msgid "Please select a file"
 msgstr "请选择一个文件"
 
@@ -4384,7 +4382,7 @@ msgstr ""
 "的链接，但您不用急。"
 
 #: wp-admin/includes/dashboard.php:820 wp-admin/includes/dashboard.php:822
-#: wp-admin/includes/post.php:1197
+#: wp-admin/includes/post.php:1208
 msgid "Somebody"
 msgstr "有人"
 
@@ -4673,27 +4671,27 @@ msgid ""
 "the HTML form."
 msgstr "上传的文件尺寸超过 HTML 表单所定义的 MAX_FILE_SIZE 值。"
 
-#: wp-admin/includes/file.php:260 wp-admin/includes/file.php:387
+#: wp-admin/includes/file.php:260 wp-admin/includes/file.php:393
 msgid "The uploaded file was only partially uploaded."
 msgstr "上传的文件不完整。"
 
-#: wp-admin/includes/file.php:261 wp-admin/includes/file.php:388
+#: wp-admin/includes/file.php:261 wp-admin/includes/file.php:394
 msgid "No file was uploaded."
 msgstr "没有被上传的文件。"
 
-#: wp-admin/includes/file.php:263 wp-admin/includes/file.php:390
+#: wp-admin/includes/file.php:263 wp-admin/includes/file.php:396
 msgid "Missing a temporary folder."
 msgstr "缺少临时文件夹。"
 
-#: wp-admin/includes/file.php:264 wp-admin/includes/file.php:391
+#: wp-admin/includes/file.php:264 wp-admin/includes/file.php:397
 msgid "Failed to write file to disk."
 msgstr "写文件到磁盘失败。"
 
-#: wp-admin/includes/file.php:265 wp-admin/includes/file.php:392
+#: wp-admin/includes/file.php:265 wp-admin/includes/file.php:398
 msgid "File upload stopped by extension."
 msgstr "扩展中止了文件的上传。"
 
-#: wp-admin/includes/file.php:282 wp-admin/includes/file.php:408
+#: wp-admin/includes/file.php:282 wp-admin/includes/file.php:414
 msgid "Invalid form submission."
 msgstr "表单提交无效。"
 
@@ -4714,15 +4712,15 @@ msgstr ""
 msgid "Specified file failed upload test."
 msgstr "指定的文件没有通过上传测试。"
 
-#: wp-admin/includes/file.php:312 wp-admin/includes/file.php:433
+#: wp-admin/includes/file.php:312 wp-admin/includes/file.php:439
 msgid "Sorry, this file type is not permitted for security reasons."
 msgstr "抱歉，出于安全的考虑，不支持此文件类型。"
 
-#: wp-admin/includes/file.php:332 wp-admin/includes/file.php:455
+#: wp-admin/includes/file.php:337 wp-admin/includes/file.php:465
 msgid "The uploaded file could not be moved to %s."
 msgstr "无法将上传的文件移动至 %s。"
 
-#: wp-admin/includes/file.php:385
+#: wp-admin/includes/file.php:391
 msgid ""
 "The uploaded file exceeds the <code>upload_max_filesize</code> directive in "
 "<code>php.ini</code>."
@@ -4730,14 +4728,14 @@ msgstr ""
 "上传的文件尺寸超过 <code>php.ini</code> 中定义的 <code>upload_max_filesize</"
 "code> 值。"
 
-#: wp-admin/includes/file.php:386
+#: wp-admin/includes/file.php:392
 msgid ""
 "The uploaded file exceeds the <em>MAX_FILE_SIZE</em> directive that was "
 "specified in the HTML form."
 msgstr ""
 "上传的文件尺寸超过 HTML 表单所定义的 <strong>MAX_FILE_SIZE</strong> 值。"
 
-#: wp-admin/includes/file.php:416
+#: wp-admin/includes/file.php:422
 msgid ""
 "File is empty. Please upload something more substantial. This error could "
 "also be caused by uploads being disabled in your php.ini."
@@ -4745,113 +4743,113 @@ msgstr ""
 "文件是空的，请上传有内容的文件。这个错误也有可能是因为您的 php.ini 禁止了上传"
 "而发生的。"
 
-#: wp-admin/includes/file.php:420
+#: wp-admin/includes/file.php:426
 msgid "Specified file does not exist."
 msgstr "指定文件不存在。"
 
-#: wp-admin/includes/file.php:484
+#: wp-admin/includes/file.php:494
 msgid "Invalid URL Provided."
 msgstr "提供的 URL 无效。"
 
-#: wp-admin/includes/file.php:488
+#: wp-admin/includes/file.php:498
 msgid "Could not create Temporary file."
 msgstr "无法创建临时文件。"
 
-#: wp-admin/includes/file.php:582 wp-admin/includes/file.php:676
+#: wp-admin/includes/file.php:592 wp-admin/includes/file.php:686
 msgid "Incompatible Archive."
 msgstr "存档不兼容。"
 
-#: wp-admin/includes/file.php:586 wp-admin/includes/file.php:622
+#: wp-admin/includes/file.php:596 wp-admin/includes/file.php:632
 msgid "Could not retrieve file from archive."
 msgstr "无法从压缩文件中获取文件。"
 
-#: wp-admin/includes/file.php:632
+#: wp-admin/includes/file.php:642
 msgid "Could not extract file from archive."
 msgstr "无法从压缩文件解压缩。"
 
-#: wp-admin/includes/file.php:635 wp-admin/includes/file.php:721
-#: wp-admin/includes/file.php:762 wp-admin/includes/update-core.php:638
-#: wp-admin/includes/update-core.php:731 wp-admin/includes/update-core.php:823
+#: wp-admin/includes/file.php:645 wp-admin/includes/file.php:731
+#: wp-admin/includes/file.php:772 wp-admin/includes/update-core.php:640
+#: wp-admin/includes/update-core.php:733 wp-admin/includes/update-core.php:825
 msgid "Could not copy file."
 msgstr "无法复制文件。"
 
-#: wp-admin/includes/file.php:679
+#: wp-admin/includes/file.php:689
 msgid "Empty archive."
 msgstr "压缩文件为空。"
 
-#: wp-admin/includes/file.php:952
+#: wp-admin/includes/file.php:962
 msgid ""
 "<strong>ERROR:</strong> There was an error connecting to the server, Please "
 "verify the settings are correct."
 msgstr "<strong>错误</strong>：连接服务器时出错，请检查设置。"
 
-#: wp-admin/includes/file.php:960
+#: wp-admin/includes/file.php:970
 msgid "FTP"
 msgstr "FTP"
 
-#: wp-admin/includes/file.php:962
+#: wp-admin/includes/file.php:972
 msgid "FTPS (SSL)"
 msgstr "FTPS（SSL）"
 
-#: wp-admin/includes/file.php:964
+#: wp-admin/includes/file.php:974
 msgid "SSH2"
 msgstr "SSH2"
 
-#: wp-admin/includes/file.php:985
+#: wp-admin/includes/file.php:995
 msgid "Connection Information"
 msgstr "连接信息"
 
-#: wp-admin/includes/file.php:989
+#: wp-admin/includes/file.php:999
 msgid ""
 "To perform the requested action, WordPress needs to access your web server."
 msgstr "要执行请求的操作，WordPress 需要访问您网页服务器的权限。"
 
-#: wp-admin/includes/file.php:993
+#: wp-admin/includes/file.php:1003
 msgid "Please enter your FTP or SSH credentials to proceed."
 msgstr "请输入您的 FTP 或 SSH 登录凭据以继续。"
 
-#: wp-admin/includes/file.php:994
+#: wp-admin/includes/file.php:1004
 msgid "FTP/SSH Username"
 msgstr "FTP 或 SSH 用户名"
 
-#: wp-admin/includes/file.php:995
+#: wp-admin/includes/file.php:1005
 msgid "FTP/SSH Password"
 msgstr "FTP 或 SSH 密码"
 
-#: wp-admin/includes/file.php:997
+#: wp-admin/includes/file.php:1007
 msgid "Please enter your FTP credentials to proceed."
 msgstr "请输入您的 FTP 登录凭据以继续。"
 
-#: wp-admin/includes/file.php:998
+#: wp-admin/includes/file.php:1008
 msgid "FTP Username"
 msgstr "FTP 用户名"
 
-#: wp-admin/includes/file.php:999
+#: wp-admin/includes/file.php:1009
 msgid "FTP Password"
 msgstr "FTP 密码"
 
-#: wp-admin/includes/file.php:1003
+#: wp-admin/includes/file.php:1013
 msgid ""
 "If you do not remember your credentials, you should contact your web host."
 msgstr "如果您忘记了您的登录凭据（如用户名、密码），请联系您的网站托管商。"
 
-#: wp-admin/includes/file.php:1007
+#: wp-admin/includes/file.php:1017
 msgid "Hostname"
 msgstr "主机名"
 
-#: wp-admin/includes/file.php:1023
+#: wp-admin/includes/file.php:1033
 msgid "Authentication Keys"
 msgstr "验证密钥对"
 
-#: wp-admin/includes/file.php:1025
+#: wp-admin/includes/file.php:1035
 msgid "Public Key:"
 msgstr "公钥："
 
-#: wp-admin/includes/file.php:1026
+#: wp-admin/includes/file.php:1036
 msgid "Private Key:"
 msgstr "私钥："
 
-#: wp-admin/includes/file.php:1029
+#: wp-admin/includes/file.php:1039
 msgid ""
 "Enter the location on the server where the keys are located. If a passphrase "
 "is needed, enter that in the password field above."
@@ -4859,11 +4857,11 @@ msgstr ""
 "请输入密钥对在该服务器的存放地址。如果需要密码（passphrase），请输入在上方的"
 "密码一栏。"
 
-#: wp-admin/includes/file.php:1034 wp-admin/includes/file.php:1036
+#: wp-admin/includes/file.php:1044 wp-admin/includes/file.php:1046
 msgid "Connection Type"
 msgstr "连接类型"
 
-#: wp-admin/includes/file.php:1055
+#: wp-admin/includes/file.php:1065
 msgid "Proceed"
 msgstr "继续"
 
@@ -5190,11 +5188,11 @@ msgstr "显示"
 msgid "Hide"
 msgstr "隐藏"
 
-#: wp-admin/includes/media.php:1155 wp-admin/includes/media.php:2367
+#: wp-admin/includes/media.php:1155 wp-admin/includes/media.php:2365
 msgid "File name:"
 msgstr "文件名："
 
-#: wp-admin/includes/media.php:1156 wp-admin/includes/media.php:2370
+#: wp-admin/includes/media.php:1156 wp-admin/includes/media.php:2368
 msgid "File type:"
 msgstr "文件类型："
 
@@ -5202,7 +5200,7 @@ msgstr "文件类型："
 msgid "Upload date:"
 msgstr "上传日期："
 
-#: wp-admin/includes/media.php:1159 wp-admin/includes/media.php:2380
+#: wp-admin/includes/media.php:1159 wp-admin/includes/media.php:2378
 msgid "Dimensions:"
 msgstr "尺寸："
 
@@ -5384,7 +5382,7 @@ msgstr ""
 msgid "Sorry, you have used all of your storage quota of %s MB."
 msgstr "抱歉，您的储存限额已用完（%s MB）。"
 
-#: wp-admin/includes/media.php:2363
+#: wp-admin/includes/media.php:2361
 msgid "File URL:"
 msgstr "文件 URL："
 
@@ -6327,67 +6325,67 @@ msgstr "该插件没有有效的标题。"
 msgid "The \"%s\" options group has been removed. Use another settings group."
 msgstr "“%s”选项组已被移除，请使用另一个选项组。"
 
-#: wp-admin/includes/post.php:33
+#: wp-admin/includes/post.php:33 wp-admin/includes/post.php:72
 msgid "You are not allowed to edit pages as this user."
 msgstr "您无法以当前用户的身份编辑这个页面。"
 
-#: wp-admin/includes/post.php:35
+#: wp-admin/includes/post.php:35 wp-admin/includes/post.php:74
 msgid "You are not allowed to edit posts as this user."
 msgstr "您无法以当前用户的身份编辑文章。"
 
-#: wp-admin/includes/post.php:287
+#: wp-admin/includes/post.php:298
 msgid "You are not allowed to edit pages."
 msgstr "您没有编辑页面的权限。"
 
-#: wp-admin/includes/post.php:289
+#: wp-admin/includes/post.php:300
 msgid "You are not allowed to edit posts."
 msgstr "您没有编辑文章的权限。"
 
-#: wp-admin/includes/post.php:436
+#: wp-admin/includes/post.php:447
 msgid "Auto Draft"
 msgstr "自动草稿"
 
-#: wp-admin/includes/post.php:527
+#: wp-admin/includes/post.php:538
 msgid "You are not allowed to create pages on this site."
 msgstr "您无权在该站点创建页面。"
 
-#: wp-admin/includes/post.php:529
+#: wp-admin/includes/post.php:540
 msgid "You are not allowed to create posts or drafts on this site."
 msgstr "您无权在本站点创建文章或草稿。"
 
-#: wp-admin/includes/post.php:1055
+#: wp-admin/includes/post.php:1066
 msgid "Click to edit this part of the permalink"
 msgstr "点击编辑这部分固定链接"
 
-#: wp-admin/includes/post.php:1057
+#: wp-admin/includes/post.php:1068
 msgid "Temporary permalink. Click to edit this part."
 msgstr "临时固定链接，点击可更改这部分。"
 
-#: wp-admin/includes/post.php:1061 wp-admin/includes/post.php:1089
+#: wp-admin/includes/post.php:1072 wp-admin/includes/post.php:1100
 msgid "Permalink:"
 msgstr "固定链接："
 
-#: wp-admin/includes/post.php:1063
+#: wp-admin/includes/post.php:1074
 msgid "Change Permalinks"
 msgstr "更改固定链接"
 
-#: wp-admin/includes/post.php:1130
+#: wp-admin/includes/post.php:1141
 msgid "Remove featured image"
 msgstr "移除特色图像"
 
-#: wp-admin/includes/post.php:1201
+#: wp-admin/includes/post.php:1212
 msgid "Warning: %s is currently editing this post"
 msgstr "注意：%s 正在编辑该文章"
 
-#: wp-admin/includes/post.php:1204
+#: wp-admin/includes/post.php:1215
 msgid "Warning: %s is currently editing this page"
 msgstr "注意：%s 正在编辑该页面"
 
-#: wp-admin/includes/post.php:1207
+#: wp-admin/includes/post.php:1218
 msgid "Warning: %s is currently editing this."
 msgstr "注意：%s 当前正在编辑。"
 
-#: wp-admin/includes/post.php:1268
+#: wp-admin/includes/post.php:1279
 msgid "Preview not available. Please save as a draft first."
 msgstr "预览不可用。请先保存草稿。"
 
@@ -6694,10 +6692,6 @@ msgctxt "post state"
 msgid "Pending"
 msgstr "待审"
 
-#: wp-admin/includes/template.php:1609 wp-admin/options.php:225
-msgid "Save Changes"
-msgstr "保存更改"
-
 #: wp-admin/includes/template.php:1764
 msgid "New Feature: Toolbar"
 msgstr "新功能：一体化工具栏"
@@ -6991,15 +6985,15 @@ msgstr "照片博客"
 msgid "Seasonal"
 msgstr "四季"
 
-#: wp-admin/includes/update-core.php:619
+#: wp-admin/includes/update-core.php:621
 msgid "Verifying the unpacked files&#8230;"
 msgstr "正在校验解压的文件&#8230;"
 
-#: wp-admin/includes/update-core.php:630
+#: wp-admin/includes/update-core.php:632
 msgid "The update could not be unpacked"
 msgstr "无法解压升级包"
 
-#: wp-admin/includes/update-core.php:659
+#: wp-admin/includes/update-core.php:661
 msgid ""
 "The update cannot be installed because WordPress %1$s requires PHP version "
 "%2$s or higher and MySQL version %3$s or higher. You are running PHP version "
@@ -7008,7 +7002,7 @@ msgstr ""
 "升级无法完成，因为 WordPress %1$s 需要 PHP %2$s 或更高版本和 MySQL %3$s 或更"
 "高版本。而您当前的 PHP 版本为 %4$s，MySQL 版本为 %5$s。"
 
-#: wp-admin/includes/update-core.php:661
+#: wp-admin/includes/update-core.php:663
 msgid ""
 "The update cannot be installed because WordPress %1$s requires PHP version "
 "%2$s or higher. You are running version %3$s."
@@ -7016,7 +7010,7 @@ msgstr ""
 "无法安装更新，因为 WordPress %1$s 要求 PHP 版本 %2$s 或更高，而您运行的 PHP "
 "版本为 %3$s。"
 
-#: wp-admin/includes/update-core.php:663
+#: wp-admin/includes/update-core.php:665
 msgid ""
 "The update cannot be installed because WordPress %1$s requires MySQL version "
 "%2$s or higher. You are running version %3$s."
@@ -7024,15 +7018,15 @@ msgstr ""
 "无法安装更新，因为 WordPress %1$s 要求 MySQL 版本 %2$s 或更高，而您运行的 "
 "MySQL 版本为 %3$s。"
 
-#: wp-admin/includes/update-core.php:761
+#: wp-admin/includes/update-core.php:763
 msgid "Upgrading database&#8230;"
 msgstr "正在升级数据库&#8230;"
 
-#: wp-admin/includes/update-core.php:863 wp-admin/update-core.php:356
+#: wp-admin/includes/update-core.php:865 wp-admin/update-core.php:356
 msgid "WordPress updated successfully"
 msgstr "WordPress 升级成功"
 
-#: wp-admin/includes/update-core.php:866 wp-admin/update-core.php:357
+#: wp-admin/includes/update-core.php:868 wp-admin/update-core.php:357
 msgid ""
 "Welcome to WordPress %1$s. You will be redirected to the About WordPress "
 "screen. If not, click <a href=\"%2$s\">here</a>."
@@ -7040,7 +7034,7 @@ msgstr ""
 "欢迎使用 WordPress %1$s。我们将带您到“关于 WordPress”页面。如果没有自动跳转，"
 "请<a href=\"%2$s\">点击这里</a>。"
 
-#: wp-admin/includes/update-core.php:867 wp-admin/update-core.php:358
+#: wp-admin/includes/update-core.php:869 wp-admin/update-core.php:358
 msgid "Welcome to WordPress %1$s. <a href=\"%2$s\">Learn more</a>."
 msgstr "欢迎使用 WordPress %1$s。<a href=\"%2$s\">了解更多</a>。"
 
@@ -8111,11 +8105,6 @@ msgstr ""
 "<a href=\"http://codex.wordpress.org/zh-cn:%E6%8E%A7%E5%88%B6%E6%9D%BF_"
 "%E6%88%91%E7%9A%84%E7%AB%99%E7%82%B9%E9%A1%B5%E9%9D%A2\" target=\"_blank\">关"
 "于我的站点的中文文档</a>"
-
-#: wp-admin/my-sites.php:55 wp-admin/options-head.php:16
-#: wp-admin/options.php:164
-msgid "Settings saved."
-msgstr "设置已保存。"
 
 #: wp-admin/my-sites.php:64
 msgid "You must be a member of at least one site to use this page."

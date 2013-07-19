@@ -428,7 +428,11 @@ function wp_not_installed() {
 			wp_die( __( 'The site you have requested is not installed properly. Please contact the system administrator.' ) );
 	} elseif ( ! is_blog_installed() && false === strpos( $_SERVER['PHP_SELF'], 'install.php' ) && !defined( 'WP_INSTALLING' ) ) {
 
-		$link = wp_guess_url() . '/wp-admin/install.php';
+		if(!BIND_DOMAIN){
+			$link = 'http://'.$_SERVER["HTTP_HOST"].'/wp-admin/install.php?'.$_SERVER['QUERY_STRING'];
+		}else{
+			$link = BIND_DOMAIN . '/wp-admin/install.php';
+		}
 
 		require( ABSPATH . WPINC . '/kses.php' );
 		require( ABSPATH . WPINC . '/pluggable.php' );

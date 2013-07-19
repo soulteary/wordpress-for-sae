@@ -254,13 +254,14 @@ function wp_save_image_file( $filename, $image, $mime_type, $post_id ) {
 		if ( null !== $saved )
 			return $saved;
 
+		$tmpfile = tempnam(SAE_TMP_PATH, 'WPIMG');
 		switch ( $mime_type ) {
 			case 'image/jpeg':
-				return imagejpeg( $image, $filename, apply_filters( 'jpeg_quality', 90, 'edit_image' ) );
+				return imagejpeg( $image, $tmpfile, apply_filters( 'jpeg_quality', 90, 'edit_image' ) ) && copy($tmpfile, $filename);
 			case 'image/png':
-				return imagepng( $image, $filename );
+				return imagepng($image, $tmpfile) && copy($tmpfile, $filename);
 			case 'image/gif':
-				return imagegif( $image, $filename );
+				return imagegif($image, $tmpfile) && copy($tmpfile, $filename);
 			default:
 				return false;
 		}

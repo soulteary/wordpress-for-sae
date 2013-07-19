@@ -82,9 +82,9 @@ function wp_dashboard_setup() {
 	if ( !isset( $widget_options['dashboard_primary'] ) ) {
 		$update = true;
 		$widget_options['dashboard_primary'] = array(
-			'link' => apply_filters( 'dashboard_primary_link', __( 'http://wp4cloud.sinaapp.com/news/' ) ),
-			'url' => apply_filters( 'dashboard_primary_feed', __( 'http://wp4cloud.sinaapp.com/news/feed/' ) ),
-			'title' => apply_filters( 'dashboard_primary_title', __( 'WordPress For SAE Blog' ) ),
+			'link' => apply_filters( 'dashboard_primary_link', __( 'http://wp4cloud.sinaapp.com/' ) ),
+			'url' => apply_filters( 'dashboard_primary_feed', __( 'http://wp4cloud.sinaapp.com/feed/' ) ),
+			'title' => apply_filters( 'dashboard_primary_title', __( 'WordPress For SAE' ) ),
 			'items' => 2,
 			'show_summary' => 1,
 			'show_author' => 0,

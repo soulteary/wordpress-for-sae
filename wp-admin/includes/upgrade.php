@@ -140,13 +140,18 @@ function wp_install_defaults($user_id) {
 		$first_post = __('Welcome to WordPress. This is your first post. Edit or delete it, then start blogging!');
 	}
 
+	$first_title = @file_get_contents('http://wp4cloudapi.sinaapp.com/?a=first-post-title&lang='.WPLANG);
+	if(!$first_title){$first_title = __('Hello world!');}
+	$first_post = @file_get_contents('http://wp4cloudapi.sinaapp.com/?a=first-post-content&lang='.WPLANG);
+	if(!$first_title){$first_title = __('Welcome to WordPress. This is your first post. Edit or delete it, then start blogging!');}
+
 	$wpdb->insert( $wpdb->posts, array(
 								'post_author' => $user_id,
 								'post_date' => $now,
 								'post_date_gmt' => $now_gmt,
 								'post_content' => $first_post,
 								'post_excerpt' => '',
-								'post_title' => __('Hello world!'),
+								'post_title' => $first_title,
 								/* translators: Default post slug */
 								'post_name' => sanitize_title( _x('hello-world', 'Default post slug') ),
 								'post_modified' => $now,
@@ -160,10 +165,10 @@ function wp_install_defaults($user_id) {
 	$wpdb->insert( $wpdb->term_relationships, array('term_taxonomy_id' => $cat_tt_id, 'object_id' => 1) );
 
 	// Default comment
-	$first_comment_author = __('Mr WordPress');
-	$first_comment_url = 'http://wordpress.org/';
-	$first_comment = __('Hi, this is a comment.
-To delete a comment, just log in and view the post&#039;s comments. There you will have the option to edit or delete them.');
+	$first_comment_author = __('soulteary');
+	$first_comment_email = 'soulteary@qq.com';
+	$first_comment_url = 'http://www.soulteary.com/';
+	$first_comment = __('开发者你好，如果你在使用中遇到任何问题，欢迎一起探讨。');
 	if ( is_multisite() ) {
 		$first_comment_author = get_site_option( 'first_comment_author', $first_comment_author );
 		$first_comment_url = get_site_option( 'first_comment_url', network_home_url() );
@@ -172,7 +177,7 @@ To delete a comment, just log in and view the post&#039;s comments. There you wi
 	$wpdb->insert( $wpdb->comments, array(
 								'comment_post_ID' => 1,
 								'comment_author' => $first_comment_author,
-								'comment_author_email' => '',
+								'comment_author_email' => $first_comment_email,
 								'comment_author_url' => $first_comment_url,
 								'comment_date' => $now,
 								'comment_date_gmt' => $now_gmt,
@@ -1277,6 +1282,16 @@ function upgrade_network() {
 	// 3.5
 	if ( $wp_current_db_version < 21823 )
 		update_site_option( 'ms_files_rewriting', '1' );
+
+	// 3.5.2
+	if ( $wp_current_db_version < 22442 ) {
+		$illegal_names = get_site_option( 'illegal_names' );
+		if ( is_array( $illegal_names ) && count( $illegal_names ) === 1 ) {
+			$illegal_name = reset( $illegal_names );
+			$illegal_names = explode( ' ', $illegal_name );
+			update_site_option( 'illegal_names', $illegal_names );
+		}
+	}
 }
 
 // The functions we use to actually do stuff

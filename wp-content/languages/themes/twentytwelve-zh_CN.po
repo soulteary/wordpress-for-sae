@@ -2,21 +2,18 @@
 # This file is distributed under the GNU General Public License.
 msgid ""
 msgstr ""
-"Project-Id-Version: Twenty Twelve\n"
+"Project-Id-Version: Twenty Twelve 1.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/twentytwelve\n"
-"POT-Creation-Date: 2012-12-07 21:19:18+00:00\n"
-"PO-Revision-Date: 2012-12-11 20:38-0500\n"
-"Last-Translator: Jiehan Zheng <zheng@jiehan.org>\n"
-"Language-Team: WordPress China <wpchina@jiehan.org>\n"
+"POT-Creation-Date: 2013-04-26 13:58:46+00:00\n"
+"PO-Revision-Date: 2013-06-22 00:40-0000\n"
+"Last-Translator: Jimmy Xu <me@jimmyxu.org>\n"
+"Language-Team: WordPress China\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: GlotPress/0.1\n"
-"X-Poedit-Basepath: /home/jiehan/Documents/WordPress/core/trunk/wp-content/"
-"themes/twentytwelve/\n"
-"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Poedit 1.5.5\n"
 
 #: 404.php:17
 msgid "This is somewhat embarrassing, isn&rsquo;t it?"
@@ -246,6 +243,7 @@ msgstr "您的评论正等待审核。"
 msgid "Reply"
 msgstr "回复"
 
+#. Translators: used between list items, there is a space after the comma.
 #: functions.php:332 functions.php:335
 msgid ", "
 msgstr "、"
@@ -254,6 +252,8 @@ msgstr "、"
 msgid "View all posts by %s"
 msgstr "查看所有由 %s 发布的文章"
 
+#. Translators: 1 is category, 2 is tag, 3 is the date and 4 is the author's
+#. name.
 #: functions.php:352
 msgid ""
 "This entry was posted in %1$s and tagged %2$s on %3$s<span class=\"by-author"

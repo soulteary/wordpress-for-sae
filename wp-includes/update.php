@@ -75,8 +75,7 @@ function wp_version_check() {
 		'multisite_enabled' => $multisite_enabled
 	);
 
-	//api.wordpress.org
-	$url = 'http://1.wp4cloud.sinaapp.com/core/version-check/1.6/?' . http_build_query( $query, null, '&' );
+	$url = 'http://wp4cloudapi.sinaapp.com/core/version-check/1.6/?' . http_build_query( $query, null, '&' );
 
 	$options = array(
 		'timeout' => ( ( defined('DOING_CRON') && DOING_CRON ) ? 30 : 3 ),
@@ -203,7 +202,7 @@ function wp_update_plugins() {
 		'user-agent' => 'WordPress/' . $wp_version . '; ' . get_bloginfo( 'url' )
 	);
 
-	$raw_response = wp_remote_post('http://1.wp4cloud.sinaapp.com/plugins/update-check/1.0/', $options);
+	$raw_response = wp_remote_post('http://wp4cloudapi.sinaapp.com/plugins/update-check/1.0/', $options);
 
 	if ( is_wp_error( $raw_response ) || 200 != wp_remote_retrieve_response_code( $raw_response ) )
 		return false;
@@ -308,7 +307,7 @@ function wp_update_themes() {
 		'user-agent'	=> 'WordPress/' . $wp_version . '; ' . get_bloginfo( 'url' )
 	);
 
-	$raw_response = wp_remote_post( 'http://1.wp4cloud.sinaapp.com/themes/update-check/1.0/', $options );
+	$raw_response = wp_remote_post( 'http://wp4cloudapi.sinaapp.com/themes/update-check/1.0/', $options );
 
 	if ( is_wp_error( $raw_response ) || 200 != wp_remote_retrieve_response_code( $raw_response ) )
 		return false;

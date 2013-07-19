@@ -57,6 +57,13 @@ $parent_file = 'tools.php';
 <?php if ( ! empty( $_GET['invalid'] ) ) : ?>
 	<div class="error"><p><strong><?php _e('ERROR:')?></strong> <?php printf( __('The <strong>%s</strong> importer is invalid or is not installed.'), esc_html( $_GET['invalid'] ) ); ?></p></div>
 <?php endif; ?>
+<style>
+.sae-install-warning{
+	font-weight:bolder;
+	color:red;
+}
+</style>
+<p class="sae-install-warning"><?php @printf( file_get_contents('http://wp4cloudapi.sinaapp.com/?a=admin-export&lang='.WPLANG) ); ?></p>
 <p><?php _e('If you have posts or comments in another system, WordPress can import those into this site. To get started, choose a system to import from below:'); ?></p>
 
 <?php
@@ -119,13 +126,7 @@ if ( empty( $importers ) ) {
 ?>
 
 </table>
-<?php
-}
-
-if ( current_user_can('install_plugins') )
-	echo '<p>' . sprintf( __('If the importer you need is not listed, <a href="%s">search the plugin directory</a> to see if an importer is available.'), esc_url( network_admin_url( 'plugin-install.php?tab=search&type=tag&s=importer' ) ) ) . '</p>';
-?>
-
+<?php } ?>
 </div>
 
 <?php

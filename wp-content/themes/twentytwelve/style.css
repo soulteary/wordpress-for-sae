@@ -1725,3 +1725,13 @@ img#wpstats {
 		margin-left: 3.57142857rem;
 	}
 }
+#sae-support{
+    display: inline-block;
+    background: url('/wp-includes/images/sae-support.png');
+    overflow: hidden;
+    text-indent: 100%;
+    width: 120px;
+    height: 33px;
+    white-space: nowrap;
+    float: right;
+}

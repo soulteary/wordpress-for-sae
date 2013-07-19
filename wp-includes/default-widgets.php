@@ -319,6 +319,10 @@ class WP_Widget_Meta extends WP_Widget {
 			/* translators: meta widget link text */
 			_e( 'WordPress.org' );
 			?></a></li>
+			<li><a href="<?php esc_attr_e( 'http://wp4cloud.sinaapp.com/' ); ?>" title="<?php echo esc_attr(__('WordPress For SAE 技术支持博客。')); ?>"><?php
+			/* translators: meta widget link text */
+			_e( 'wp4cloud 技术支持博客' );
+			?></a></li>
 			<?php wp_meta(); ?>
 			</ul>
 <?php

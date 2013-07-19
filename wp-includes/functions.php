@@ -496,6 +496,7 @@ function wp_get_http( $url, $file_path = false, $red = 1 ) {
 
 	$options = array();
 	$options['redirection'] = 5;
+	$options['reject_unsafe_urls'] = true;
 
 	if ( false == $file_path )
 		$options['method'] = 'HEAD';
@@ -543,7 +544,7 @@ function wp_get_http_headers( $url, $deprecated = false ) {
 	if ( !empty( $deprecated ) )
 		_deprecated_argument( __FUNCTION__, '2.7' );
 
-	$response = wp_remote_head( $url );
+	$response = wp_remote_head( $url, array( 'reject_unsafe_urls' => true ) );
 
 	if ( is_wp_error( $response ) )
 		return false;
@@ -655,10 +656,10 @@ function add_query_arg() {
 	else
 		$frag = '';
 
-	if ( 0 === stripos( 'http://', $uri ) ) {
+	if ( 0 === stripos( $uri, 'http://' ) ) {
 		$protocol = 'http://';
 		$uri = substr( $uri, 7 );
-	} elseif ( 0 === stripos( 'https://', $uri ) ) {
+	} elseif ( 0 === stripos( $uri, 'https://' ) ) {
 		$protocol = 'https://';
 		$uri = substr( $uri, 8 );
 	} else {
@@ -758,6 +759,7 @@ function wp_remote_fopen( $uri ) {
 
 	$options = array();
 	$options['timeout'] = 10;
+	$options['reject_unsafe_urls'] = true;
 
 	$response = wp_remote_get( $uri, $options );
 
@@ -1314,31 +1316,9 @@ function wp_get_original_referer() {
 function wp_mkdir_p( $target ) {
 	if ( substr($target, 0, 10) == 'saestor://' ) {
 		return true;
+	}else{
+		return false;
 	}
-
-	// safe mode fails with a trailing slash under certain PHP versions.
-	$target = rtrim($target, '/'); // Use rtrim() instead of untrailingslashit to avoid formatting.php dependency.
-	if ( empty($target) )
-		$target = '/';
-
-	if ( file_exists( $target ) )
-		return @is_dir( $target );
-
-	// Attempting to create the directory may clutter up our display.
-	if ( @mkdir( $target ) ) {
-		$stat = @stat( dirname( $target ) );
-		$dir_perms = $stat['mode'] & 0007777;  // Get the permission bits.
-		@chmod( $target, $dir_perms );
-		return true;
-	} elseif ( is_dir( dirname( $target ) ) ) {
-			return false;
-	}
-
-	// If the above failed, attempt to create the parent node, then try again.
-	if ( ( $target != '/' ) && ( wp_mkdir_p( dirname( $target ) ) ) )
-		return wp_mkdir_p( $target );
-
-	return false;
 }
 
 /**
@@ -1516,44 +1496,6 @@ function wp_upload_dir( $time = null ) {
 		$url = trailingslashit( $siteurl ) . UPLOADS;
 	}
 
-	// If multisite (and if not the main site in a post-MU network)
-	if ( is_multisite() && ! ( is_main_site() && defined( 'MULTISITE' ) ) ) {
-
-		if ( ! get_site_option( 'ms_files_rewriting' ) ) {
-			// If ms-files rewriting is disabled (networks created post-3.5), it is fairly straightforward:
-			// Append sites/%d if we're not on the main site (for post-MU networks). (The extra directory
-			// prevents a four-digit ID from conflicting with a year-based directory for the main site.
-			// But if a MU-era network has disabled ms-files rewriting manually, they don't need the extra
-			// directory, as they never had wp-content/uploads for the main site.)
-
-			if ( defined( 'MULTISITE' ) )
-				$ms_dir = '/sites/' . get_current_blog_id();
-			else
-				$ms_dir = '/' . get_current_blog_id();
-
-			$dir .= $ms_dir;
-			$url .= $ms_dir;
-
-		} elseif ( defined( 'UPLOADS' ) && ! ms_is_switched() ) {
-			// Handle the old-form ms-files.php rewriting if the network still has that enabled.
-			// When ms-files rewriting is enabled, then we only listen to UPLOADS when:
-			//   1) we are not on the main site in a post-MU network,
-			//      as wp-content/uploads is used there, and
-			//   2) we are not switched, as ms_upload_constants() hardcodes
-			//      these constants to reflect the original blog ID.
-			//
-			// Rather than UPLOADS, we actually use BLOGUPLOADDIR if it is set, as it is absolute.
-			// (And it will be set, see ms_upload_constants().) Otherwise, UPLOADS can be used, as
-			// as it is relative to ABSPATH. For the final piece: when UPLOADS is used with ms-files
-			// rewriting in multisite, the resulting URL is /files. (#WP22702 for background.)
-
-			if ( defined( 'BLOGUPLOADDIR' ) )
-				$dir = untrailingslashit( BLOGUPLOADDIR );
-			else
-				$dir = ABSPATH . UPLOADS;
-			$url = trailingslashit( $siteurl ) . 'files';
-		}
-	}
 
 	$dir = SAE_DIR;
 	$url = SAE_URL;
@@ -2946,9 +2888,15 @@ function _doing_it_wrong( $function, $message, $version ) {
 
 	// Allow plugin to filter the output error trigger
 	if ( WP_DEBUG && apply_filters( 'doing_it_wrong_trigger_error', true ) ) {
-		$version = is_null( $version ) ? '' : sprintf( __( '(This message was added in version %s.)' ), $version );
-		$message .= ' ' . __( 'Please see <a href="http://codex.wordpress.org/Debugging_in_WordPress">Debugging in WordPress</a> for more information.' );
-		trigger_error( sprintf( __( '%1$s was called <strong>incorrectly</strong>. %2$s %3$s' ), $function, $message, $version ) );
+		if ( function_exists( '__' ) ) {
+			$version = is_null( $version ) ? '' : sprintf( __( '(This message was added in version %s.)' ), $version );
+			$message .= ' ' . __( 'Please see <a href="http://codex.wordpress.org/Debugging_in_WordPress">Debugging in WordPress</a> for more information.' );
+			trigger_error( sprintf( __( '%1$s was called <strong>incorrectly</strong>. %2$s %3$s' ), $function, $message, $version ) );
+		} else {
+			$version = is_null( $version ) ? '' : sprintf( '(This message was added in version %s.)', $version );
+			$message .= ' Please see <a href="http://codex.wordpress.org/Debugging_in_WordPress">Debugging in WordPress</a> for more information.';
+			trigger_error( sprintf( '%1$s was called <strong>incorrectly</strong>. %2$s %3$s', $function, $message, $version ) );
+		}
 	}
 }
 
@@ -3679,6 +3627,14 @@ function wp_find_hierarchy_loop( $callback, $start, $start_parent, $callback_arg
  * @return mixed scalar ID of some arbitrary member of the loop, or array of IDs of all members of loop if $_return_loop
  */
 function wp_find_hierarchy_loop_tortoise_hare( $callback, $start, $override = array(), $callback_args = array(), $_return_loop = false ) {
+
+	if ( !function_exists('utf8_encode') ) {
+		function utf8_encode($str) {
+			$encoding_in = mb_detect_encoding($str);
+			return mb_convert_encoding($str, 'UTF-8', $encoding_in);
+		}
+	}
+
 	$tortoise = $hare = $evanescent_hare = $start;
 	$return = array();
 
@@ -3703,14 +3659,6 @@ function wp_find_hierarchy_loop_tortoise_hare( $callback, $start, $override = ar
 	}
 
 	return false;
-}
-
-
-if ( !function_exists('utf8_encode') ) {
-	function utf8_encode($str) {
-		$encoding_in = mb_detect_encoding($str);
-		return mb_convert_encoding($str, 'UTF-8', $encoding_in);
-	}
 }
 
 /**

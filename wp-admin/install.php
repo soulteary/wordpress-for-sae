@@ -179,8 +179,13 @@ switch($step) {
 
 <h1><?php _e( 'Information needed' ); ?></h1>
 <p><?php _e( 'Please provide the following information. Don&#8217;t worry, you can always change these settings later.' ); ?></p>
-<p style="font-weight:bolder; color:red;"><?php @printf( file_get_contents('http://wp4saeapi.sinaapp.com/install_announce.txt') ); ?></p>
-
+<style>
+.sae-install-warning{
+	font-weight:bolder;
+	color:red;
+}
+</style>
+<p class="sae-install-warning"><?php @printf( file_get_contents('http://wp4cloudapi.sinaapp.com/?a=install-announce&lang='.WPLANG) ); ?></p>
 <?php
 		display_setup_form();
 		break;
