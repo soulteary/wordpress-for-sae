@@ -38,25 +38,25 @@ define('WP_USE_MULTIPLE_DB', true);
 
 /** Support Muitiple Database */
 $db_list = array(
-  	'write'=> array(
-			array(
-				'db_host' => SAE_MYSQL_HOST_M.':'.SAE_MYSQL_PORT,
-				'db_user'=> SAE_MYSQL_USER,
-				'db_password'=> SAE_MYSQL_PASS,
-				'db_name'=> SAE_MYSQL_DB,
-				'db_charset'=> 'utf8'
-				)
-			),
-		'read'=> array(
-			array(
-				'db_host' => SAE_MYSQL_HOST_S.':'.SAE_MYSQL_PORT,
-				'db_user'=> SAE_MYSQL_USER,
-				'db_password'=> SAE_MYSQL_PASS,
-				'db_name'=> SAE_MYSQL_DB,
-				'db_charset'=> 'utf8'
-				)
-			),
-		);
+    'write' => array(
+        array(
+            'db_host' => SAE_MYSQL_HOST_M . ':' . SAE_MYSQL_PORT,
+            'db_user' => SAE_MYSQL_USER,
+            'db_password' => SAE_MYSQL_PASS,
+            'db_name' => SAE_MYSQL_DB,
+            'db_charset' => 'utf8'
+        )
+    ),
+    'read' => array(
+        array(
+            'db_host' => SAE_MYSQL_HOST_S . ':' . SAE_MYSQL_PORT,
+            'db_user' => SAE_MYSQL_USER,
+            'db_password' => SAE_MYSQL_PASS,
+            'db_name' => SAE_MYSQL_DB,
+            'db_charset' => 'utf8'
+        )
+    ),
+);
 $global_db_list = $db_list['write'];
 
 /** SAE Storage Domain */
@@ -95,7 +95,7 @@ define('NONCE_SALT',       hash_hmac('sha1', SAE_ACCESSKEY . 'NONCE_SALT', SAE_S
  * You can have multiple installations in one database if you give each a unique
  * prefix. Only numbers, letters, and underscores please!
  */
-$table_prefix  = 'w352_';
+$table_prefix  = 'wp_';
 
 /**
  * WordPress Localized Language, defaults to English.

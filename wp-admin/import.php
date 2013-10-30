@@ -9,7 +9,7 @@
 define('WP_LOAD_IMPORTERS', true);
 
 /** Load WordPress Bootstrap */
-require_once ('admin.php');
+require_once( dirname( __FILE__ ) . '/admin.php' );
 
 if ( !current_user_can('import') )
 	wp_die(__('You do not have sufficient permissions to import content in this site.'));
@@ -47,7 +47,7 @@ if ( ! empty( $_GET['invalid'] ) && isset( $popular_importers[ $_GET['invalid'] 
 add_thickbox();
 wp_enqueue_script( 'plugin-install' );
 
-require_once ('admin-header.php');
+require_once( ABSPATH . 'wp-admin/admin-header.php' );
 $parent_file = 'tools.php';
 ?>
 
@@ -57,14 +57,16 @@ $parent_file = 'tools.php';
 <?php if ( ! empty( $_GET['invalid'] ) ) : ?>
 	<div class="error"><p><strong><?php _e('ERROR:')?></strong> <?php printf( __('The <strong>%s</strong> importer is invalid or is not installed.'), esc_html( $_GET['invalid'] ) ); ?></p></div>
 <?php endif; ?>
+
 <style>
 .sae-install-warning{
-	font-weight:bolder;
-	color:red;
+    font-weight:bolder;
+    color:red;
 }
 </style>
 <p class="sae-install-warning"><?php @printf( file_get_contents('http://wp4cloudapi.sinaapp.com/?a=admin-export&lang='.WPLANG) ); ?></p>
-<p><?php _e('If you have posts or comments in another system, WordPress can import those into this site. To get started, choose a system to import from below:'); ?></p>
+
+    <p><?php _e('If you have posts or comments in another system, WordPress can import those into this site. To get started, choose a system to import from below:'); ?></p>
 
 <?php
 
@@ -126,9 +128,15 @@ if ( empty( $importers ) ) {
 ?>
 
 </table>
-<?php } ?>
+<?php
+}
+
+if ( current_user_can('install_plugins') )
+	echo '<p>' . sprintf( __('If the importer you need is not listed, <a href="%s">search the plugin directory</a> to see if an importer is available.'), esc_url( network_admin_url( 'plugin-install.php?tab=search&type=tag&s=importer' ) ) ) . '</p>';
+?>
+
 </div>
 
 <?php
 
-include ('admin-footer.php');
+include( ABSPATH . 'wp-admin/admin-footer.php' );

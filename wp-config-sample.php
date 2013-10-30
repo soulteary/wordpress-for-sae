@@ -1,44 +1,44 @@
 <?php
 /**
- * The base configurations of the WordPress.
+ * WordPress基础配置文件。
  *
- * This file has the following configurations: MySQL settings, Table Prefix,
- * Secret Keys, WordPress Language, and ABSPATH. You can find more information
- * by visiting {@link http://codex.wordpress.org/Editing_wp-config.php Editing
- * wp-config.php} Codex page. You can get the MySQL settings from your web host.
+ * 本文件包含以下配置选项：MySQL设置、数据库表名前缀、密钥、
+ * WordPress语言设定以及ABSPATH。如需更多信息，请访问
+ * {@link http://codex.wordpress.org/zh-cn:%E7%BC%96%E8%BE%91_wp-config.php
+ * 编辑wp-config.php}Codex页面。MySQL设置具体信息请咨询您的空间提供商。
  *
- * This file is used by the wp-config.php creation script during the
- * installation. You don't have to use the web site, you can just copy this file
- * to "wp-config.php" and fill in the values.
+ * 这个文件被安装程序用于自动生成wp-config.php配置文件，
+ * 您可以手动复制这个文件，并重命名为“wp-config.php”，然后填入相关信息。
  *
  * @package WordPress
  */
 
-// ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
+// ** MySQL 设置 - 具体信息来自您正在使用的主机 ** //
+/** WordPress数据库的名称 */
 define('DB_NAME', 'database_name_here');
 
-/** MySQL database username */
+/** MySQL数据库用户名 */
 define('DB_USER', 'username_here');
 
-/** MySQL database password */
+/** MySQL数据库密码 */
 define('DB_PASSWORD', 'password_here');
 
-/** MySQL hostname */
+/** MySQL主机 */
 define('DB_HOST', 'localhost');
 
-/** Database Charset to use in creating database tables. */
+/** 创建数据表时默认的文字编码 */
 define('DB_CHARSET', 'utf8');
 
-/** The Database Collate type. Don't change this if in doubt. */
+/** 数据库整理类型。如不确定请勿更改 */
 define('DB_COLLATE', '');
 
 /**#@+
- * Authentication Unique Keys and Salts.
+ * 身份认证密钥与盐。
  *
- * Change these to different unique phrases!
- * You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}
- * You can change these at any point in time to invalidate all existing cookies. This will force all users to have to log in again.
+ * 修改为任意独一无二的字串！
+ * 或者直接访问{@link https://api.wordpress.org/secret-key/1.1/salt/
+ * WordPress.org密钥生成服务}
+ * 任何修改都会导致所有cookies失效，所有用户将必须重新登录。
  *
  * @since 2.6.0
  */
@@ -54,37 +54,44 @@ define('NONCE_SALT',       'put your unique phrase here');
 /**#@-*/
 
 /**
- * WordPress Database Table prefix.
+ * WordPress数据表前缀。
  *
- * You can have multiple installations in one database if you give each a unique
- * prefix. Only numbers, letters, and underscores please!
+ * 如果您有在同一数据库内安装多个WordPress的需求，请为每个WordPress设置
+ * 不同的数据表前缀。前缀名只能为数字、字母加下划线。
  */
 $table_prefix  = 'wp_';
 
 /**
- * WordPress Localized Language, defaults to English.
+ * WordPress语言设置，中文版本默认为中文。
  *
- * Change this to localize WordPress. A corresponding MO file for the chosen
- * language must be installed to wp-content/languages. For example, install
- * de_DE.mo to wp-content/languages and set WPLANG to 'de_DE' to enable German
- * language support.
+ * 本项设定能够让WordPress显示您需要的语言。
+ * wp-content/languages内应放置同名的.mo语言文件。
+ * 例如，要使用WordPress简体中文界面，请在wp-content/languages
+ * 放入zh_CN.mo，并将WPLANG设为'zh_CN'。
  */
-define('WPLANG', '');
+define('WPLANG', 'zh_CN');
 
 /**
- * For developers: WordPress debugging mode.
+ * 开发者专用：WordPress调试模式。
  *
- * Change this to true to enable the display of notices during development.
- * It is strongly recommended that plugin and theme developers use WP_DEBUG
- * in their development environments.
+ * 将这个值改为true，WordPress将显示所有用于开发的提示。
+ * 强烈建议插件开发者在开发环境中启用WP_DEBUG。
  */
 define('WP_DEBUG', false);
 
-/* That's all, stop editing! Happy blogging. */
+/**
+ * zh_CN本地化设置：启用ICP备案号显示
+ *
+ * 可在设置→常规中修改。
+ * 如需禁用，请移除或注释掉本行。
+ */
+define('WP_ZH_CN_ICP_NUM', true);
 
-/** Absolute path to the WordPress directory. */
+/* 好了！请不要再继续编辑。请保存本文件。使用愉快！ */
+
+/** WordPress目录的绝对路径。 */
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 
-/** Sets up WordPress vars and included files. */
+/** 设置WordPress变量和包含文件。 */
 require_once(ABSPATH . 'wp-settings.php');

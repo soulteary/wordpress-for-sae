@@ -1,9 +1,8 @@
 <?php
 /**
- * The template for displaying the footer.
+ * The template for displaying the footer
  *
- * Contains footer content and the closing of the
- * #main and #page div elements.
+ * Contains footer content and the closing of the #main and #page div elements.
  *
  * @package WordPress
  * @subpackage Twenty_Twelve
@@ -13,8 +12,7 @@
 	</div><!-- #main .wrapper -->
 	<footer id="colophon" role="contentinfo">
 		<div class="site-info">
-            <a id="sae-support" href="http://sae.sina.com.cn">新浪云计算</a>
-            <?php do_action( 'twentytwelve_credits' ); ?>
+			<?php do_action( 'twentytwelve_credits' ); ?>
 			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'twentytwelve' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'twentytwelve' ); ?>"><?php printf( __( 'Proudly powered by %s', 'twentytwelve' ), 'WordPress' ); ?></a>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
