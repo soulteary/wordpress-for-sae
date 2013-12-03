@@ -21,12 +21,15 @@ add_filter('SAE_FILTER_UPLOAD_DIR', 'SAE_FILTER_UPLOAD_DIR');
  * 由于本地禁止读写特性，禁用在线安装插件以及主题等的功能。
  *
  * @file wp-includes/capabilities.php
+ * @logs
+ *       - [2013/12/3]去掉对 edit_themes 限制，代码空间只读，不会造成影响。
+ *       - 解决部分主题后台不能显示的问题。
  * @since 3.5.2
  *
  */
 function SAE_FILTER_USER_CAPABILITY($capability)
 {
-    $block_action = array('edit_themes','install_plugins','install_themes', 'edit_plugins', 'update_plugins', 'install_plugins', 'update_themes','delete_plugins','delete_themes','delete_plugins');
+    $block_action = array('install_plugins','install_themes', 'edit_plugins', 'update_plugins', 'install_plugins', 'update_themes','delete_plugins','delete_themes','delete_plugins');
     if (in_array($capability, $block_action)!=false) {
         return false;
     }
@@ -46,7 +49,7 @@ function SAE_FILTER_USER_CAPABILITY($capability)
  * 检查是否正常开启了STORAGE服务以及创建DOMAIN。
  *
  * @file wp-includes/capabilities.php
- * @since 3.7.2
+ * @since 3.7.1
  *
  */
 function SAE_FLITER_STORAGE_CHECKER($ak){

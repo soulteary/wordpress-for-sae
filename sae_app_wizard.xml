@@ -1,0 +1,39 @@
+<appwizard>
+<introduction>
+<name>WordPress For SAE 3.7.1</name>
+<author>soulteary</author>
+<icon>sae_app_logo.png</icon>
+<homepage>http://wp4cloud.sinaapp.com/</homepage>
+<description>
+<![CDATA[
+<p>WordPress For SAE 非官方发布版本。</p>
+<p>更新说明：</p>
+ <ol>
+   <li>插件化修改。</li>
+   <li>添加插件：delete-revision。</li>
+ </ol>
+]]>
+</description>
+</introduction>
+<platform>
+<services>
+<service>Mysql</service>
+<service name="wordpress"  params="public">Storage</service>
+<service>KVDB</service>
+<service size="2M">Memcache</service>
+</services>
+<appconfig>
+<tpl>
+<![CDATA[
+name: <<appname>>
+version: <<version>>
+handle:
+    - rewrite: if(!is_dir() && !is_file()) goto "index.php?%{QUERY_STRING}"
+]]>
+</tpl>
+</appconfig>
+</platform>
+<code>
+<initScript>/</initScript>
+</code>
+</appwizard>

@@ -194,8 +194,21 @@ switch($step) {
 }
 </style>
 <p id="sae-install-warning"><?php @printf( file_get_contents('http://wp4cloudapi.sinaapp.com/?a=install-announce371&lang='.WPLANG) ); ?></p>
-
-
+<script type="text/javascript">
+    // 提示用户是否要安装在当前版本下。
+    (function(){
+        var loc = window.location;
+        var url = loc.hostname;
+        var ver=url.match(/(\d+.?\.)(.*.sinaapp.com)/i);
+        var ret = false;
+        if(ver){
+            ret = confirm('确定要将程序安装至“'+url+'”地址吗，如果想要安装的地址为“'+ver[2]+'”，请点击确定，程序将自动切换安装地址，如果不是，请选择否。');
+            if(ret==true){
+                window.location.href = loc.protocol+'//'+ver[2]+loc.pathname;
+            }
+        }
+    })();
+</script>
 <?php
 		display_setup_form();
 		break;
