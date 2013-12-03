@@ -1,6 +1,13 @@
 WordPress 3.7.1 For SAE 
 =================
 
+更新说明
+-----------------
+- 2013/12/3 添加1个文章版本控制插件，支持部分主题后台显示，安装时判断是否要安装在子版本目录下，支持自动安装，免去手工操作。[详情](https://github.com/soulteary/wordpress-for-sae/wiki/WordPress-3.7.1-For-SAE-%E4%BF%AE%E6%94%B9%E8%AE%B0%E5%BD%95-2)
+
+
+程序概要
+-----------------
 简单的把移植改动集中到了一个mu 插件中, sae-support.php 
 改动都比较简单,就不赘语了.
 
