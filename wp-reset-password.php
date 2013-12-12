@@ -2,7 +2,8 @@
 /**
  * WordPress For SAE PassWord Reset Tools
  * @soulteary 2013.7 [http://www.soulteary.com]
- *
+ * @update 2013.12.12
+ * @see http://www.soulteary.com/2013/12/12/wordpress-reset-password.html
  */
 
 define('FILE_NAME', basename($_SERVER['SCRIPT_FILENAME']));
@@ -26,7 +27,7 @@ function makeTpl($title, $event = false){
     <div id="login">
         <h1><a href="http://cn.wordpress.org/" title="基于 WordPress">WordPress For SAE</a></h1>
         <?php if($event == 'TOKEN'):?>
-        <div id="login_error"><strong>错误</strong>：您输入的Secret Key不正确。<br></div>
+        <div id="login_error"><strong>错误</strong>：您输入的Secret Key不正确，请前往<a href="http://sae.sina.com.cn" target="_blank">SAE在线管理平台</a>重新获取。<br></div>
         <?php elseif('RESET-EMPTY'==$event):?>
         <style type="text/css">
             .login #login_error {
@@ -53,11 +54,10 @@ function makeTpl($title, $event = false){
                     <input type="password" name="token" id="token" class="input" value="" size="20" /></label>
             </p>
             <p class="submit">
-                <input type="submit" name="wp-submit" id="wp-submit" class="button button-primary button-large"
-                       value="验证" />
+                <input type="submit" name="wp-submit" id="wp-submit" class="button button-primary button-large" value="验证" />
             </p>
         <?php elseif('RESET-EMPTY' == $event || 'RESET-ERROR' == $event):?>
-        <form name="loginform" id="loginform" action="./<?=FILE_NAME?>?token=<?=TOKEN;?>" method="post">
+        <form name="loginform" id="loginform" action="./<?=FILE_NAME?>" method="post">
             <p>
                 <label for="username">帐号名称<br />
                     <input type="text" name="username" id="username" class="input" value="" size="20" /></label>
@@ -66,9 +66,9 @@ function makeTpl($title, $event = false){
                 <label for="password">新的密码<br />
                     <input type="password" name="password" id="password" class="input" value="" size="20" /></label>
             </p>
+            <input type="hidden" name="token" value="<?=TOKEN;?>"/>
             <p class="submit">
-                <input type="submit" name="wp-submit" id="wp-submit" class="button button-primary button-large"
-                       value="修改" />
+                <input type="submit" name="wp-submit" id="wp-submit" class="button button-primary button-large" value="修改" />
             </p>
         <?php elseif('RESET-DONE' == $event):?>
         <form name="loginform" id="loginform" method="post">
@@ -88,35 +88,33 @@ function makeTpl($title, $event = false){
     </body>
     </html>
 <?php
-    exit();
+    exit;
 }
-
-
-
 
 define('TOKEN', SAE_SECRETKEY);
-if(!isset($_REQUEST['token'])||empty($_REQUEST['token'])){
-    makeTpl('权限验证');
+if(!isset($_POST['token'])||empty($_POST['token'])){
+    makeTpl('管理员验证');
 }else{
-    if($_REQUEST['token'] != TOKEN){
-        makeTpl('权限验证','TOKEN');
+    if($_POST['token'] != TOKEN){
+        makeTpl('管理员验证','TOKEN');
     }
 }
 
-//include("wp-config.php");
-//include("wp-blog-header.php");
+$username = trim($_POST['username']);
+$password = trim($_POST['password']);
 
-
-
-if (!isset($_POST['password'])||!isset($_POST['username'])||empty($_POST['username'])||empty($_POST['username'])) {
+if (!isset($password)||!isset($username)||empty($username)||empty($password)) {
     makeTpl('重置帐号','RESET-EMPTY');
 } else {
-    $sql = "UPDATE " . $wpdb->users . " SET user_pass = '" . md5($_POST['password']) . "' WHERE user_login = '".$_POST['username']."'";
-    if ($link = $wpdb->query($sql)) {
-        makeTpl('重置帐号','RESET-DONE');
-        exit;
-    } else {
+
+    $username = wp_slash( $username );
+    $user = WP_User::get_data_by('login', $username);
+
+    if(!$user){
         makeTpl('重置帐号','RESET-ERROR');
     }
+    wp_set_password($password, $user->ID);
+    wp_password_change_notification( $user );
+    makeTpl('重置帐号','RESET-DONE');
 }
 ?>
