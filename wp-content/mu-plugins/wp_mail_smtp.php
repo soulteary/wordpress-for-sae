@@ -42,11 +42,11 @@ $wpms_options = array (
 	'mail_from' => '',
 	'mail_from_name' => '',
 	'mailer' => 'smtp',
-	'mail_set_return_path' => 'false',
-	'smtp_host' => 'localhost',
-	'smtp_port' => '25',
-	'smtp_ssl' => 'none',
-	'smtp_auth' => false,
+	'mail_set_return_path' => 'true',
+	'smtp_host' => 'smtp.exmail.qq.com',
+	'smtp_port' => '465',
+	'smtp_ssl' => true,
+	'smtp_auth' => true,
 	'smtp_user' => '',
 	'smtp_pass' => ''
 );
@@ -177,7 +177,7 @@ function wp_mail_smtp_options_page() {
 	}
 
 	// Send a test mail if necessary
-	if (isset($_POST['wpms_action']) && $_POST['wpms_action'] == __('Send Test', 'wp_mail_smtp') && isset($_POST['to'])) {
+	if (isset($_POST['wpms_action']) && $_POST['wpms_action'] == '发送测试邮件' && isset($_POST['to'])) {
 		
 		// Set up the mail variables
 		$to = $_POST['to'];
@@ -219,107 +219,99 @@ function wp_mail_smtp_options_page() {
 	
 	?>
 <div class="wrap">
-<h2><?php _e('Advanced Email Options', 'wp_mail_smtp'); ?></h2>
+<h2>邮件设置</h2>
 <form method="post" action="options.php">
 <?php wp_nonce_field('email-options'); ?>
 
 <table class="optiontable form-table">
 <tr valign="top">
-<th scope="row"><label for="mail_from"><?php _e('From Email', 'wp_mail_smtp'); ?></label></th>
+<th scope="row"><label for="mail_from">发送邮件地址</label></th>
 <td><input name="mail_from" type="text" id="mail_from" value="<?php print(get_option('mail_from')); ?>" size="40" class="regular-text" />
-<span class="description"><?php _e('You can specify the email address that emails should be sent from. If you leave this blank, the default email will be used.', 'wp_mail_smtp'); if(get_option('db_version') < 6124) { print('<br /><span style="color: red;">'); _e('<strong>Please Note:</strong> You appear to be using a version of WordPress prior to 2.3. Please ignore the From Name field and instead enter Name&lt;email@domain.com&gt; in this field.', 'wp_mail_smtp'); print('</span>'); } ?></span></td>
+<span class="description">你可以指定发送邮件的邮箱地址，如果不填写，将会使用默认的地址。</span></td>
 </tr>
 <tr valign="top">
-<th scope="row"><label for="mail_from_name"><?php _e('From Name', 'wp_mail_smtp'); ?></label></th>
+<th scope="row"><label for="mail_from_name">发送邮件昵称</label></th>
 <td><input name="mail_from_name" type="text" id="mail_from_name" value="<?php print(get_option('mail_from_name')); ?>" size="40" class="regular-text" />
-<span class="description"><?php _e('You can specify the name that emails should be sent from. If you leave this blank, the emails will be sent from WordPress.', 'wp_mail_smtp'); ?></span></td>
+<span class="description">你可以指定发送邮件的昵称，如果不填写，将会使用WordPress作为昵称。</span></td>
 </tr>
 </table>
 
 
 <table class="optiontable form-table">
 <tr valign="top">
-<th scope="row"><?php _e('Mailer', 'wp_mail_smtp'); ?> </th>
+<th scope="row">发信方式 </th>
 <td><fieldset><legend class="screen-reader-text"><span><?php _e('Mailer', 'wp_mail_smtp'); ?></legend>
-<p><input id="mailer_smtp" type="radio" name="mailer" value="smtp" <?php checked('smtp', get_option('mailer')); ?> />
-<label for="mailer_smtp"><?php _e('Send all WordPress emails via SMTP.', 'wp_mail_smtp'); ?></label></p>
-<p><input id="mailer_mail" type="radio" name="mailer" value="mail" <?php checked('mail', get_option('mailer')); ?> />
-<label for="mailer_mail"><?php _e('Use the PHP mail() function to send emails.', 'wp_mail_smtp'); ?></label></p>
+<input id="mailer_smtp" type="radio" name="mailer" value="smtp" <?php checked('smtp', get_option('mailer')); ?> />
+<label for="mailer_smtp">使用SMTP方式来发送邮件。</label>
 </fieldset></td>
 </tr>
-</table>
 
-
-<table class="optiontable form-table">
 <tr valign="top">
-<th scope="row"><?php _e('Return Path', 'wp_mail_smtp'); ?> </th>
+<th scope="row">回信地址 </th>
 <td><fieldset><legend class="screen-reader-text"><span><?php _e('Return Path', 'wp_mail_smtp'); ?></span></legend><label for="mail_set_return_path">
-<input name="mail_set_return_path" type="checkbox" id="mail_set_return_path" value="true" <?php checked('true', get_option('mail_set_return_path')); ?> />
-<?php _e('Set the return-path to match the From Email'); ?></label>
+<input name="mail_set_return_path" type="checkbox" id="mail_set_return_path" value="true" <?php checked('true', get_option('mail_set_return_path')); ?> />回信地址与发件地址保持一致。</label>
 </fieldset></td>
 </tr>
 </table>
 
-<h3><?php _e('SMTP Options', 'wp_mail_smtp'); ?></h3>
-<p><?php _e('These options only apply if you have chosen to send mail by SMTP above.', 'wp_mail_smtp'); ?></p>
 
+<h3>SMTP 设置</h3>
 <table class="optiontable form-table">
 <tr valign="top">
-<th scope="row"><label for="smtp_host"><?php _e('SMTP Host', 'wp_mail_smtp'); ?></label></th>
+<th scope="row"><label for="smtp_host">SMTP 主机地址</label></th>
 <td><input name="smtp_host" type="text" id="smtp_host" value="<?php print(get_option('smtp_host')); ?>" size="40" class="regular-text" /></td>
 </tr>
 <tr valign="top">
-<th scope="row"><label for="smtp_port"><?php _e('SMTP Port', 'wp_mail_smtp'); ?></label></th>
+<th scope="row"><label for="smtp_port">SMTP 主机端口</label></th>
 <td><input name="smtp_port" type="text" id="smtp_port" value="<?php print(get_option('smtp_port')); ?>" size="6" class="regular-text" /></td>
 </tr>
 <tr valign="top">
-<th scope="row"><?php _e('Encryption', 'wp_mail_smtp'); ?> </th>
+<th scope="row">加密方式 </th>
 <td><fieldset><legend class="screen-reader-text"><span><?php _e('Encryption', 'wp_mail_smtp'); ?></span></legend>
 <input id="smtp_ssl_none" type="radio" name="smtp_ssl" value="none" <?php checked('none', get_option('smtp_ssl')); ?> />
-<label for="smtp_ssl_none"><span><?php _e('No encryption.', 'wp_mail_smtp'); ?></span></label><br />
+<label for="smtp_ssl_none"><span>不启用加密方式</span></label><br />
 <input id="smtp_ssl_ssl" type="radio" name="smtp_ssl" value="ssl" <?php checked('ssl', get_option('smtp_ssl')); ?> />
-<label for="smtp_ssl_ssl"><span><?php _e('Use SSL encryption.', 'wp_mail_smtp'); ?></span></label><br />
+<label for="smtp_ssl_ssl"><span>使用SSL加密方式</span></label><br />
 <input id="smtp_ssl_tls" type="radio" name="smtp_ssl" value="tls" <?php checked('tls', get_option('smtp_ssl')); ?> />
-<label for="smtp_ssl_tls"><span><?php _e('Use TLS encryption. This is not the same as STARTTLS. For most servers SSL is the recommended option.', 'wp_mail_smtp'); ?></span></label>
+<label for="smtp_ssl_tls"><span>使用TLS加密方式</span></label>
 </td>
 </tr>
 <tr valign="top">
-<th scope="row"><?php _e('Authentication', 'wp_mail_smtp'); ?> </th>
+<th scope="row">验证方式 </th>
 <td>
 <input id="smtp_auth_false" type="radio" name="smtp_auth" value="false" <?php checked('false', get_option('smtp_auth')); ?> />
-<label for="smtp_auth_false"><span><?php _e('No: Do not use SMTP authentication.', 'wp_mail_smtp'); ?></span></label><br />
+<label for="smtp_auth_false"><span>不使用SMTP验证</span></label><br />
 <input id="smtp_auth_true" type="radio" name="smtp_auth" value="true" <?php checked('true', get_option('smtp_auth')); ?> />
-<label for="smtp_auth_true"><span><?php _e('Yes: Use SMTP authentication.', 'wp_mail_smtp'); ?></span></label><br />
-<span class="description"><?php _e('If this is set to no, the values below are ignored.', 'wp_mail_smtp'); ?></span>
+<label for="smtp_auth_true"><span>使用SMTP验证</span></label><br />
 </td>
 </tr>
 <tr valign="top">
-<th scope="row"><label for="smtp_user"><?php _e('Username', 'wp_mail_smtp'); ?></label></th>
+<th scope="row"><label for="smtp_user">发信邮箱帐号</label></th>
 <td><input name="smtp_user" type="text" id="smtp_user" value="<?php print(get_option('smtp_user')); ?>" size="40" class="code" /></td>
 </tr>
 <tr valign="top">
-<th scope="row"><label for="smtp_pass"><?php _e('Password', 'wp_mail_smtp'); ?></label></th>
-<td><input name="smtp_pass" type="text" id="smtp_pass" value="<?php print(get_option('smtp_pass')); ?>" size="40" class="code" /></td>
+<th scope="row"><label for="smtp_pass">发信邮箱密码</label></th>
+<td><input name="smtp_pass" type="password" id="smtp_pass" value="<?php print(get_option('smtp_pass')); ?>" size="40" class="code" /></td>
 </tr>
 </table>
 
-<p class="submit"><input type="submit" name="submit" id="submit" class="button-primary" value="<?php _e('Save Changes'); ?>" /></p>
+<p class="submit"><input type="submit" name="submit" id="submit" class="button-primary" value="更新配置" /></p>
 <input type="hidden" name="action" value="update" />
 </p>
 <input type="hidden" name="option_page" value="email">
 </form>
 
-<h3><?php _e('Send a Test Email', 'wp_mail_smtp'); ?></h3>
+<h3>发送一份测试邮件</h3>
 
 <form method="POST">
 <table class="optiontable form-table">
 <tr valign="top">
-<th scope="row"><label for="to"><?php _e('To:', 'wp_mail_smtp'); ?></label></th>
+<th scope="row"><label for="to">收件地址</label></th>
 <td><input name="to" type="text" id="to" value="" size="40" class="code" />
-<span class="description"><?php _e('Type an email address here and then click Send Test to generate a test email.', 'wp_mail_smtp'); ?></span></td>
+<span class="description">你可以给你的邮箱发送一份邮件来测试上面的配置是否正确。</span></td>
 </tr>
 </table>
-<p class="submit"><input type="submit" name="wpms_action" id="wpms_action" class="button-primary" value="<?php _e('Send Test', 'wp_mail_smtp'); ?>" /></p>
+<p class="submit"><input type="submit" name="wpms_action" id="wpms_action" class="button-primary" value="发送测试邮件" /></p>
 </form>
 
 </div>
@@ -336,7 +328,7 @@ if (!function_exists('wp_mail_smtp_menus')) :
 function wp_mail_smtp_menus() {
 	
 	if (function_exists('add_submenu_page')) {
-		add_options_page(__('Advanced Email Options', 'wp_mail_smtp'),__('Email', 'wp_mail_smtp'),'manage_options',__FILE__,'wp_mail_smtp_options_page');
+		add_options_page(__('邮件设置', 'wp_mail_smtp'),__('邮件设置', 'wp_mail_smtp'),'manage_options',__FILE__, 'wp_mail_smtp_options_page');
 	}
 	
 } // End of wp_mail_smtp_menus() function definition
