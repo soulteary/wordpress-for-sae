@@ -88,7 +88,6 @@ class WP_Import extends WP_Importer {
 				$this->fetch_attachments = ( ! empty( $_POST['fetch_attachments'] ) && $this->allow_fetch_attachments() );
 				$this->id = (int) $_POST['import_id'];
 				$file = get_attached_file( $this->id );
-				set_time_limit(0);
 				$this->import( $file );
 				break;
 		}
