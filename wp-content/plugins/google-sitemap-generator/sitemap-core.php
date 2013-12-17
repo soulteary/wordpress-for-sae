@@ -1536,14 +1536,6 @@ class GoogleSitemapGenerator {
 		global $wpdb, $posts, $wp_version;
 		$this->Initate();
 
-		if($this->GetOption("b_memory")!='') {
-			@ini_set("memory_limit",$this->GetOption("b_memory"));
-		}
-
-		if($this->GetOption("b_time")!=-1) {
-			@set_time_limit($this->GetOption("b_time"));
-		}
-
 		//This object saves the status information of the script directly to the database
 		$status = new GoogleSitemapGeneratorStatus();
 

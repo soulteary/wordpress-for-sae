@@ -120,10 +120,7 @@ if ( isset($_POST['permalink_structure']) || isset($_POST['category_base']) ) {
 $permalink_structure = get_option('permalink_structure');
 $category_base = get_option('category_base');
 $tag_base = get_option( 'tag_base' );
-
 $writable = true;
-
-
 if ( $wp_rewrite->using_index_permalinks() )
 	$usingpi = true;
 else
@@ -159,7 +156,6 @@ if ( ! is_multisite() ) {
 <?php endif; ?>
 
 <div class="wrap">
-<?php screen_icon(); ?>
 <h2><?php echo esc_html( $title ); ?></h2>
 
 <form name="form" action="options-permalink.php" method="post">

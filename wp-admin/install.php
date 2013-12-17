@@ -56,6 +56,7 @@ function display_header() {
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
 <head>
+	<meta name="viewport" content="width=device-width" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title><?php _e( 'WordPress &rsaquo; Installation' ); ?></title>
 	<?php
@@ -172,13 +173,6 @@ if ( ! is_string( $wpdb->base_prefix ) || '' === $wpdb->base_prefix ) {
 switch($step) {
 	case 0: // Step 1
 	case 1: // Step 1, direct link.
-    if(!apply_filters('SAE_FLITER_STORAGE_CHECKER',false)){
-        if(!apply_filters('SAE_FLITER_STORAGE_CHECKER',SAE_ACCESSKEY)){
-            die('SAE STROAGE 服务连接失败，请确定已经新建名称为wordpress的doamin。');
-        }else{
-            die('SAE STROAGE 服务链接成功，但是名称为wordpress的domain为私有访问，建议修改为共有访问。');
-        }
-    }
 	  display_header();
 ?>
 <h1><?php _ex( 'Welcome', 'Howdy' ); ?></h1>
@@ -193,7 +187,8 @@ switch($step) {
     color:red;
 }
 </style>
-<p id="sae-install-warning"><?php @printf( file_get_contents('http://wp4cloudapi.sinaapp.com/?a=install-announce371&lang='.WPLANG) ); ?></p>
+
+<p id="sae-install-warning"><?php @printf( file_get_contents('http://wp4cloudapi.sinaapp.com/?a=install-announce-3.8&lang='.WPLANG) ); ?></p>
 <script type="text/javascript">
     // 提示用户是否要安装在当前版本下。
     (function(){
@@ -209,6 +204,7 @@ switch($step) {
         }
     })();
 </script>
+
 <?php
 		display_setup_form();
 		break;
@@ -278,8 +274,10 @@ switch($step) {
 		}
 		break;
 }
+if ( !wp_is_mobile() ) {
 ?>
 <script type="text/javascript">var t = document.getElementById('weblog_title'); if (t){ t.focus(); }</script>
+<?php } ?>
 <?php wp_print_scripts( 'user-profile' ); ?>
 </body>
 </html>

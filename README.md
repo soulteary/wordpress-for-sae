@@ -1,8 +1,9 @@
-WordPress 3.7.1 For SAE 
+WordPress 3.8 For SAE 
 =================
 
 更新说明
 -----------------
+- 2013/12/17 更新WP 3.8, 一个相册插件，修正一些BUG.[详情](https://github.com/soulteary/wordpress-for-sae/wiki/WordPress-3.8-For-SAE-%E4%BF%AE%E6%94%B9%E8%AE%B0%E5%BD%95)
 - 2013/12/3 添加1个文章版本控制插件，支持部分主题后台显示，安装时判断是否要安装在子版本目录下，支持自动安装，免去手工操作。[详情](https://github.com/soulteary/wordpress-for-sae/wiki/WordPress-3.7.1-For-SAE-%E4%BF%AE%E6%94%B9%E8%AE%B0%E5%BD%95-2)
 
 

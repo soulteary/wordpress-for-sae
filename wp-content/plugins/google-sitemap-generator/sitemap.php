@@ -230,14 +230,8 @@ class GoogleSitemapGeneratorLoader {
 	function LoadPlugin() {
 
 		$mem = abs(intval(@ini_get('memory_limit')));
-		if($mem && $mem < 64) {
-			@ini_set('memory_limit', '64M');
-		}
 
 		$time = abs(intval(@ini_get("max_execution_time")));
-		if($time != 0 && $time < 120) {
-			@set_time_limit(120);
-		}
 
 		if(!class_exists("GoogleSitemapGenerator")) {
 
