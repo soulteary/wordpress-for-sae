@@ -14,6 +14,7 @@
 		<div class="site-info">
 			<?php do_action( 'twentytwelve_credits' ); ?>
 			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'twentytwelve' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'twentytwelve' ); ?>"><?php printf( __( 'Proudly powered by %s', 'twentytwelve' ), 'WordPress' ); ?></a>
+            <a href="http://sae.sina.com.cn" title="Sina App Engine" class="sae-logo" target="_blank">新浪云计算</a>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

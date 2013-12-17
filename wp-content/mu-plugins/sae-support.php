@@ -11,39 +11,10 @@ License: GPL2
 !!PLEASE Copy this file to wp-content/sae-support.php
  */
 
-add_filter('SAE_FILTER_USER_CAPABILITY', 'SAE_FILTER_USER_CAPABILITY');
 add_filter('SAE_FLITER_STORAGE_CHECKER', 'SAE_FLITER_STORAGE_CHECKER');
 add_filter('SAE_FILTER_MKDIR_P', 'SAE_FILTER_MKDIR_P');
 add_filter('SAE_FILTER_UPLOAD_DIR', 'SAE_FILTER_UPLOAD_DIR');
 
-
-/**
- * 由于本地禁止读写特性，禁用在线安装插件以及主题等的功能。
- *
- * @file wp-includes/capabilities.php
- * @logs
- *       - [2013/12/3]去掉对 edit_themes 限制，代码空间只读，不会造成影响。
- *       - 解决部分主题后台不能显示的问题。
- * @since 3.5.2
- *
- */
-function SAE_FILTER_USER_CAPABILITY($capability)
-{
-    $block_action = array('install_plugins','install_themes', 'edit_plugins', 'update_plugins', 'install_plugins', 'update_themes','delete_plugins','delete_themes','delete_plugins');
-    if (in_array($capability, $block_action)!=false) {
-        return false;
-    }
-
-    $current_user = wp_get_current_user();
-
-    if ( empty( $current_user ) )
-        return false;
-
-    $args = array_slice( func_get_args(), 1 );
-    $args = array_merge( array( $capability ), $args );
-
-    return call_user_func_array( array( $current_user, 'has_cap' ), $args );
-}
 
 /**
  * 检查是否正常开启了STORAGE服务以及创建DOMAIN。

@@ -650,8 +650,6 @@ window.parent.location = <?php echo json_encode(admin_url('admin.php?page=duoshu
 	public function export(){
 		global $wpdb;
 		
-		@set_time_limit(0);
-		@ini_set('memory_limit', '256M');
 		@ini_set('display_errors', $this->getOption('debug'));
 		
 		$progress = $this->getOption('synchronized');
@@ -1275,8 +1273,6 @@ function getSyncOptionsCallback(rsp){
 	}
 	
 	public function syncLogAction(){
-		@set_time_limit(0);
-		@ini_set('memory_limit', '256M');
 		@ini_set('display_errors', $this->getOption('debug'));
 		
 		try{
