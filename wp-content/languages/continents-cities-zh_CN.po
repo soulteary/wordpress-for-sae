@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the WordPress package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WordPress 3.8\n"
+"Project-Id-Version: WordPress 3.9\n"
 "Report-Msgid-Bugs-To: http://wppolyglots.wordpress.com\n"
-"POT-Creation-Date: 2013-12-11 23:15:04+00:00\n"
+"POT-Creation-Date: 2014-03-18 17:11:37+00:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Jimmy Xu <me@jimmyxu.org>\n"
 "Language-Team: WordPress China\n"
@@ -12,7 +12,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.6.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: wp-admin/includes/continents-cities.php:7

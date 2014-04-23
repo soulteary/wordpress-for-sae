@@ -36,6 +36,7 @@ define('DB_COLLATE', '');
 /** Use Muitiple Database */
 define('WP_USE_MULTIPLE_DB', true);
 
+
 /** Support Muitiple Database */
 $db_list = array(
     'write' => array(
@@ -59,13 +60,14 @@ $db_list = array(
 );
 $global_db_list = $db_list['write'];
 
+
 /** SAE Storage Domain */
 define('SAE_STORAGE', wordpress);
 
-/** File Upload Dir */ 
+/** File Upload Dir */
 define('SAE_DIR','saestor://'.SAE_STORAGE.'/uploads');
 
-/** File URL PATH */ 
+/** File URL PATH */
 define('SAE_URL', 'http://' . $_SERVER['HTTP_APPNAME'] . '-'.SAE_STORAGE.'.stor.sinaapp.com/uploads');
 
 
@@ -105,7 +107,6 @@ $table_prefix  = 'wp_';
  * de_DE.mo to wp-content/languages and set WPLANG to 'de_DE' to enable German
  * language support.
  */
-// define('WPLANG', '');
 define('WPLANG', 'zh_CN');
 
 //USE SINAAPP DOMAIN OR USE OWN DOMAIN
@@ -125,7 +126,7 @@ define('WP_DEBUG', false);
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/');
+    define('ABSPATH', dirname(__FILE__) . '/');
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');

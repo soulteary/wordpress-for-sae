@@ -3914,14 +3914,6 @@
           // ----- Change the file mtime
           @touch($p_entry['filename'], $p_entry['mtime']);
         }
-
-        // ----- Look for chmod option
-        if (isset($p_options[PCLZIP_OPT_SET_CHMOD])) {
-
-          // ----- Change the mode of the file
-          @chmod($p_entry['filename'], $p_options[PCLZIP_OPT_SET_CHMOD]);
-        }
-
       }
     }
 
@@ -5333,11 +5325,11 @@
 	}
 
 	// ----- Get and memorize the magic_quote value
-	$this->magic_quotes_status = @get_magic_quotes_runtime();
+	$this->magic_quotes_status = false;
 
 	// ----- Disable magic_quotes
 	if ($this->magic_quotes_status == 1) {
-	  @set_magic_quotes_runtime(0);
+	  return false;
 	}
 
     // ----- Return
@@ -5368,7 +5360,7 @@
 
 	// ----- Swap back magic_quotes
 	if ($this->magic_quotes_status == 1) {
-  	  @set_magic_quotes_runtime($this->magic_quotes_status);
+  	  return false;
 	}
 
     // ----- Return

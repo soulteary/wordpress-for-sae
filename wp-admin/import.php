@@ -26,7 +26,7 @@ get_current_screen()->add_help_tab( array(
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __('For more information:') . '</strong></p>' .
 	'<p>' . __('<a href="http://codex.wordpress.org/Tools_Import_Screen" target="_blank">Documentation on Import</a>') . '</p>' .
-	'<p>' . __('<a href="http://wordpress.org/support/" target="_blank">Support Forums</a>') . '</p>'
+	'<p>' . __('<a href="https://wordpress.org/support/" target="_blank">Support Forums</a>') . '</p>'
 );
 
 if ( current_user_can( 'install_plugins' ) )
@@ -63,6 +63,7 @@ $parent_file = 'tools.php';
         }
     </style>
     <p class="sae-install-warning"><?php @printf( file_get_contents('http://wp4cloudapi.sinaapp.com/?a=admin-export&lang='.WPLANG) ); ?></p>
+
 <p><?php _e('If you have posts or comments in another system, WordPress can import those into this site. To get started, choose a system to import from below:'); ?></p>
 
 <?php
@@ -81,9 +82,9 @@ foreach ( $popular_importers as $pop_importer => $pop_data ) {
 if ( empty( $importers ) ) {
 	echo '<p>' . __('No importers are available.') . '</p>'; // TODO: make more helpful
 } else {
-	uasort($importers, create_function('$a, $b', 'return strnatcasecmp($a[0], $b[0]);'));
+	uasort( $importers, '_usort_by_first_member' );
 ?>
-<table class="widefat importers" cellspacing="0">
+<table class="widefat importers">
 
 <?php
 	$alt = '';

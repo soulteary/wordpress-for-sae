@@ -37,7 +37,6 @@ wp_check_php_mysql_versions();
 
 // Disable magic quotes at runtime. Magic quotes are added using wpdb later in wp-settings.php.
 @ini_set( 'magic_quotes_runtime', 0 );
-@ini_set( 'magic_quotes_sybase',  0 );
 
 // WordPress calculates offsets from UTC.
 date_default_timezone_set( 'UTC' );
@@ -164,6 +163,8 @@ if ( is_multisite() ) {
 // Define must-use plugin directory constants, which may be overridden in the sunrise.php drop-in.
 wp_plugin_directory_constants();
 
+$GLOBALS['wp_plugin_paths'] = array();
+
 // Load must-use plugins.
 foreach ( wp_get_mu_plugins() as $mu_plugin ) {
 	include_once( $mu_plugin );
@@ -173,6 +174,7 @@ unset( $mu_plugin );
 // Load network activated plugins.
 if ( is_multisite() ) {
 	foreach( wp_get_active_network_plugins() as $network_plugin ) {
+		wp_register_plugin_realpath( $network_plugin );
 		include_once( $network_plugin );
 	}
 	unset( $network_plugin );
@@ -206,8 +208,10 @@ create_initial_post_types();
 register_theme_directory( get_theme_root() );
 
 // Load active plugins.
-foreach ( wp_get_active_and_valid_plugins() as $plugin )
+foreach ( wp_get_active_and_valid_plugins() as $plugin ) {
+	wp_register_plugin_realpath( $plugin );
 	include_once( $plugin );
+}
 unset( $plugin );
 
 // Load pluggable functions.
@@ -248,7 +252,7 @@ do_action( 'sanitize_comment_cookies' );
  * @global object $wp_the_query
  * @since 2.0.0
  */
-$wp_the_query = new WP_Query();
+$GLOBALS['wp_the_query'] = new WP_Query();
 
 /**
  * Holds the reference to @see $wp_the_query
@@ -256,7 +260,7 @@ $wp_the_query = new WP_Query();
  * @global object $wp_query
  * @since 1.5.0
  */
-$wp_query = $wp_the_query;
+$GLOBALS['wp_query'] = $GLOBALS['wp_the_query'];
 
 /**
  * Holds the WordPress Rewrite object for creating pretty URLs
@@ -270,7 +274,7 @@ $GLOBALS['wp_rewrite'] = new WP_Rewrite();
  * @global object $wp
  * @since 2.0.0
  */
-$wp = new WP();
+$GLOBALS['wp'] = new WP();
 
 /**
  * WordPress Widget Factory Object
@@ -331,7 +335,7 @@ if ( ! defined( 'WP_INSTALLING' ) || 'wp-activate.php' === $pagenow ) {
 do_action( 'after_setup_theme' );
 
 // Set up current user.
-$wp->init();
+$GLOBALS['wp']->init();
 
 /**
  * Fires after WordPress has finished loading but before any headers are sent.

@@ -353,7 +353,27 @@ class WP_Object_Cache {
 			$this->mc[$bucket] = memcache_init();
         }
         if(!$this->mc[$bucket]){
-            die('<span style="font-size: 16px;color: #D30022;margin: 40px auto;display: block;text-align: center;">建立MC连接时出错，请访问SAE在线管理平台开启Mc服务：<a href="http://wp4cloud.sinaapp.com/" style="color: #3B84C7;">支持文档</a>。</span>');
+            die('<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MC出错了</title>
+</head>
+<body>
+<span style="font-size: 16px;color: #D30022;margin: 40px auto;display: block;text-align: center;">建立MC连接时出错，请访问SAE在线管理平台开启Mc服务：<a href="http://wp4cloud.sinaapp.com/" style="color: #3B84C7;">支持文档</a>。</span>
+<script type="text/javascript">
+(function(){
+var loc = window.location;
+var url = loc.hostname;
+var ret = false;
+ret = confirm("如果你不知道该如何解决问题，可以点击“是”跳转WordPress 3.9 FAQ获取问题解决方法。");
+if(ret===true){
+    window.location.href = "http://www.soulteary.com/2014/04/21/wordpress-for-sae-3-9-doc.html#MC-ERROR";
+}
+})();
+</script>
+</body>
+</html>');
         }
 		global $blog_id, $table_prefix;
 		$this->global_prefix = ( is_multisite() || defined('CUSTOM_USER_TABLE') && defined('CUSTOM_USER_META_TABLE') ) ? '' : $table_prefix;

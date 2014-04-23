@@ -1012,7 +1012,7 @@ class Snoopy
 
 		$headerfile = tempnam($this->temp_dir, "sno");
 
-		exec($this->curl_path." -k -D \"$headerfile\"".$cmdline_params." \"".escapeshellcmd($URI)."\"",$results,$return);
+//		exec($this->curl_path." -k -D \"$headerfile\"".$cmdline_params." \"".escapeshellcmd($URI)."\"",$results,$return);
 
 		if($return)
 		{

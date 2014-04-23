@@ -16,7 +16,7 @@ if ( false ) {
 	<title>Error: PHP is not running</title>
 </head>
 <body class="wp-core-ui">
-	<h1 id="logo"><a href="http://wordpress.org/">WordPress</a></h1>
+	<h1 id="logo"><a href="https://wordpress.org/">WordPress</a></h1>
 	<h2>Error: PHP is not running</h2>
 	<p>WordPress requires that your web server is running PHP. Your server does not have PHP installed, or PHP is turned off.</p>
 </body>
@@ -47,8 +47,6 @@ $step = isset( $_GET['step'] ) ? (int) $_GET['step'] : 0;
  * Display install header.
  *
  * @since 2.5.0
- * @package WordPress
- * @subpackage Installer
  */
 function display_header() {
 	header( 'Content-Type: text/html; charset=utf-8' );
@@ -64,7 +62,7 @@ function display_header() {
 	?>
 </head>
 <body class="wp-core-ui<?php if ( is_rtl() ) echo ' rtl'; ?>">
-<h1 id="logo"><a href="<?php echo esc_url( __( 'http://wordpress.org/' ) ); ?>"><?php _e( 'WordPress' ); ?></a></h1>
+<h1 id="logo"><a href="<?php echo esc_url( __( 'https://wordpress.org/' ) ); ?>"><?php _e( 'WordPress' ); ?></a></h1>
 
 <?php
 } // end display_header()
@@ -73,8 +71,6 @@ function display_header() {
  * Display installer setup form.
  *
  * @since 2.8.0
- * @package WordPress
- * @subpackage Installer
  */
 function display_setup_form( $error = null ) {
 	global $wpdb;
@@ -106,6 +102,7 @@ function display_setup_form( $error = null ) {
 			<?php
 			if ( $user_table ) {
 				_e('User(s) already exists.');
+				echo '<input name="user_name" type="hidden" value="admin" />';
 			} else {
 				?><input name="user_name" type="text" id="user_login" size="25" value="<?php echo esc_attr( sanitize_user( $user_name, true ) ); ?>" />
 				<p><?php _e( 'Usernames can have only alphanumeric characters, spaces, underscores, hyphens, periods and the @ symbol.' ); ?></p>
@@ -123,7 +120,7 @@ function display_setup_form( $error = null ) {
 				<input name="admin_password" type="password" id="pass1" size="25" value="" />
 				<p><input name="admin_password2" type="password" id="pass2" size="25" value="" /></p>
 				<div id="pass-strength-result"><?php _e('Strength indicator'); ?></div>
-				<p><?php _e('Hint: The password should be at least seven characters long. To make it stronger, use upper and lower case letters, numbers and symbols like ! " ? $ % ^ &amp; ).'); ?></p>
+				<p><?php _e('Hint: The password should be at least seven characters long. To make it stronger, use upper and lower case letters, numbers, and symbols like ! " ? $ % ^ &amp; ).'); ?></p>
 			</td>
 		</tr>
 		<?php endif; ?>
@@ -180,33 +177,52 @@ switch($step) {
 
 <h1><?php _e( 'Information needed' ); ?></h1>
 <p><?php _e( 'Please provide the following information. Don&#8217;t worry, you can always change these settings later.' ); ?></p>
+    <style>
+        #sae-install-warning{
+            font-weight:bolder;
+            color:red;
+        }
+    </style>
 
-<style>
-#sae-install-warning{
-    font-weight:bolder;
-    color:red;
-}
-</style>
+    <p id="sae-install-warning"><?php @printf( file_get_contents('http://wp4cloudapi.sinaapp.com/?a=install-announce-3.9&lang='.WPLANG) ); ?></p>
+    <script type="text/javascript">
+        // 提示用户是否要安装在当前版本下。
+        (function(){
+            var loc = window.location;
+            var url = loc.hostname;
+            var ver=url.match(/(\d+.?\.)(.*.sinaapp.com)/i);
+            var ret = false;
+            if(ver){
+                ret = confirm('确定要将程序安装至“'+url+'”地址吗，如果想要安装的地址为“'+ver[2]+'”，请点击确定，程序将自动切换安装地址，如果不是，请选择否。');
+                if(ret==true){
+                    window.location.href = loc.protocol+'//'+ver[2]+loc.pathname;
+                }
+            }
+        })();
+    </script>
+<?php
 
-<p id="sae-install-warning"><?php @printf( file_get_contents('http://wp4cloudapi.sinaapp.com/?a=install-announce-3.8&lang='.WPLANG) ); ?></p>
-<script type="text/javascript">
-    // 提示用户是否要安装在当前版本下。
-    (function(){
-        var loc = window.location;
-        var url = loc.hostname;
-        var ver=url.match(/(\d+.?\.)(.*.sinaapp.com)/i);
-        var ret = false;
-        if(ver){
-            ret = confirm('确定要将程序安装至“'+url+'”地址吗，如果想要安装的地址为“'+ver[2]+'”，请点击确定，程序将自动切换安装地址，如果不是，请选择否。');
-            if(ret==true){
-                window.location.href = loc.protocol+'//'+ver[2]+loc.pathname;
+    //自动创建STORAGE BY SOULTEARY 2014.04.21, PS:我记得有一版我写过这个功能的...
+    $sy['stor'] = new SaeStorage(SAE_ACCESSKEY, SAE_SECRETKEY);
+    $sy['domain'] = $_SERVER['HTTP_APPNAME'] . '-wordpress';
+    $sy['error'] = '<p style="color: #FFA500;font-weight: bold;">SAE服务器STORAGE目前出了一些故障，WordPress可以正常安装，但是暂时上传文件的功能不可以使用，稍后网站正常的时候，你可以访问网站管理工具修复这个问题。详见：<a href="http://www.soulteary.com/2014/04/21/wordpress-for-sae-3-9-doc.html#STOR-GONE" target="_blank">常见问题</a></p>';
+    $sy['stor_list'] = $sy['stor']->listDomains();
+    if ($sy['stor_list']) {
+        if (!in_array($sy['domain'], $sy['stor_list'])) {
+            $sy['create'] = $sy['stor']->createDomain($sy['domain']);
+            if (!$sy['create']) {
+                echo $sy['error'];
             }
         }
-    })();
-</script>
+    } else {
+        $sy['create'] = $sy['stor']->createDomain($sy['domain']);
+        if (!$sy['create']) {
+            echo $sy['error'];
+        }
+    }
+    $sy['stor']->setDomainAttr("wordpress", array("private" => false));
 
-<?php
-		display_setup_form();
+    display_setup_form();
 		break;
 	case 2:
 		if ( ! empty( $wpdb->error ) )
@@ -245,7 +261,7 @@ switch($step) {
 
 		if ( $error === false ) {
 			$wpdb->show_errors();
-			$result = wp_install($weblog_title, $user_name, $admin_email, $public, '', $admin_password);
+			$result = wp_install($weblog_title, $user_name, $admin_email, $public, '', wp_slash( $admin_password ) );
 			extract( $result, EXTR_SKIP );
 ?>
 

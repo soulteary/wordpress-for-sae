@@ -1,6 +1,6 @@
 <appwizard>
     <introduction>
-        <name>WordPress For SAE 3.8</name>
+        <name>WordPress For SAE 3.9</name>
         <author>soulteary</author>
         <icon>sae_app_logo.png</icon>
         <homepage>http://wp4cloud.sinaapp.com/</homepage>
@@ -9,9 +9,8 @@
 <p>WordPress For SAE</p>
 <p>更新说明：</p>
  <ol>
-   <li>更新WordPress 3.8。</li>
-   <li>修正错误：注册用户资料更新，批量清空回收站。</li>
-   <li>添加插件：bmo-expo。</li>
+   <li>更新WordPress 3.9。</li>
+   <li>大量优化修改，详见博客。</li>
  </ol>
 ]]>
         </description>
@@ -20,7 +19,6 @@
         <services>
             <service>Mysql</service>
             <service name="wordpress"  params="public">Storage</service>
-            <service>KVDB</service>
             <service size="2M">Memcache</service>
         </services>
         <appconfig>

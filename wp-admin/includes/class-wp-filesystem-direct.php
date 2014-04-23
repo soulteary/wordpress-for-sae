@@ -9,7 +9,7 @@
 /**
  * WordPress Filesystem Class for direct PHP file and folder manipulation.
  *
- * @since 2.5
+ * @since 2.5.0
  * @package WordPress
  * @subpackage Filesystem
  * @uses WP_Filesystem_Base Extends class
@@ -138,8 +138,6 @@ class WP_Filesystem_Direct extends WP_Filesystem_Base {
 				return false;
 		}
 
-		if ( ! $recursive || ! $this->is_dir($file) )
-			return @chmod($file, $mode);
 		// Is a directory, and we want recursive
 		$file = trailingslashit($file);
 		$filelist = $this->dirlist($file);
@@ -194,10 +192,10 @@ class WP_Filesystem_Direct extends WP_Filesystem_Base {
 	 * FIXME does not handle errors in fileperms()
 	 *
 	 * @param string $file Path to the file.
-	 * @return string Mode of the file (last 4 digits).
+	 * @return string Mode of the file (last 3 digits).
 	 */
 	function getchmod($file) {
-		return substr(decoct(@fileperms($file)),3);
+		return substr( decoct( @fileperms( $file ) ), -3 );
 	}
 
 	function group($file) {

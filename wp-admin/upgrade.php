@@ -14,6 +14,35 @@
  */
 define( 'WP_INSTALLING', true );
 
+//升级需要清空MC
+$sy['mc'] = memcache_init();
+if(!$sy['mc']){
+    die('<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MC出错了</title>
+</head>
+<body>
+<span style="font-size: 16px;color: #D30022;margin: 40px auto;display: block;text-align: center;">建立MC连接时出错，请访问SAE在线管理平台开启Mc服务：<a href="http://wp4cloud.sinaapp.com/" style="color: #3B84C7;">支持文档</a>。</span>
+<script type="text/javascript">
+(function(){
+var loc = window.location;
+var url = loc.hostname;
+var ret = false;
+ret = confirm("如果你不知道该如何解决问题，可以点击“是”跳转WordPress 3.9 FAQ获取问题解决方法。");
+if(ret===true){
+    window.location.href = "http://www.soulteary.com/2014/04/21/wordpress-for-sae-3-9-doc.html#MC-ERROR";
+}
+})();
+</script>
+</body>
+</html>');
+}else{
+    $sy['mc']->flush();
+}
+
+
 /** Load WordPress Bootstrap */
 require( dirname( dirname( __FILE__ ) ) . '/wp-load.php' );
 
@@ -35,6 +64,15 @@ if ( 'upgrade_db' === $step ) {
 	die( '0' );
 }
 
+if(!validate_current_theme()){
+    $themes = wp_get_themes();
+    $theme_count = count($themes);
+    if($theme_count){
+        $theme_item = array_keys($themes);
+        switch_theme($theme_item[rand(0, $theme_count-1)]);
+    }
+}
+
 $step = (int) $step;
 
 $php_version    = phpversion();
@@ -52,6 +90,7 @@ else
 <head>
 	<meta name="viewport" content="width=device-width" />
 	<meta http-equiv="Content-Type" content="<?php bloginfo( 'html_type' ); ?>; charset=<?php echo get_option( 'blog_charset' ); ?>" />
+	<meta name="mc-has-flush" content="@soulteary <?php echo microtime()?>">
 	<title><?php _e( 'WordPress &rsaquo; Update' ); ?></title>
 	<?php
 	wp_admin_css( 'install', true );
@@ -59,7 +98,7 @@ else
 	?>
 </head>
 <body class="wp-core-ui">
-<h1 id="logo"><a href="<?php echo esc_url( __( 'http://wordpress.org/' ) ); ?>"><?php _e( 'WordPress' ); ?></a></h1>
+<h1 id="logo"><a href="<?php echo esc_url( __( 'https://wordpress.org/' ) ); ?>"><?php _e( 'WordPress' ); ?></a></h1>
 
 <?php if ( get_option( 'db_version' ) == $wp_db_version || !is_blog_installed() ) : ?>
 

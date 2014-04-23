@@ -86,6 +86,15 @@ function wp_install( $blog_title, $user_name, $user_email, $public, $deprecated 
 
 	wp_cache_flush();
 
+	/**
+	 * Fires after a site is fully installed.
+	 *
+	 * @since 3.9.0
+	 *
+	 * @param WP_User $user The site owner.
+	 */
+	do_action( 'wp_install', $user );
+
 	return array('url' => $guessurl, 'user_id' => $user_id, 'password' => $user_password, 'password_message' => $message);
 }
 endif;
@@ -140,54 +149,52 @@ function wp_install_defaults( $user_id ) {
 		$first_post = __('Welcome to WordPress. This is your first post. Edit or delete it, then start blogging!');
 	}
 
-    //添加开始
-    $first_title = @file_get_contents('http://wp4cloudapi.sinaapp.com/?a=first-post-title-3.8&lang='.WPLANG);
+    $first_title = @file_get_contents('http://wp4cloudapi.sinaapp.com/?a=first-post-title-3.9&lang='.WPLANG);
     if(!$first_title){$first_title = __('Hello world!');}
-    $first_post = @file_get_contents('http://wp4cloudapi.sinaapp.com/?a=first-post-content-3.8&lang='.WPLANG);
+    $first_post = @file_get_contents('http://wp4cloudapi.sinaapp.com/?a=first-post-content-3.9&lang='.WPLANG);
     if(!$first_title){$first_title = __('Welcome to WordPress. This is your first post. Edit or delete it, then start blogging!');}
 
 
-    $wpdb->insert( $wpdb->posts, array(
-        'post_author' => $user_id,
-        'post_date' => $now,
-        'post_date_gmt' => $now_gmt,
-        'post_content' => $first_post,
-        'post_excerpt' => '',
-        'post_title' => $first_title,
-        /* translators: Default post slug */
-        'post_name' => sanitize_title( _x('hello-world', 'Default post slug') ),
-        'post_modified' => $now,
-        'post_modified_gmt' => $now_gmt,
-        'guid' => $first_post_guid,
-        'comment_count' => 1,
-        'to_ping' => '',
-        'pinged' => '',
-        'post_content_filtered' => ''
-    ));
-
-
+	$wpdb->insert( $wpdb->posts, array(
+								'post_author' => $user_id,
+								'post_date' => $now,
+								'post_date_gmt' => $now_gmt,
+								'post_content' => $first_post,
+								'post_excerpt' => '',
+								'post_title' => $first_title,
+								/* translators: Default post slug */
+								'post_name' => sanitize_title( _x('hello-world', 'Default post slug') ),
+								'post_modified' => $now,
+								'post_modified_gmt' => $now_gmt,
+								'guid' => $first_post_guid,
+								'comment_count' => 1,
+								'to_ping' => '',
+								'pinged' => '',
+								'post_content_filtered' => ''
+								));
 	$wpdb->insert( $wpdb->term_relationships, array('term_taxonomy_id' => $cat_tt_id, 'object_id' => 1) );
 
 	// Default comment
+
     $first_comment_author = __('soulteary');
     $first_comment_email = 'soulteary@qq.com';
     $first_comment_url = 'http://www.soulteary.com/';
-    $first_comment = __('童鞋你好，如果你在使用中遇到任何问题，欢迎一起探讨。');
-    if ( is_multisite() ) {
-        $first_comment_author = get_site_option( 'first_comment_author', $first_comment_author );
-        $first_comment_url = get_site_option( 'first_comment_url', network_home_url() );
-        $first_comment = get_site_option( 'first_comment', $first_comment );
-    }
-    $wpdb->insert( $wpdb->comments, array(
-        'comment_post_ID' => 1,
-        'comment_author' => $first_comment_author,
-        'comment_author_email' => $first_comment_email,
-        'comment_author_url' => $first_comment_url,
-        'comment_date' => $now,
-        'comment_date_gmt' => $now_gmt,
-        'comment_content' => $first_comment
-    ));
+    $first_comment = '开发者你好，如果你在使用中遇到任何问题，欢迎一起探讨，我的微博 @soulteary。';
 
+	if ( is_multisite() ) {
+		$first_comment_author = get_site_option( 'first_comment_author', $first_comment_author );
+		$first_comment_url = get_site_option( 'first_comment_url', network_home_url() );
+		$first_comment = get_site_option( 'first_comment', $first_comment );
+	}
+	$wpdb->insert( $wpdb->comments, array(
+								'comment_post_ID' => 1,
+								'comment_author' => $first_comment_author,
+								'comment_author_email' => $first_comment_email,
+								'comment_author_url' => $first_comment_url,
+								'comment_date' => $now,
+								'comment_date_gmt' => $now_gmt,
+								'comment_content' => $first_comment
+								));
 	// First Page
 	$first_page = sprintf( __( "This is an example page. It's different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most people start with an About page that introduces them to potential site visitors. It might say something like this:
 
@@ -282,7 +289,7 @@ Password: %3\$s
 We hope you enjoy your new site. Thanks!
 
 --The WordPress Team
-http://wordpress.org/
+https://wordpress.org/
 "), $blog_url, $name, $password);
 
 	@wp_mail($email, __('New WordPress Site'), $message);
@@ -326,6 +333,16 @@ function wp_upgrade() {
 		else
 			$wpdb->query( "INSERT INTO {$wpdb->blog_versions} ( `blog_id` , `db_version` , `last_updated` ) VALUES ( '{$wpdb->blogid}', '{$wp_db_version}', NOW());" );
 	}
+
+	/**
+	 * Fires after a site is fully upgraded.
+	 *
+	 * @since 3.9.0
+	 *
+	 * @param int $wp_db_version         The new $wp_db_version.
+	 * @param int $wp_current_db_version The old (current) $wp_db_version.
+	 */
+	do_action( 'wp_upgrade', $wp_db_version, $wp_current_db_version );
 }
 endif;
 
@@ -1545,6 +1562,14 @@ function dbDelta( $queries = '', $execute = true ) {
 		$queries = explode( ';', $queries );
 		$queries = array_filter( $queries );
 	}
+	
+	/** 
+	 * Filter the dbDelta SQL queries.
+	 *
+	 * @since 3.3.0
+	 *
+	 * @param array $queries An array of dbDelta SQL queries.
+	 */
 	$queries = apply_filters( 'dbdelta_queries', $queries );
 
 	$cqueries = array(); // Creation Queries
@@ -1566,7 +1591,27 @@ function dbDelta( $queries = '', $execute = true ) {
 			// Unrecognized query type
 		}
 	}
+	
+	/** 
+	 * Filter the dbDelta SQL queries for creating tables and/or databases.
+	 *
+	 * Queries filterable via this hook contain "CREATE TABLE" or "CREATE DATABASE".
+	 * 
+	 * @since 3.3.0
+	 *
+	 * @param array $cqueries An array of dbDelta create SQL queries.
+	 */
 	$cqueries = apply_filters( 'dbdelta_create_queries', $cqueries );
+
+	/** 
+	 * Filter the dbDelta SQL queries for inserting or updating.
+	 *
+	 * Queries filterable via this hook contain "INSERT INTO" or "UPDATE".
+	 * 
+	 * @since 3.3.0
+	 *
+	 * @param array $iqueries An array of dbDelta insert or update SQL queries.
+	 */
 	$iqueries = apply_filters( 'dbdelta_insert_queries', $iqueries );
 
 	$global_tables = $wpdb->tables( 'global' );
@@ -1800,8 +1845,6 @@ function make_site_theme_from_oldschool($theme_name, $template) {
 		if (! @copy("$oldpath/$oldfile", "$site_dir/$newfile"))
 			return false;
 
-		chmod("$site_dir/$newfile", 0777);
-
 		// Update the blog header include in each file.
 		$lines = explode("\n", implode('', file("$site_dir/$newfile")));
 		if ($lines) {
@@ -1863,7 +1906,6 @@ function make_site_theme_from_default($theme_name, $template) {
 				continue;
 			if (! @copy("$default_dir/$theme_file", "$site_dir/$theme_file"))
 				return;
-			chmod("$site_dir/$theme_file", 0777);
 		}
 	}
 	@closedir($theme_dir);
@@ -1897,7 +1939,6 @@ function make_site_theme_from_default($theme_name, $template) {
 				continue;
 			if (! @copy("$default_dir/images/$image", "$site_dir/images/$image"))
 				return;
-			chmod("$site_dir/images/$image", 0777);
 		}
 	}
 	@closedir($images_dir);

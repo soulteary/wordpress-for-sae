@@ -22,7 +22,7 @@
  * @var array
  */
 
-$menu[2] = array( __('Dashboard'), 'read', 'index.php', '', 'menu-top menu-top-first menu-icon-dashboard', 'menu-dashboard', 'none' );
+$menu[2] = array( __('Dashboard'), 'read', 'index.php', '', 'menu-top menu-top-first menu-icon-dashboard', 'menu-dashboard', 'dashicons-dashboard' );
 
 $submenu[ 'index.php' ][0] = array( __('Home'), 'read', 'index.php' );
 
@@ -30,23 +30,9 @@ if ( is_multisite() ) {
 	$submenu[ 'index.php' ][5] = array( __('My Sites'), 'read', 'my-sites.php' );
 }
 
-if ( ! is_multisite() || is_super_admin() )
-	$update_data = wp_get_update_data();
-
-if ( ! is_multisite() ) {
-	if ( current_user_can( 'update_core' ) )
-		$cap = 'update_core';
-	elseif ( current_user_can( 'update_plugins' ) )
-		$cap = 'update_plugins';
-	else
-		$cap = 'update_themes';
-	$submenu[ 'index.php' ][10] = array( sprintf( __('Updates %s'), "<span class='update-plugins count-{$update_data['counts']['total']}' title='{$update_data['title']}'><span class='update-count'>" . number_format_i18n($update_data['counts']['total']) . "</span></span>" ), $cap, 'update-core.php');
-	unset( $cap );
-}
-
 $menu[4] = array( '', 'read', 'separator1', '', 'wp-menu-separator' );
 
-$menu[5] = array( __('Posts'), 'edit_posts', 'edit.php', '', 'open-if-no-js menu-top menu-icon-post', 'menu-posts', 'none' );
+$menu[5] = array( __('Posts'), 'edit_posts', 'edit.php', '', 'open-if-no-js menu-top menu-icon-post', 'menu-posts', 'dashicons-admin-post' );
 	$submenu['edit.php'][5]  = array( __('All Posts'), 'edit_posts', 'edit.php' );
 	/* translators: add new post */
 	$submenu['edit.php'][10]  = array( _x('Add New', 'post'), get_post_type_object( 'post' )->cap->create_posts, 'post-new.php' );
@@ -60,7 +46,7 @@ $menu[5] = array( __('Posts'), 'edit_posts', 'edit.php', '', 'open-if-no-js menu
 	}
 	unset($tax);
 
-$menu[10] = array( __('Media'), 'upload_files', 'upload.php', '', 'menu-top menu-icon-media', 'menu-media', 'none' );
+$menu[10] = array( __('Media'), 'upload_files', 'upload.php', '', 'menu-top menu-icon-media', 'menu-media', 'dashicons-admin-media' );
 	$submenu['upload.php'][5] = array( __('Library'), 'upload_files', 'upload.php');
 	/* translators: add new file */
 	$submenu['upload.php'][10] = array( _x('Add New', 'file'), 'upload_files', 'media-new.php');
@@ -72,13 +58,13 @@ $menu[10] = array( __('Media'), 'upload_files', 'upload.php', '', 'menu-top menu
 	}
 	unset($tax);
 
-$menu[15] = array( __('Links'), 'manage_links', 'link-manager.php', '', 'menu-top menu-icon-links', 'menu-links', 'none' );
+$menu[15] = array( __('Links'), 'manage_links', 'link-manager.php', '', 'menu-top menu-icon-links', 'menu-links', 'dashicons-admin-links' );
 	$submenu['link-manager.php'][5] = array( _x('All Links', 'admin menu'), 'manage_links', 'link-manager.php' );
 	/* translators: add new links */
 	$submenu['link-manager.php'][10] = array( _x('Add New', 'link'), 'manage_links', 'link-add.php' );
 	$submenu['link-manager.php'][15] = array( __('Link Categories'), 'manage_categories', 'edit-tags.php?taxonomy=link_category' );
 
-$menu[20] = array( __('Pages'), 'edit_pages', 'edit.php?post_type=page', '', 'menu-top menu-icon-page', 'menu-pages', 'none' );
+$menu[20] = array( __('Pages'), 'edit_pages', 'edit.php?post_type=page', '', 'menu-top menu-icon-page', 'menu-pages', 'dashicons-admin-page' );
 	$submenu['edit.php?post_type=page'][5] = array( __('All Pages'), 'edit_pages', 'edit.php?post_type=page' );
 	/* translators: add new page */
 	$submenu['edit.php?post_type=page'][10] = array( _x('Add New', 'page'), get_post_type_object( 'page' )->cap->create_posts, 'post-new.php?post_type=page' );
@@ -93,7 +79,7 @@ $menu[20] = array( __('Pages'), 'edit_pages', 'edit.php?post_type=page', '', 'me
 
 $awaiting_mod = wp_count_comments();
 $awaiting_mod = $awaiting_mod->moderated;
-$menu[25] = array( sprintf( __('Comments %s'), "<span class='awaiting-mod count-$awaiting_mod'><span class='pending-count'>" . number_format_i18n($awaiting_mod) . "</span></span>" ), 'edit_posts', 'edit-comments.php', '', 'menu-top menu-icon-comments', 'menu-comments', 'none' );
+$menu[25] = array( sprintf( __('Comments %s'), "<span class='awaiting-mod count-$awaiting_mod'><span class='pending-count'>" . number_format_i18n($awaiting_mod) . "</span></span>" ), 'edit_posts', 'edit-comments.php', '', 'menu-top menu-icon-comments', 'menu-comments', 'dashicons-admin-comments' );
 unset($awaiting_mod);
 
 $submenu[ 'edit-comments.php' ][0] = array( __('All Comments'), 'edit_posts', 'edit-comments.php' );
@@ -117,7 +103,7 @@ foreach ( (array) get_post_types( array('show_ui' => true, '_builtin' => false, 
 		}
 		$ptype_class = $ptype_for_id;
 	} else {
-		$menu_icon   = 'none';
+		$menu_icon   = 'dashicons-admin-post';
 		$ptype_class = 'post';
 	}
 
@@ -144,7 +130,7 @@ $menu[59] = array( '', 'read', 'separator2', '', 'wp-menu-separator' );
 
 $appearance_cap = current_user_can( 'switch_themes') ? 'switch_themes' : 'edit_theme_options';
 
-$menu[60] = array( __('Appearance'), $appearance_cap, 'themes.php', '', 'menu-top menu-icon-appearance', 'menu-appearance', 'div' );
+$menu[60] = array( __('Appearance'), $appearance_cap, 'themes.php', '', 'menu-top menu-icon-appearance', 'menu-appearance', 'dashicons-admin-appearance' );
 	$submenu['themes.php'][5] = array( __( 'Themes' ), $appearance_cap, 'themes.php' );
 	$submenu['themes.php'][6] = array( __( 'Customize' ), 'edit_theme_options', 'customize.php', 'hide-if-no-customize' );
 	if ( current_theme_supports( 'menus' ) || current_theme_supports( 'widgets' ) )
@@ -152,37 +138,15 @@ $menu[60] = array( __('Appearance'), $appearance_cap, 'themes.php', '', 'menu-to
 
 unset( $appearance_cap );
 
-// Add 'Editor' to the bottom of the Appearance menu.
-if ( ! is_multisite() )
-	add_action('admin_menu', '_add_themes_utility_last', 101);
-function _add_themes_utility_last() {
-	// Must use API on the admin_menu hook, direct modification is only possible on/before the _admin_menu hook
-	add_submenu_page('themes.php', _x('Editor', 'theme editor'), _x('Editor', 'theme editor'), 'edit_themes', 'theme-editor.php');
-}
 
-$count = '';
-if ( ! is_multisite() && current_user_can( 'update_plugins' ) ) {
-	if ( ! isset( $update_data ) )
-		$update_data = wp_get_update_data();
-	$count = "<span class='update-plugins count-{$update_data['counts']['plugins']}'><span class='plugin-count'>" . number_format_i18n($update_data['counts']['plugins']) . "</span></span>";
-}
-
-$menu[65] = array( sprintf( __('Plugins %s'), $count ), 'activate_plugins', 'plugins.php', '', 'menu-top menu-icon-plugins', 'menu-plugins', 'none' );
-
-$submenu['plugins.php'][5]  = array( __('Installed Plugins'), 'activate_plugins', 'plugins.php' );
-
-	if ( ! is_multisite() ) {
-		/* translators: add new plugin */
-		$submenu['plugins.php'][10] = array( _x('Add New', 'plugin'), 'install_plugins', 'plugin-install.php' );
-		$submenu['plugins.php'][15] = array( _x('Editor', 'plugin editor'), 'edit_plugins', 'plugin-editor.php' );
-	}
+$menu[65] = array( __('Plugins'), 'activate_plugins', 'plugins.php', '', 'menu-top menu-icon-plugins', 'menu-plugins', 'dashicons-admin-plugins' );
 
 unset( $update_data );
 
 if ( current_user_can('list_users') )
-	$menu[70] = array( __('Users'), 'list_users', 'users.php', '', 'menu-top menu-icon-users', 'menu-users', 'none' );
+	$menu[70] = array( __('Users'), 'list_users', 'users.php', '', 'menu-top menu-icon-users', 'menu-users', 'dashicons-admin-users' );
 else
-	$menu[70] = array( __('Profile'), 'read', 'profile.php', '', 'menu-top menu-icon-users', 'menu-users', 'none' );
+	$menu[70] = array( __('Profile'), 'read', 'profile.php', '', 'menu-top menu-icon-users', 'menu-users', 'dashicons-admin-users' );
 
 if ( current_user_can('list_users') ) {
 	$_wp_real_parent_file['profile.php'] = 'users.php'; // Back-compat for plugins adding submenus to profile.php.
@@ -202,7 +166,7 @@ if ( current_user_can('list_users') ) {
 		$submenu['profile.php'][10] = array(__('Add New User'), 'promote_users', 'user-new.php');
 }
 
-$menu[75] = array( __('Tools'), 'edit_posts', 'tools.php', '', 'menu-top menu-icon-tools', 'menu-tools', 'none' );
+$menu[75] = array( __('Tools'), 'edit_posts', 'tools.php', '', 'menu-top menu-icon-tools', 'menu-tools', 'dashicons-admin-tools' );
 	$submenu['tools.php'][5] = array( __('Available Tools'), 'edit_posts', 'tools.php' );
 	$submenu['tools.php'][10] = array( __('Import'), 'import', 'import.php' );
 	$submenu['tools.php'][15] = array( __('Export'), 'export', 'export.php' );
@@ -211,7 +175,7 @@ $menu[75] = array( __('Tools'), 'edit_posts', 'tools.php', '', 'menu-top menu-ic
 	if ( ! is_multisite() && defined('WP_ALLOW_MULTISITE') && WP_ALLOW_MULTISITE )
 		$submenu['tools.php'][50] = array(__('Network Setup'), 'manage_options', 'network.php');
 
-$menu[80] = array( __('Settings'), 'manage_options', 'options-general.php', '', 'menu-top menu-icon-settings', 'menu-settings', 'none' );
+$menu[80] = array( __('Settings'), 'manage_options', 'options-general.php', '', 'menu-top menu-icon-settings', 'menu-settings', 'dashicons-admin-settings' );
 	$submenu['options-general.php'][10] = array(_x('General', 'settings screen'), 'manage_options', 'options-general.php');
 	$submenu['options-general.php'][15] = array(__('Writing'), 'manage_options', 'options-writing.php');
 	$submenu['options-general.php'][20] = array(__('Reading'), 'manage_options', 'options-reading.php');

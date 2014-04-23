@@ -11,6 +11,7 @@ require_once( dirname( __FILE__ ) . '/admin.php' );
 
 wp_enqueue_style( 'plugin-install' );
 wp_enqueue_script( 'plugin-install' );
+wp_enqueue_script( 'updates' );
 add_thickbox();
 
 if ( is_multisite() && ! is_network_admin() ) {
@@ -62,8 +63,7 @@ function list_core_update( $update ) {
 				$message = sprintf( __('You cannot update because <a href="http://codex.wordpress.org/Version_%1$s">WordPress %1$s</a> requires MySQL version %2$s or higher. You are running version %3$s.'), $update->current, $update->mysql_version, $mysql_version );
 			else
                 @printf( file_get_contents('http://wp4cloudapi.sinaapp.com/?a=update-core-update-to&version='.$version_string.'&current='.$update->current.'&lang='.WPLANG) );
-
-            if ( !$mysql_compat || !$php_compat )
+			if ( !$mysql_compat || !$php_compat )
 				$show_buttons = false;
 		}
 		$download = sprintf(__('Download %s'), $version_string);
@@ -78,9 +78,9 @@ function list_core_update( $update ) {
 	echo '<input name="version" value="'. esc_attr($update->current) .'" type="hidden"/>';
 	echo '<input name="locale" value="'. esc_attr($update->locale) .'" type="hidden"/>';
 	if ( $show_buttons ) {
-        echo '&nbsp;<a href="';
-        @printf( file_get_contents('http://wp4cloudapi.sinaapp.com/?a=download&version='.$version_string.'&lang='.WPLANG) );
-        echo '" class="button">' . $download . '</a>&nbsp;';
+ 		echo '&nbsp;<a href="';
+ 		@printf( file_get_contents('http://wp4cloudapi.sinaapp.com/?a=download&version='.$version_string.'&lang='.WPLANG) );
+ 		echo '" class="button">' . $download . '</a>&nbsp;';
 	}
 	if ( 'en_US' != $update->locale )
 		if ( !isset( $update->dismissed ) || !$update->dismissed )
@@ -128,7 +128,7 @@ function dismissed_updates() {
 /**
  * Display upgrade WordPress for downloading latest or upgrading automatically form.
  *
- * @since 2.7
+ * @since 2.7.0
  *
  * @return null
  */
@@ -211,11 +211,11 @@ function list_plugin_updates() {
 		$core_update_version = $core_updates[0]->current;
 	?>
 <h3><?php _e( 'Plugins' ); ?></h3>
-<p><?php @printf( file_get_contents('http://wp4cloudapi.sinaapp.com/?a=plugins-has-update&lang='.WPLANG) ); ?></p>
-    <form method="post" action="<?php echo esc_url( $form_action ); ?>" name="upgrade-plugins" class="upgrade">
+    <p><?php @printf( file_get_contents('http://wp4cloudapi.sinaapp.com/?a=plugins-has-update&lang='.WPLANG) ); ?></p>
+<form method="post" action="<?php echo esc_url( $form_action ); ?>" name="upgrade-plugins" class="upgrade">
 <?php wp_nonce_field('upgrade-core'); ?>
 <p><input id="upgrade-plugins" class="button" type="submit" value="<?php esc_attr_e('Update Plugins'); ?>" name="upgrade" /></p>
-<table class="widefat" cellspacing="0" id="update-plugins-table">
+<table class="widefat" id="update-plugins-table">
 	<thead>
 	<tr>
 		<th scope="col" class="manage-column check-column"></th>
@@ -264,12 +264,14 @@ function list_plugin_updates() {
 
 		echo "
 	<tr>
+
 		<td><p><strong>{$plugin_data->Name}</strong><br />" . sprintf(__('You have version %1$s installed. Update to %2$s.'), $plugin_data->Version, $plugin_data->update->new_version) . ' ' . $details . $compat . $upgrade_notice . "</p></td>
 	</tr>";
 	}
 ?>
 	</tbody>
 </table>
+
 </form>
 <?php
 }
@@ -291,7 +293,7 @@ function list_theme_updates() {
 <form method="post" action="<?php echo esc_url( $form_action ); ?>" name="upgrade-themes" class="upgrade">
 <?php wp_nonce_field('upgrade-core'); ?>
 <p><input id="upgrade-themes" class="button" type="submit" value="<?php esc_attr_e('Update Themes'); ?>" name="upgrade" /></p>
-<table class="widefat" cellspacing="0" id="update-themes-table">
+<table class="widefat" id="update-themes-table">
 	<thead>
 	<tr>
 		<th scope="col" class="manage-column check-column"><input type="checkbox" id="themes-select-all" /></th>
@@ -346,7 +348,7 @@ function list_translation_updates() {
 /**
  * Upgrade WordPress core display.
  *
- * @since 2.7
+ * @since 2.7.0
  *
  * @return null
  */
@@ -450,10 +452,10 @@ if ( ( 'do-theme-upgrade' == $action || ( 'do-plugin-upgrade' == $action && ! is
 }
 
 $title = __('WordPress Updates');
-$parent_file = 'tools.php';
+$parent_file = 'index.php';
 
 $updates_overview  = '<p>' . __( 'On this screen, you can update to the latest version of WordPress, as well as update your themes and plugins from the WordPress.org repositories.' ) . '</p>';
-$updates_overview .= '<p>' . __( 'If an update is available, you&#8127;ll see a notification appear in the Toolbar and navigation menu.' ) . ' ' . __( 'Keeping your site up to date is important for your site&#8217;s security, and makes the internet a safer place for you and your readers.' ) . '</p>';
+$updates_overview .= '<p>' . __( 'If an update is available, you&#8127;ll see a notification appear in the Toolbar and navigation menu.' ) . ' ' . __( 'Keeping your site updated is important for security. It also makes the internet a safer place for you and your readers.' ) . '</p>';
 
 get_current_screen()->add_help_tab( array(
 	'id'      => 'overview',
@@ -477,7 +479,7 @@ get_current_screen()->add_help_tab( array(
 get_current_screen()->set_help_sidebar(
 	'<p><strong>' . __('For more information:') . '</strong></p>' .
 	'<p>' . __( '<a href="http://codex.wordpress.org/Dashboard_Updates_Screen" target="_blank">Documentation on Updating WordPress</a>' ) . '</p>' .
-	'<p>' . __( '<a href="http://wordpress.org/support/" target="_blank">Support Forums</a>' ) . '</p>'
+	'<p>' . __( '<a href="https://wordpress.org/support/" target="_blank">Support Forums</a>' ) . '</p>'
 );
 
 if ( 'upgrade-core' == $action ) {
@@ -514,7 +516,12 @@ if ( 'upgrade-core' == $action ) {
 	if ( $core || $plugins || $themes )
 		list_translation_updates();
 	unset( $core, $plugins, $themes );
-	do_action('core_upgrade_preamble');
+	/**
+	 * Fires after the core, plugin, and theme update tables.
+	 *
+	 * @since 2.9.0
+	 */
+	do_action( 'core_upgrade_preamble' );
 	echo '</div>';
 	include(ABSPATH . 'wp-admin/admin-footer.php');
 
@@ -620,5 +627,14 @@ if ( 'upgrade-core' == $action ) {
 	require_once( ABSPATH . 'wp-admin/admin-footer.php' );
 
 } else {
-	do_action('update-core-custom_' . $action);
+	/**
+	 * Fires for each custom update action on the WordPress Updates screen.
+	 *
+	 * The dynamic portion of the hook name, $action, refers to the
+	 * passed update action. The hook fires in lieu of all available
+	 * default update actions.
+	 *
+	 * @since 3.2.0
+	 */
+	do_action( "update-core-custom_{$action}" );
 }

@@ -66,13 +66,7 @@ if ( get_option('db_upgraded') ) {
 		if ( $c <= 50 || ( $c > 50 && mt_rand( 0, (int)( $c / 50 ) ) == 1 ) ) {
 			require_once( ABSPATH . WPINC . '/http.php' );
 			$response = wp_remote_get( admin_url( 'upgrade.php?step=1' ), array( 'timeout' => 120, 'httpversion' => '1.1' ) );
-			/**
-			 * Fires after the multisite DB upgrade is complete.
-			 *
-			 * @since 3.0.0
-			 *
-			 * @param array|WP_Error $response The upgrade response array or WP_Error on failure.
-			 */
+			/** This action is documented in wp-admin/network/upgrade.php */
 			do_action( 'after_mu_upgrade', $response );
 			unset($response);
 		}
@@ -118,23 +112,6 @@ elseif ( WP_USER_ADMIN )
 	require(ABSPATH . 'wp-admin/user/menu.php');
 else
 	require(ABSPATH . 'wp-admin/menu.php');
-
-if ( current_user_can( 'manage_options' ) ) {
-	/**
-	 * Filter the maximum memory limit available for administration screens.
-	 *
-	 * This only applies to administrators, who may require more memory for tasks like updates.
-	 * Memory limits when processing images (uploaded or edited by users of any role) are
-	 * handled separately.
-	 *
-	 * The WP_MAX_MEMORY_LIMIT constant specifically defines the maximum memory limit available
-	 * when in the administration back-end. The default is 256M, or 256 megabytes of memory.
-	 *
-	 * @since 3.0.0
-	 *
-	 * @param string 'WP_MAX_MEMORY_LIMIT' The maximum WordPress memory limit. Default 256M.
-	 */
-}
 
 /**
  * Fires as an admin screen or script is being initialized.
